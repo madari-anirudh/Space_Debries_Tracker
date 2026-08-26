@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/debris")
+      .get("https://space-debris-tracker-api-t9n9.onrender.com/api/debris")
       .then((res) => {
         setDebrisData(Array.isArray(res.data) ? res.data : []);
       })
