@@ -70,6 +70,11 @@ const REFRESH_INTERVAL =
 const INITIAL_REFRESH_DELAY =
   5000;
 
+
+  const {
+  findCloseApproaches,
+  analyzeCloseApproach
+} = require("./services/collisionService");
 /*
 =========================================================
 RUNTIME STATUS
@@ -1192,6 +1197,172 @@ app.get(
       },
 
     });
+  }
+);
+
+app.get(
+  "/api/collisions",
+  async (req, res) => {
+    try {
+
+      // -----------------------------------------
+      // Check orbital cache
+      // -----------------------------------------
+
+      if (
+        !debrisCache ||
+        !Array.isArray(
+          debrisCache.objects
+        ) ||
+        debrisCache.objects.length < 2
+      ) {
+
+        return res.status(503).json({
+
+          source:
+            "Local orbital cache",
+
+          error:
+            "Debris orbital cache is not available or contains insufficient objects.",
+
+          objectsChecked: 0,
+
+          approachesFound: 0,
+
+          results: []
+
+        });
+      }
+
+
+      // -----------------------------------------
+      // Read API parameters
+      // -----------------------------------------
+
+      const predictionMinutes =
+        Number(
+          req.query.minutes || 180
+        );
+
+      const thresholdKm =
+        Number(
+          req.query.threshold || 100
+        );
+
+
+      // -----------------------------------------
+      // Safety validation
+      // -----------------------------------------
+
+      const safePredictionMinutes =
+        Number.isFinite(
+          predictionMinutes
+        )
+          ? Math.min(
+              Math.max(
+                predictionMinutes,
+                1
+              ),
+              1440
+            )
+          : 180;
+
+
+      const safeThresholdKm =
+        Number.isFinite(
+          thresholdKm
+        )
+          ? Math.min(
+              Math.max(
+                thresholdKm,
+                1
+              ),
+              1000
+            )
+          : 100;
+
+
+      // -----------------------------------------
+      // Collision / close-approach analysis
+      // -----------------------------------------
+
+      const analysis =
+        findCloseApproaches(
+          debrisCache.objects,
+          {
+            predictionMinutes:
+              safePredictionMinutes,
+
+            stepSeconds:
+              60,
+
+            thresholdKm:
+              safeThresholdKm,
+
+            maxResults:
+              50
+          }
+        );
+
+
+      // -----------------------------------------
+      // Return API response
+      // -----------------------------------------
+
+      res.json({
+
+        source:
+          "Local orbital cache",
+
+        propagation:
+          "satellite.js / SGP4",
+
+        predictionWindowMinutes:
+          safePredictionMinutes,
+
+        thresholdKm:
+          safeThresholdKm,
+
+        objectsChecked:
+          analysis
+            .statistics
+            .objectsPropagated,
+
+        statistics:
+          analysis.statistics,
+
+        approachesFound:
+          analysis.results.length,
+
+        results:
+          analysis.results
+
+      });
+
+    } catch (error) {
+
+      console.error(
+        "[COLLISION] Analysis error:",
+        error
+      );
+
+      res.status(500).json({
+
+        source:
+          "Local orbital cache",
+
+        error:
+          "Collision analysis failed.",
+
+        message:
+          error.message,
+
+        results:
+          []
+
+      });
+
+    }
   }
 );
 
