@@ -733,25 +733,25 @@ function calculatePosition(
     }
 
     return {
+  name: object.name || "UNKNOWN OBJECT",
 
-      name:
-        object.name ||
-        "UNKNOWN OBJECT",
+  noradId:
+    object.noradId ||
+    (
+      object.line1
+        ? object.line1.substring(2, 7).trim()
+        : null
+    ),
 
-      lat,
+  lat,
+  lon,
+  alt,
+  velocity,
 
-      lon,
+  source: "Local Orbital Cache",
 
-      alt,
-
-      velocity,
-
-      source:
-        "Local Orbital Cache",
-
-      updatedAt:
-        date.toISOString(),
-    };
+  updatedAt: date.toISOString(),
+};
 
   } catch (error) {
 
