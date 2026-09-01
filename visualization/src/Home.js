@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import EarthScene from "./EarthScene";
 import "./home.css";
+import MissionControl from "./MissionControl";
 const Home = () => {
   const [startSpace, setStartSpace] = useState(false);
   const [debrisData, setDebrisData] = useState([]);
@@ -65,7 +66,7 @@ const Home = () => {
 
           <div>
             <strong>ORBITAL</strong>
-            <small>DEBRIS TRACKER</small>
+            <small>DEBRIS TRACKER</small>            
           </div>
         </div>
 
@@ -247,6 +248,9 @@ const Home = () => {
                 <small>Current monitoring state</small>
               </div>
             </div>
+          </div>
+          <div className="mission-control">
+            <MissionControl />
           </div>
         </section>
 
