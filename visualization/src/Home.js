@@ -9,7 +9,7 @@ const Home = () => {
   const [debrisData, setDebrisData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("overview");
-
+  const [trackedEvent, setTrackedEvent] = useState(null);
   useEffect(() => {
     axios
       .get("https://space-debris-tracker-api-t9n9.onrender.com/api/debris")
@@ -48,8 +48,26 @@ const Home = () => {
   };
 
   if (startSpace) {
-    return <EarthScene onBack={() => setStartSpace(false)} />;
-  }
+  return (
+    <div className="space-tracker-screen">
+      <EarthScene
+        trackedEvent={trackedEvent}
+        onBack={() => setStartSpace(false)}
+      />
+
+      <MissionControl
+        onTrackEvent={(event) => {
+          console.log(
+            "Tracking collision event:",
+            event
+          );
+
+          setTrackedEvent(event);
+        }}
+      />
+    </div>
+  );
+}
 
   return (
     <div className="space-home">
@@ -250,7 +268,16 @@ const Home = () => {
             </div>
           </div>
           <div className="mission-control">
-            <MissionControl />
+            <MissionControl
+        onTrackEvent={(event) => {
+          console.log(
+            "Tracking collision event:",
+            event
+          );
+
+          setTrackedEvent(event);
+        }}
+      />
           </div>
         </section>
 

@@ -74,6 +74,7 @@ COMPONENT
 
 const EarthScene = ({
   onBack,
+  trackedEvent,
 }) => {
 
   const mountRef =
