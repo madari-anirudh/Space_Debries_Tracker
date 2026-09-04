@@ -75,6 +75,11 @@ const INITIAL_REFRESH_DELAY =
   findCloseApproaches,
   analyzeCloseApproach
 } = require("./services/collisionService");
+
+const {
+  analyzePredictions,
+  createPredictionSummary
+} = require("./services/aiPredictionService");
 /*
 =========================================================
 RUNTIME STATUS
@@ -1363,6 +1368,236 @@ app.get(
       });
 
     }
+  }
+);
+
+/*
+=========================================================
+ AI COLLISION PREDICTION
+=========================================================
+*/
+
+app.get(
+  "/api/ai/collisions",
+  async (req, res) => {
+
+    try {
+
+      /*
+      -----------------------------------------------------
+      Check orbital cache
+      -----------------------------------------------------
+      */
+
+      if (
+        !debrisCache ||
+        !Array.isArray(
+          debrisCache.objects
+        ) ||
+        debrisCache.objects.length < 2
+      ) {
+
+        return res
+          .status(503)
+          .json({
+
+            success:
+              false,
+
+            error:
+              "Debris orbital cache is not available or contains insufficient objects.",
+
+            results:
+              []
+
+          });
+
+      }
+
+
+      /*
+      -----------------------------------------------------
+      Parameters
+      -----------------------------------------------------
+      */
+
+      const predictionMinutes =
+        Number(
+          req.query.minutes || 180
+        );
+
+
+      const thresholdKm =
+        Number(
+          req.query.threshold || 100
+        );
+
+
+      /*
+      -----------------------------------------------------
+      Safety limits
+      -----------------------------------------------------
+      */
+
+      const safePredictionMinutes =
+        Number.isFinite(
+          predictionMinutes
+        )
+          ? Math.min(
+              Math.max(
+                predictionMinutes,
+                1
+              ),
+              1440
+            )
+          : 180;
+
+
+      const safeThresholdKm =
+        Number.isFinite(
+          thresholdKm
+        )
+          ? Math.min(
+              Math.max(
+                thresholdKm,
+                1
+              ),
+              1000
+            )
+          : 100;
+
+
+      /*
+      -----------------------------------------------------
+      STEP 1
+      Existing physics-based close approach engine
+      -----------------------------------------------------
+      */
+
+      const analysis =
+        findCloseApproaches(
+          debrisCache.objects,
+          {
+
+            predictionMinutes:
+              safePredictionMinutes,
+
+            stepSeconds:
+              60,
+
+            thresholdKm:
+              safeThresholdKm,
+
+            maxResults:
+              50
+
+          }
+        );
+
+
+      /*
+      -----------------------------------------------------
+      STEP 2
+      AI prediction layer
+      -----------------------------------------------------
+      */
+
+      const predictedResults =
+        analyzePredictions(
+          analysis.results
+        );
+
+
+      /*
+      -----------------------------------------------------
+      STEP 3
+      Prediction summary
+      -----------------------------------------------------
+      */
+
+      const summary =
+        createPredictionSummary(
+          predictedResults
+        );
+
+
+      /*
+      -----------------------------------------------------
+      Response
+      -----------------------------------------------------
+      */
+
+      res.json({
+
+        success:
+          true,
+
+        engine:
+          "AI Collision Prediction Engine",
+
+        version:
+          "3.1",
+
+        source:
+          "Local orbital cache",
+
+        propagation:
+          "satellite.js / SGP4",
+
+        predictionWindowMinutes:
+          safePredictionMinutes,
+
+        thresholdKm:
+          safeThresholdKm,
+
+        objectsChecked:
+          analysis
+            .statistics
+            .objectsPropagated,
+
+        closeApproaches:
+          analysis
+            .results
+            .length,
+
+        predictions:
+          summary,
+
+        results:
+          predictedResults
+
+      });
+
+    } catch (
+      error
+    ) {
+
+      console.error(
+        "[AI COLLISION] Prediction error:",
+        error
+      );
+
+
+      res
+        .status(500)
+        .json({
+
+          success:
+            false,
+
+          error:
+            "AI collision prediction failed.",
+
+          message:
+            error.message,
+
+          results:
+            []
+
+        });
+
+    }
+
   }
 );
 
