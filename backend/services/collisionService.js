@@ -2,88 +2,53 @@ const satellite = require("satellite.js");
 
 /*
 ============================================================
- SPACE DEBRIS TRACKER
- COLLISION / CLOSE-APPROACH ENGINE
-============================================================
-
-Data source:
-    Local orbital cache
-
-Propagation:
-    satellite.js / SGP4
-
-Purpose:
-    Close-approach screening
-
-IMPORTANT:
-    This is NOT an operational collision-probability system.
-
-    TLE + SGP4 data does not contain the covariance/
-    uncertainty information required for authoritative
-    collision probability calculations.
-
-============================================================
-*/
-
-
-/*
-============================================================
- CONFIGURATION
+CONFIGURATION
 ============================================================
 */
 
 const DEFAULT_PREDICTION_MINUTES = 180;
-
 const DEFAULT_STEP_SECONDS = 60;
-
 const DEFAULT_THRESHOLD_KM = 100;
-
 const DEFAULT_MAX_RESULTS = 50;
 
 
 /*
 ============================================================
- NORAD ID
+NORAD ID
 ============================================================
 */
 
 function getNoradId(line1) {
-
-  if (
-    !line1 ||
-    typeof line1 !== "string"
-  ) {
+  if (!line1 || typeof line1 !== "string") {
     return null;
   }
 
-  const match =
-    line1.match(
-      /^1\s+(\d{1,7})/
-    );
+  /*
+   * NORAD catalog number occupies columns 3-7
+   * in a standard TLE line.
+   */
 
-  return match
-    ? match[1]
-    : null;
+  const id = line1.substring(2, 7).trim();
+
+  return id || null;
 }
 
 
 /*
 ============================================================
- CREATE SGP4 SATREC
+CREATE SATREC
 ============================================================
 */
 
 function createSatrec(object) {
-
-  if (
-    !object ||
-    !object.line1 ||
-    !object.line2
-  ) {
-    return null;
-  }
-
   try {
+    if (
+      !object ||
+      !object.line1 ||
+      !object.line2
+    ) {
+      return null;
+    }
 
     return satellite.twoline2satrec(
       object.line1,
@@ -91,7 +56,6 @@ function createSatrec(object) {
     );
 
   } catch (error) {
-
     return null;
   }
 }
@@ -99,149 +63,18 @@ function createSatrec(object) {
 
 /*
 ============================================================
- PROPAGATE OBJECT
-============================================================
-
-Returns:
-
-{
-    position: {
-        x,
-        y,
-        z
-    },
-
-    velocity: {
-        x,
-        y,
-        z
-    }
-}
-
-Position:
-    km
-
-Velocity:
-    km/s
-*/
-
-function propagateObject(
-  satrec,
-  date
-) {
-
-  if (!satrec) {
-    return null;
-  }
-
-  try {
-
-    const state =
-      satellite.propagate(
-        satrec,
-        date
-      );
-
-    if (
-      !state ||
-      !state.position ||
-      !state.velocity
-    ) {
-      return null;
-    }
-
-    const position =
-      state.position;
-
-    const velocity =
-      state.velocity;
-
-
-    /*
-    Validate position
-    */
-
-    if (
-      !Number.isFinite(
-        position.x
-      ) ||
-      !Number.isFinite(
-        position.y
-      ) ||
-      !Number.isFinite(
-        position.z
-      )
-    ) {
-      return null;
-    }
-
-
-    /*
-    Validate velocity
-    */
-
-    if (
-      !Number.isFinite(
-        velocity.x
-      ) ||
-      !Number.isFinite(
-        velocity.y
-      ) ||
-      !Number.isFinite(
-        velocity.z
-      )
-    ) {
-      return null;
-    }
-
-
-    return {
-
-      position: {
-        x: position.x,
-        y: position.y,
-        z: position.z
-      },
-
-      velocity: {
-        x: velocity.x,
-        y: velocity.y,
-        z: velocity.z
-      }
-
-    };
-
-  } catch (error) {
-
-    return null;
-  }
-}
-
-
-/*
-============================================================
- VECTOR DISTANCE
+VECTOR DISTANCE
 ============================================================
 */
 
-function vectorDistance(
-  a,
-  b
-) {
-
+function vectorDistance(a, b) {
   if (!a || !b) {
     return Infinity;
   }
 
-  const dx =
-    a.x - b.x;
-
-  const dy =
-    a.y - b.y;
-
-  const dz =
-    a.z - b.z;
-
+  const dx = a.x - b.x;
+  const dy = a.y - b.y;
+  const dz = a.z - b.z;
 
   return Math.sqrt(
     dx * dx +
@@ -253,7 +86,7 @@ function vectorDistance(
 
 /*
 ============================================================
- RELATIVE VELOCITY
+RELATIVE VELOCITY
 ============================================================
 */
 
@@ -261,26 +94,18 @@ function calculateRelativeVelocity(
   velocityA,
   velocityB
 ) {
-
-  if (
-    !velocityA ||
-    !velocityB
-  ) {
+  if (!velocityA || !velocityB) {
     return null;
   }
 
   const dx =
-    velocityA.x -
-    velocityB.x;
+    velocityA.x - velocityB.x;
 
   const dy =
-    velocityA.y -
-    velocityB.y;
+    velocityA.y - velocityB.y;
 
   const dz =
-    velocityA.z -
-    velocityB.z;
-
+    velocityA.z - velocityB.z;
 
   return Math.sqrt(
     dx * dx +
@@ -292,120 +117,164 @@ function calculateRelativeVelocity(
 
 /*
 ============================================================
- RISK CLASSIFICATION
+PROPAGATE OBJECT
+============================================================
+*/
+
+function propagateObject(
+  satrec,
+  date
+) {
+  try {
+    if (!satrec || !date) {
+      return null;
+    }
+
+    const propagated =
+      satellite.propagate(
+        satrec,
+        date
+      );
+
+    if (
+      !propagated ||
+      !propagated.position
+    ) {
+      return null;
+    }
+
+    const position =
+      propagated.position;
+
+    const velocity =
+      propagated.velocity;
+
+    if (
+      !position ||
+      !Number.isFinite(position.x) ||
+      !Number.isFinite(position.y) ||
+      !Number.isFinite(position.z)
+    ) {
+      return null;
+    }
+
+    return {
+      position,
+      velocity: velocity || null
+    };
+
+  } catch (error) {
+    return null;
+  }
+}
+
+
+/*
+============================================================
+RISK CLASSIFICATION
 ============================================================
 
-These are SCREENING categories.
+IMPORTANT:
 
-They are NOT collision probabilities.
+This is a screening score.
+
+It is NOT a scientifically validated collision
+probability.
+
+Actual collision probability requires covariance /
+uncertainty information.
+============================================================
 */
 
 function classifyRisk(
-  distanceKm
+  missDistanceKm
 ) {
-
-  if (
-    !Number.isFinite(
-      distanceKm
-    )
-  ) {
-    return "UNKNOWN";
-  }
-
-
-  if (
-    distanceKm < 1
-  ) {
-    return "CRITICAL";
-  }
-
-
-  if (
-    distanceKm < 5
-  ) {
-    return "HIGH";
-  }
-
-
-  if (
-    distanceKm < 25
-  ) {
-    return "MEDIUM";
-  }
-
-
-  if (
-    distanceKm < 100
-  ) {
+  if (!Number.isFinite(missDistanceKm)) {
     return "LOW";
   }
 
+  if (missDistanceKm <= 1) {
+    return "CRITICAL";
+  }
 
-  return "NOMINAL";
+  if (missDistanceKm <= 5) {
+    return "HIGH";
+  }
+
+  if (missDistanceKm <= 25) {
+    return "MEDIUM";
+  }
+
+  return "LOW";
 }
 
 
 /*
 ============================================================
- RISK SCORE
+RISK SCORE
 ============================================================
-
-Used only for UI sorting / analysis.
-
-NOT a collision probability.
 */
 
 function calculateRiskScore(
-  distanceKm
+  missDistanceKm,
+  relativeVelocityKms = null
 ) {
-
-  if (
-    !Number.isFinite(
-      distanceKm
-    )
-  ) {
+  if (!Number.isFinite(missDistanceKm)) {
     return 0;
   }
 
+  let score = 0;
 
-  if (
-    distanceKm < 1
-  ) {
-    return 100;
+  /*
+   * Distance component
+   */
+
+  if (missDistanceKm <= 1) {
+    score += 70;
+  } else if (missDistanceKm <= 5) {
+    score += 55;
+  } else if (missDistanceKm <= 10) {
+    score += 40;
+  } else if (missDistanceKm <= 25) {
+    score += 25;
+  } else if (missDistanceKm <= 50) {
+    score += 10;
   }
 
+  /*
+   * Relative velocity component.
+   *
+   * This is deliberately capped so velocity does
+   * not dominate the miss-distance signal.
+   */
 
   if (
-    distanceKm < 5
+    Number.isFinite(
+      relativeVelocityKms
+    )
   ) {
-    return 80;
+    if (relativeVelocityKms >= 10) {
+      score += 30;
+    } else if (relativeVelocityKms >= 5) {
+      score += 20;
+    } else if (relativeVelocityKms >= 1) {
+      score += 10;
+    } else if (relativeVelocityKms >= 0.1) {
+      score += 5;
+    }
   }
 
-
-  if (
-    distanceKm < 25
-  ) {
-    return 50;
-  }
-
-
-  if (
-    distanceKm < 100
-  ) {
-    return 20;
-  }
-
-
-  return 0;
+  return Math.min(
+    100,
+    Math.round(score)
+  );
 }
 
 
 /*
 ============================================================
- CLOSE APPROACH ANALYSIS
+ANALYZE CLOSE APPROACH
 ============================================================
-
-Analyze two orbital objects over a future time window.
 */
 
 function analyzeCloseApproach(
@@ -416,58 +285,39 @@ function analyzeCloseApproach(
   stepSeconds =
     DEFAULT_STEP_SECONDS
 ) {
-
   const satrecA =
-    createSatrec(
-      objectA
-    );
+    createSatrec(objectA);
 
   const satrecB =
-    createSatrec(
-      objectB
-    );
+    createSatrec(objectB);
 
-
-  if (
-    !satrecA ||
-    !satrecB
-  ) {
+  if (!satrecA || !satrecB) {
     return null;
   }
-
 
   const startTime =
     new Date();
 
-
   const totalSeconds =
-    predictionMinutes *
-    60;
-
+    predictionMinutes * 60;
 
   let closestDistanceKm =
     Infinity;
 
-
   let closestTime =
     null;
-
 
   let closestRelativeVelocity =
     null;
 
-
   let closestPositionA =
     null;
-
 
   let closestPositionB =
     null;
 
-
   let closestVelocityA =
     null;
-
 
   let closestVelocityB =
     null;
@@ -475,7 +325,7 @@ function analyzeCloseApproach(
 
   /*
   ----------------------------------------------------------
-  Time propagation
+  TIME PROPAGATION
   ----------------------------------------------------------
   */
 
@@ -491,13 +341,11 @@ function analyzeCloseApproach(
         seconds * 1000
       );
 
-
     const stateA =
       propagateObject(
         satrecA,
         currentTime
       );
-
 
     const stateB =
       propagateObject(
@@ -505,29 +353,15 @@ function analyzeCloseApproach(
         currentTime
       );
 
-
-    if (
-      !stateA ||
-      !stateB
-    ) {
+    if (!stateA || !stateB) {
       continue;
     }
-
-
-    /*
-    Calculate distance
-    */
 
     const distanceKm =
       vectorDistance(
         stateA.position,
         stateB.position
       );
-
-
-    /*
-    Check closest approach
-    */
 
     if (
       distanceKm <
@@ -537,10 +371,8 @@ function analyzeCloseApproach(
       closestDistanceKm =
         distanceKm;
 
-
       closestTime =
         currentTime;
-
 
       closestRelativeVelocity =
         calculateRelativeVelocity(
@@ -548,30 +380,24 @@ function analyzeCloseApproach(
           stateB.velocity
         );
 
-
       closestPositionA =
         stateA.position;
-
 
       closestPositionB =
         stateB.position;
 
-
       closestVelocityA =
         stateA.velocity;
 
-
       closestVelocityB =
         stateB.velocity;
-
     }
-
   }
 
 
   /*
   ----------------------------------------------------------
-  No valid result
+  VALIDATION
   ----------------------------------------------------------
   */
 
@@ -585,28 +411,49 @@ function analyzeCloseApproach(
   }
 
 
+  /*
+  ----------------------------------------------------------
+  RELATIVE VELOCITY
+  ----------------------------------------------------------
+  */
+
+  const relativeVelocityKms =
+    Number.isFinite(
+      closestRelativeVelocity
+    )
+      ? Number(
+          closestRelativeVelocity.toFixed(3)
+        )
+      : null;
+
+
+  /*
+  ----------------------------------------------------------
+  RISK
+  ----------------------------------------------------------
+  */
+
   const riskLevel =
     classifyRisk(
       closestDistanceKm
     );
 
-
   const riskScore =
     calculateRiskScore(
-      closestDistanceKm
+      closestDistanceKm,
+      relativeVelocityKms
     );
 
 
   /*
   ----------------------------------------------------------
-  Time until closest approach
+  TIME TO CLOSEST APPROACH
   ----------------------------------------------------------
   */
 
   const timeToClosestApproachMs =
     closestTime.getTime() -
     startTime.getTime();
-
 
   const timeToClosestApproachSeconds =
     Math.max(
@@ -620,14 +467,13 @@ function analyzeCloseApproach(
 
   /*
   ----------------------------------------------------------
-  Return analysis
+  RETURN
   ----------------------------------------------------------
   */
 
   return {
 
     object1: {
-
       name:
         objectA.name ||
         "UNKNOWN",
@@ -637,12 +483,9 @@ function analyzeCloseApproach(
         getNoradId(
           objectA.line1
         )
-
     },
 
-
     object2: {
-
       name:
         objectB.name ||
         "UNKNOWN",
@@ -652,7 +495,6 @@ function analyzeCloseApproach(
         getNoradId(
           objectB.line1
         )
-
     },
 
 
@@ -665,24 +507,14 @@ function analyzeCloseApproach(
 
       missDistanceKm:
         Number(
-          closestDistanceKm.toFixed(
-            3
-          )
+          closestDistanceKm.toFixed(3)
         ),
 
-      relativeVelocityKms:
-        closestRelativeVelocity !== null
-          ? Number(
-              closestRelativeVelocity.toFixed(
-                3
-              )
-            )
-          : null,
+      relativeVelocityKms,
 
       riskLevel,
 
       riskScore
-
     },
 
 
@@ -693,7 +525,6 @@ function analyzeCloseApproach(
 
       object2:
         closestPositionB
-
     },
 
 
@@ -704,44 +535,38 @@ function analyzeCloseApproach(
 
       object2:
         closestVelocityB
-
     },
 
 
     analysis: {
-  predictionWindowMinutes:
-    predictionMinutes,
 
-  stepSeconds,
+      predictionWindowMinutes:
+        predictionMinutes,
 
-  method:
-    "SGP4 propagation using satellite.js",
+      stepSeconds,
 
-  type:
-    "close-approach screening",
+      method:
+        "SGP4 propagation using satellite.js",
 
-  collisionProbability:
-    null
-}
+      type:
+        "close-approach screening",
 
+      collisionProbability:
+        null
+    }
   };
-
 }
 
 
 /*
 ============================================================
- ORBITAL PRE-FILTER
+ORBITAL PRE-FILTER
 ============================================================
 
-This function determines whether two objects are worth
-running through the expensive prediction calculation.
+This is ONLY a performance optimization.
 
-IMPORTANT:
-
-This is only a PERFORMANCE FILTER.
-
-The final close approach is calculated using SGP4.
+The final result is still calculated using SGP4.
+============================================================
 */
 
 function shouldAnalyzePair(
@@ -749,14 +574,9 @@ function shouldAnalyzePair(
   stateB,
   thresholdKm
 ) {
-
-  if (
-    !stateA ||
-    !stateB
-  ) {
+  if (!stateA || !stateB) {
     return false;
   }
-
 
   const currentDistance =
     vectorDistance(
@@ -764,22 +584,19 @@ function shouldAnalyzePair(
       stateB.position
     );
 
-
   /*
-  Safety margin.
+   * Generous screening margin.
+   *
+   * We don't want to discard an object that is
+   * currently farther away but approaches during
+   * the prediction window.
+   */
 
-  We intentionally use a generous margin because an object
-  that is currently farther away may approach later.
-  */
-
-  const safetyMarginKm =
-    500;
-
+  const safetyMarginKm = 500;
 
   const screeningDistanceKm =
     thresholdKm +
     safetyMarginKm;
-
 
   return (
     currentDistance <=
@@ -790,12 +607,8 @@ function shouldAnalyzePair(
 
 /*
 ============================================================
- FIND CLOSE APPROACHES
+FIND CLOSE APPROACHES
 ============================================================
-
-Processes the complete supplied cache.
-
-No artificial "first 150 objects" limitation.
 */
 
 function findCloseApproaches(
@@ -810,6 +623,8 @@ function findCloseApproaches(
     thresholdKm =
       DEFAULT_THRESHOLD_KM,
 
+    maxObjects = null,
+
     maxResults =
       DEFAULT_MAX_RESULTS
 
@@ -818,19 +633,16 @@ function findCloseApproaches(
 
   /*
   ----------------------------------------------------------
-  Validate input
+  VALIDATION
   ----------------------------------------------------------
   */
 
   if (
-    !Array.isArray(
-      objects
-    ) ||
+    !Array.isArray(objects) ||
     objects.length < 2
   ) {
 
     return {
-
       results: [],
 
       statistics: {
@@ -848,33 +660,46 @@ function findCloseApproaches(
 
         analyzedPairs: 0,
 
-        closeApproaches: 0
+        closeApproaches: 0,
 
+        returnedResults: 0
       }
-
     };
-
   }
 
 
   /*
   ----------------------------------------------------------
-  Prepare SGP4 records
+  OBJECT LIMIT
+  ----------------------------------------------------------
+  */
+
+  const workingObjects =
+    Number.isFinite(maxObjects) &&
+    maxObjects > 0
+      ? objects.slice(
+          0,
+          maxObjects
+        )
+      : objects;
+
+
+  /*
+  ----------------------------------------------------------
+  CREATE SATREC
   ----------------------------------------------------------
   */
 
   const trackedObjects =
-    objects
+    workingObjects
       .map(
         object => ({
-
           object,
 
           satrec:
             createSatrec(
               object
             )
-
         })
       )
       .filter(
@@ -885,17 +710,15 @@ function findCloseApproaches(
 
   /*
   ----------------------------------------------------------
-  Current propagation
+  CURRENT PROPAGATION
   ----------------------------------------------------------
   */
 
   const now =
     new Date();
 
-
   const positionedObjects =
     [];
-
 
   for (
     const item of
@@ -908,11 +731,9 @@ function findCloseApproaches(
         now
       );
 
-
     if (!state) {
       continue;
     }
-
 
     positionedObjects.push({
 
@@ -923,21 +744,18 @@ function findCloseApproaches(
         item.satrec,
 
       state
-
     });
-
   }
 
 
   /*
   ----------------------------------------------------------
-  Statistics
+  STATISTICS
   ----------------------------------------------------------
   */
 
   const objectCount =
     positionedObjects.length;
-
 
   const totalPossiblePairs =
     (
@@ -945,18 +763,16 @@ function findCloseApproaches(
       (objectCount - 1)
     ) / 2;
 
-
   let candidatePairs = 0;
 
   let analyzedPairs = 0;
-
 
   const results = [];
 
 
   /*
   ----------------------------------------------------------
-  Pair screening
+  PAIR SCREENING
   ----------------------------------------------------------
   */
 
@@ -970,7 +786,6 @@ function findCloseApproaches(
     const objectA =
       positionedObjects[i];
 
-
     for (
       let j = i + 1;
       j <
@@ -983,8 +798,8 @@ function findCloseApproaches(
 
 
       /*
-      Fast spatial pre-filter
-      */
+       * Fast spatial filter
+       */
 
       const possible =
         shouldAnalyzePair(
@@ -993,18 +808,16 @@ function findCloseApproaches(
           thresholdKm
         );
 
-
       if (!possible) {
         continue;
       }
-
 
       candidatePairs++;
 
 
       /*
-      Accurate SGP4 analysis
-      */
+       * Accurate SGP4 prediction
+       */
 
       const result =
         analyzeCloseApproach(
@@ -1014,23 +827,20 @@ function findCloseApproaches(
           stepSeconds
         );
 
-
       if (!result) {
         continue;
       }
-
 
       analyzedPairs++;
 
 
       /*
-      Only retain approaches inside
-      requested threshold.
-      */
+       * Retain only approaches
+       * inside requested threshold.
+       */
 
       if (
-        result
-          .closestApproach
+        result.closestApproach
           .missDistanceKm <=
         thresholdKm
       ) {
@@ -1038,37 +848,87 @@ function findCloseApproaches(
         results.push(
           result
         );
-
       }
-
     }
-
   }
 
 
   /*
   ----------------------------------------------------------
-  Sort by closest distance
+  SORT RESULTS
+  ----------------------------------------------------------
+
+  Priority:
+
+  1. Risk score
+  2. Miss distance
+  3. Time to TCA
   ----------------------------------------------------------
   */
 
   results.sort(
     (a, b) => {
 
-      return (
+      const scoreA =
         a.closestApproach
-          .missDistanceKm -
-        b.closestApproach
-          .missDistanceKm
-      );
+          ?.riskScore || 0;
 
+      const scoreB =
+        b.closestApproach
+          ?.riskScore || 0;
+
+      if (
+        scoreB !== scoreA
+      ) {
+        return (
+          scoreB -
+          scoreA
+        );
+      }
+
+
+      const distanceA =
+        a.closestApproach
+          ?.missDistanceKm ??
+        Infinity;
+
+      const distanceB =
+        b.closestApproach
+          ?.missDistanceKm ??
+        Infinity;
+
+      if (
+        distanceA !==
+        distanceB
+      ) {
+        return (
+          distanceA -
+          distanceB
+        );
+      }
+
+
+      const timeA =
+        a.closestApproach
+          ?.timeToClosestApproachSeconds ??
+        Infinity;
+
+      const timeB =
+        b.closestApproach
+          ?.timeToClosestApproachSeconds ??
+        Infinity;
+
+      return (
+        timeA -
+        timeB
+      );
     }
   );
 
 
   /*
   ----------------------------------------------------------
-  Limit returned results
+  LIMIT RESULTS
   ----------------------------------------------------------
   */
 
@@ -1081,7 +941,7 @@ function findCloseApproaches(
 
   /*
   ----------------------------------------------------------
-  Statistics
+  FINAL RESPONSE
   ----------------------------------------------------------
   */
 
@@ -1109,17 +969,14 @@ function findCloseApproaches(
 
       returnedResults:
         limitedResults.length
-
     }
-
   };
-
 }
 
 
 /*
 ============================================================
- FILTER BY RISK
+FILTER BY RISK
 ============================================================
 */
 
@@ -1129,13 +986,10 @@ function filterByRisk(
 ) {
 
   if (
-    !Array.isArray(
-      results
-    )
+    !Array.isArray(results)
   ) {
     return [];
   }
-
 
   if (
     !Array.isArray(
@@ -1145,7 +999,6 @@ function filterByRisk(
   ) {
     return results;
   }
-
 
   return results.filter(
     result =>
@@ -1160,7 +1013,7 @@ function filterByRisk(
 
 /*
 ============================================================
- EXPORTS
+EXPORTS
 ============================================================
 */
 
@@ -1185,5 +1038,4 @@ module.exports = {
   findCloseApproaches,
 
   filterByRisk
-
 };
