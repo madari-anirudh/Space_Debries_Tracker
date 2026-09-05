@@ -33,6 +33,9 @@ const DEBRIS_STATUS_API =
 const ISS_API =
   `${API_BASE}/api/iss`;
 
+const COLLISION_API =
+  `${API_BASE}/api/collisions`;
+
 
 /*
 =========================================================
@@ -40,15 +43,6 @@ UPDATE INTERVALS
 =========================================================
 */
 
-/*
- * This does NOT download orbital data.
- *
- * It only requests the current propagated positions
- * from our backend.
- *
- * server.js handles the actual orbital-data refresh
- * every 2 hours.
- */
 const POSITION_UPDATE_INTERVAL = 5000;
 
 
@@ -80,6 +74,9 @@ const EarthScene = ({
   const mountRef =
     useRef(null);
 
+  const viewModeRef =
+    useRef("TRACKING");
+
 
   /*
   ========================================================
@@ -106,6 +103,16 @@ const EarthScene = ({
     viewMode,
     setViewMode,
   ] = useState("TRACKING");
+
+
+  /*
+  ========================================================
+  PHASE 3 CAMERA RESTORE
+  ========================================================
+  */
+
+  const previousCameraStateRef =
+    useRef(null);
 
 
   /*
@@ -148,6 +155,9 @@ const EarthScene = ({
       null,
 
     iss:
+      null,
+
+    collision:
       null,
   });
 
@@ -646,6 +656,207 @@ const EarthScene = ({
     );
 
 
+    /*
+    ======================================================
+    COLLISION VISUALIZATION
+    ======================================================
+    */
+
+    const collisionGroup =
+      new THREE.Group();
+
+    scene.add(
+      collisionGroup
+    );
+
+    const collisionLineMaterial =
+      new THREE.LineBasicMaterial({
+        color: 0xff3b30,
+        transparent: true,
+        opacity: 0.9,
+      });
+
+    const collisionMarkerMaterial =
+      new THREE.MeshBasicMaterial({
+        color: 0xff3b30,
+      });
+
+    const collisionMarkerGeometry =
+      new THREE.SphereGeometry(
+        2.8,
+        16,
+        16
+      );
+
+    let collisionLine =
+      null;
+
+    let collisionMarker1 =
+      null;
+
+    let collisionMarker2 =
+      null;
+
+
+    const clearCollisionVisualization =
+      () => {
+
+        if (collisionLine) {
+
+          collisionGroup.remove(
+            collisionLine
+          );
+
+          collisionLine.geometry.dispose();
+
+          collisionLine =
+            null;
+        }
+
+        if (collisionMarker1) {
+
+          collisionGroup.remove(
+            collisionMarker1
+          );
+
+          collisionMarker1 =
+            null;
+        }
+
+        if (collisionMarker2) {
+
+          collisionGroup.remove(
+            collisionMarker2
+          );
+
+          collisionMarker2 =
+            null;
+        }
+      };
+
+
+    const showCollisionVisualization =
+      (
+        event,
+        currentDebrisData
+      ) => {
+
+        clearCollisionVisualization();
+
+        if (
+          !event ||
+          !Array.isArray(currentDebrisData)
+        ) {
+          return;
+        }
+
+        const norad1 =
+          String(
+            event.object1?.noradId || ""
+          );
+
+        const norad2 =
+          String(
+            event.object2?.noradId || ""
+          );
+
+        const object1 =
+          currentDebrisData.find(
+            object =>
+              String(
+                object.noradId
+              ) === norad1
+          );
+
+        const object2 =
+          currentDebrisData.find(
+            object =>
+              String(
+                object.noradId
+              ) === norad2
+          );
+
+        if (
+          !object1 ||
+          !object2
+        ) {
+
+          console.warn(
+            "Collision objects not found in debris cache",
+            norad1,
+            norad2
+          );
+
+          return;
+        }
+
+        const position1 =
+          convertCoordsToVector(
+            object1.lat,
+            object1.lon,
+            object1.alt
+          );
+
+        const position2 =
+          convertCoordsToVector(
+            object2.lat,
+            object2.lon,
+            object2.alt
+          );
+
+        const geometry =
+          new THREE.BufferGeometry()
+            .setFromPoints([
+              position1,
+              position2,
+            ]);
+
+        collisionLine =
+          new THREE.Line(
+            geometry,
+            collisionLineMaterial
+          );
+
+        collisionGroup.add(
+          collisionLine
+        );
+
+        collisionMarker1 =
+          new THREE.Mesh(
+            collisionMarkerGeometry,
+            collisionMarkerMaterial
+          );
+
+        collisionMarker2 =
+          new THREE.Mesh(
+            collisionMarkerGeometry,
+            collisionMarkerMaterial
+          );
+
+        collisionMarker1.position.copy(
+          position1
+        );
+
+        collisionMarker2.position.copy(
+          position2
+        );
+
+        collisionGroup.add(
+          collisionMarker1
+        );
+
+        collisionGroup.add(
+          collisionMarker2
+        );
+      };
+
+
+    /*
+    ======================================================
+    CREATE ORBIT RING
+    ======================================================
+    */
+
     const createOrbitRing =
       (
         radius,
@@ -671,16 +882,12 @@ const EarthScene = ({
           points.push(
             new THREE.Vector3(
               radius *
-                Math.cos(
-                  angle
-                ),
+                Math.cos(angle),
 
               0,
 
               radius *
-                Math.sin(
-                  angle
-                )
+                Math.sin(angle)
             )
           );
         }
@@ -725,45 +932,29 @@ const EarthScene = ({
 
     createOrbitRing(
       122,
-      THREE.MathUtils.degToRad(
-        12
-      ),
-      THREE.MathUtils.degToRad(
-        20
-      ),
+      THREE.MathUtils.degToRad(12),
+      THREE.MathUtils.degToRad(20),
       0.13
     );
 
     createOrbitRing(
       145,
-      THREE.MathUtils.degToRad(
-        42
-      ),
-      THREE.MathUtils.degToRad(
-        -30
-      ),
+      THREE.MathUtils.degToRad(42),
+      THREE.MathUtils.degToRad(-30),
       0.1
     );
 
     createOrbitRing(
       175,
-      THREE.MathUtils.degToRad(
-        72
-      ),
-      THREE.MathUtils.degToRad(
-        50
-      ),
+      THREE.MathUtils.degToRad(72),
+      THREE.MathUtils.degToRad(50),
       0.075
     );
 
     createOrbitRing(
       215,
-      THREE.MathUtils.degToRad(
-        25
-      ),
-      THREE.MathUtils.degToRad(
-        80
-      ),
+      THREE.MathUtils.degToRad(25),
+      THREE.MathUtils.degToRad(80),
       0.06
     );
 
@@ -789,13 +980,6 @@ const EarthScene = ({
 
         const safeAlt =
           Number(alt) || 0;
-
-        /*
-         * Backend altitude is kilometres.
-         *
-         * We compress orbital altitude for
-         * visualisation.
-         */
 
         const visualAltitude =
           Math.max(
@@ -1036,6 +1220,22 @@ const EarthScene = ({
       null;
 
 
+    /*
+    ======================================================
+    COLLISION TRACKING
+    ======================================================
+    */
+
+    let trackedCollisionGroup =
+      null;
+
+
+    /*
+    ======================================================
+    CLEAR SELECTED ORBIT
+    ======================================================
+    */
+
     const clearSelectedOrbit =
       () => {
 
@@ -1056,6 +1256,504 @@ const EarthScene = ({
         }
       };
 
+
+    /*
+    ======================================================
+    PHASE 3 CAMERA STATE
+    SAVE CURRENT CAMERA
+    ======================================================
+    */
+
+    const savePreviousCameraState =
+      () => {
+
+        /*
+         * Do not overwrite the saved camera
+         * if Track Event is already active.
+         */
+
+        if (
+          previousCameraStateRef.current
+        ) {
+          return;
+        }
+
+        previousCameraStateRef.current = {
+
+          position:
+            camera.position.clone(),
+
+          target:
+            controls.target.clone(),
+
+          viewMode:
+            viewModeRef.current,
+        };
+
+        console.log(
+          "PHASE 3: Camera state saved",
+          previousCameraStateRef.current
+        );
+      };
+
+
+    /*
+    ======================================================
+    PHASE 3 CAMERA RESTORE
+    ======================================================
+    */
+
+    const restorePreviousCameraState =
+      () => {
+
+        const saved =
+          previousCameraStateRef.current;
+
+        if (!saved) {
+          return;
+        }
+
+        console.log(
+          "PHASE 3: Restoring previous camera state",
+          saved
+        );
+
+        camera.position.copy(
+          saved.position
+        );
+
+        controls.target.copy(
+          saved.target
+        );
+
+        controls.update();
+
+        setViewMode(
+          saved.viewMode
+        );
+
+        viewModeRef.current =
+          saved.viewMode;
+
+        previousCameraStateRef.current =
+          null;
+      };
+
+
+    /*
+    ======================================================
+    CLEAR COLLISION TRACKING
+    ======================================================
+    */
+
+    const clearTrackedCollision = () => {
+
+      if (!trackedCollisionGroup) {
+        return;
+      }
+
+      scene.remove(
+        trackedCollisionGroup
+      );
+
+      trackedCollisionGroup.traverse(
+        (child) => {
+
+          if (child.geometry) {
+            child.geometry.dispose();
+          }
+
+          if (child.material) {
+
+            if (
+              Array.isArray(
+                child.material
+              )
+            ) {
+
+              child.material.forEach(
+                (material) => {
+                  material.dispose();
+                }
+              );
+
+            } else {
+
+              child.material.dispose();
+
+            }
+          }
+
+        }
+      );
+
+      trackedCollisionGroup =
+        null;
+    };
+
+
+    /*
+    ======================================================
+    TRACK COLLISION EVENT
+    ======================================================
+    */
+
+    const trackCollisionEvent = (
+      event
+    ) => {
+
+      if (!event) {
+        return;
+      }
+
+      /*
+       * PHASE 3:
+       * Save the exact camera state BEFORE
+       * moving the camera to the collision.
+       */
+
+      savePreviousCameraState();
+
+      clearTrackedCollision();
+
+
+      /*
+      -------------------------------------------------------
+      FIND OBJECTS
+      -------------------------------------------------------
+      */
+
+      const object1 =
+        event.object1 || {};
+
+      const object2 =
+        event.object2 || {};
+
+
+      const norad1 =
+        String(
+          object1.noradId ?? ""
+        );
+
+      const norad2 =
+        String(
+          object2.noradId ?? ""
+        );
+
+
+      const debris1 =
+        debrisData.find(
+          (object) =>
+            String(
+              object.noradId ??
+              object.id ??
+              ""
+            ) === norad1
+        );
+
+
+      const debris2 =
+        debrisData.find(
+          (object) =>
+            String(
+              object.noradId ??
+              object.id ??
+              ""
+            ) === norad2
+        );
+
+
+      /*
+      -------------------------------------------------------
+      DEBUG
+      -------------------------------------------------------
+      */
+
+      console.log(
+        "PHASE 3 TRACK EVENT",
+        {
+          norad1,
+          norad2,
+          debris1,
+          debris2,
+          debrisCount:
+            debrisData.length,
+        }
+      );
+
+
+      /*
+      -------------------------------------------------------
+      OBJECTS NOT FOUND
+      -------------------------------------------------------
+      */
+
+      if (
+        !debris1 ||
+        !debris2
+      ) {
+
+        console.warn(
+          "Collision objects not found in current debris dataset",
+          {
+            norad1,
+            norad2,
+          }
+        );
+
+        /*
+         * Since tracking did not actually start,
+         * restore the camera state that was saved.
+         */
+
+        restorePreviousCameraState();
+
+        return;
+      }
+
+
+      /*
+      -------------------------------------------------------
+      CONVERT TO THREE.JS POSITIONS
+      -------------------------------------------------------
+      */
+
+      const position1 =
+        convertCoordsToVector(
+          debris1.lat,
+          debris1.lon,
+          debris1.alt
+        );
+
+
+      const position2 =
+        convertCoordsToVector(
+          debris2.lat,
+          debris2.lon,
+          debris2.alt
+        );
+
+
+      /*
+      -------------------------------------------------------
+      COLLISION GROUP
+      -------------------------------------------------------
+      */
+
+      trackedCollisionGroup =
+        new THREE.Group();
+
+
+      /*
+      -------------------------------------------------------
+      OBJECT 1 MARKER
+      -------------------------------------------------------
+      */
+
+      const markerGeometry1 =
+        new THREE.SphereGeometry(
+          3.8,
+          16,
+          16
+        );
+
+
+      const markerMaterial1 =
+        new THREE.MeshBasicMaterial({
+          color:
+            0xff3b30,
+
+          transparent:
+            true,
+
+          opacity:
+            0.95,
+        });
+
+
+      const marker1 =
+        new THREE.Mesh(
+          markerGeometry1,
+          markerMaterial1
+        );
+
+
+      marker1.position.copy(
+        position1
+      );
+
+
+      trackedCollisionGroup.add(
+        marker1
+      );
+
+
+      /*
+      -------------------------------------------------------
+      OBJECT 2 MARKER
+      -------------------------------------------------------
+      */
+
+      const markerGeometry2 =
+        new THREE.SphereGeometry(
+          3.8,
+          16,
+          16
+        );
+
+
+      const markerMaterial2 =
+        new THREE.MeshBasicMaterial({
+          color:
+            0xff3b30,
+
+          transparent:
+            true,
+
+          opacity:
+            0.95,
+        });
+
+
+      const marker2 =
+        new THREE.Mesh(
+          markerGeometry2,
+          markerMaterial2
+        );
+
+
+      marker2.position.copy(
+        position2
+      );
+
+
+      trackedCollisionGroup.add(
+        marker2
+      );
+
+
+      /*
+      -------------------------------------------------------
+      CONNECTION LINE
+      -------------------------------------------------------
+      */
+
+      const lineGeometry =
+        new THREE.BufferGeometry()
+          .setFromPoints([
+            position1,
+            position2,
+          ]);
+
+
+      const lineMaterial =
+        new THREE.LineBasicMaterial({
+
+          color:
+            0xff3b30,
+
+          transparent:
+            true,
+
+          opacity:
+            0.9,
+        });
+
+
+      const collisionLine =
+        new THREE.Line(
+          lineGeometry,
+          lineMaterial
+        );
+
+
+      trackedCollisionGroup.add(
+        collisionLine
+      );
+
+
+      /*
+      -------------------------------------------------------
+      MIDPOINT
+      -------------------------------------------------------
+      */
+
+      const midpoint =
+        new THREE.Vector3()
+          .addVectors(
+            position1,
+            position2
+          )
+          .multiplyScalar(
+            0.5
+          );
+
+
+      /*
+      -------------------------------------------------------
+      TRACK CAMERA
+      -------------------------------------------------------
+      */
+
+      const cameraDirection =
+        midpoint
+          .clone()
+          .normalize();
+
+
+      const cameraDistance =
+        Math.max(
+          220,
+          position1.distanceTo(
+            position2
+          ) * 3
+        );
+
+
+      const cameraPosition =
+        midpoint
+          .clone()
+          .add(
+            cameraDirection.multiplyScalar(
+              cameraDistance
+            )
+          );
+
+
+      camera.position.copy(
+        cameraPosition
+      );
+
+
+      controls.target.copy(
+        midpoint
+      );
+
+
+      controls.update();
+
+
+      /*
+      -------------------------------------------------------
+      ADD TO SCENE
+      -------------------------------------------------------
+      */
+
+      scene.add(
+        trackedCollisionGroup
+      );
+
+      console.log(
+        "PHASE 3: Collision camera tracking active"
+      );
+    };
+
+
+    /*
+    ======================================================
+    CREATE SELECTED ORBIT
+    ======================================================
+    */
 
     const createSelectedOrbit =
       (position) => {
@@ -1228,7 +1926,6 @@ const EarthScene = ({
 
         /*
          * Update selected object position
-         * after each telemetry refresh.
          */
 
         const selected =
@@ -1278,13 +1975,6 @@ const EarthScene = ({
       async () => {
 
         try {
-
-          /*
-           * ONLY our backend.
-           *
-           * No CelesTrak request.
-           * No Retlector request.
-           */
 
           const response =
             await axios.get(
@@ -1626,6 +2316,83 @@ const EarthScene = ({
 
     /*
     ======================================================
+    COLLISION DATA
+    ======================================================
+    */
+
+    const updateCollisions =
+      async () => {
+
+        try {
+
+          const response =
+            await axios.get(
+              COLLISION_API,
+              {
+                timeout:
+                  15000,
+              }
+            );
+
+          if (disposed) {
+            return;
+          }
+
+          const data =
+            response.data;
+
+          const results =
+            Array.isArray(
+              data?.results
+            )
+              ? data.results
+              : [];
+
+          if (
+            results.length === 0
+          ) {
+
+            setTelemetry(
+              previous => ({
+                ...previous,
+                collision: null,
+              })
+            );
+
+            clearCollisionVisualization();
+
+            return;
+          }
+
+          const collision =
+            results[0];
+
+          showCollisionVisualization(
+            collision,
+            debrisData
+          );
+
+          setTelemetry(
+            previous => ({
+              ...previous,
+              collision,
+            })
+          );
+
+        } catch (
+          error
+        ) {
+
+          console.error(
+            "Collision API error:",
+            error.message
+          );
+        }
+      };
+
+
+    /*
+    ======================================================
     CAMERA VIEWS
     ======================================================
     */
@@ -1633,14 +2400,12 @@ const EarthScene = ({
     const setCameraView =
       (mode) => {
 
-        setViewMode(
-          mode
-        );
+        setViewMode(mode);
 
-        if (
-          mode ===
-          "EARTH"
-        ) {
+        viewModeRef.current =
+          mode;
+
+        if (mode === "EARTH") {
 
           camera.position.set(
             0,
@@ -1649,10 +2414,7 @@ const EarthScene = ({
           );
         }
 
-        if (
-          mode ===
-          "TRACKING"
-        ) {
+        if (mode === "TRACKING") {
 
           camera.position.set(
             0,
@@ -1661,10 +2423,7 @@ const EarthScene = ({
           );
         }
 
-        if (
-          mode ===
-          "WIDE"
-        ) {
+        if (mode === "WIDE") {
 
           camera.position.set(
             0,
@@ -1682,6 +2441,12 @@ const EarthScene = ({
         controls.update();
       };
 
+
+    /*
+    ======================================================
+    RESET CAMERA
+    ======================================================
+    */
 
     const resetCamera =
       () => {
@@ -1702,19 +2467,37 @@ const EarthScene = ({
           "TRACKING"
         );
 
+        viewModeRef.current =
+          "TRACKING";
+
         controls.update();
       };
 
 
     /*
-     * Expose camera functions to Mission Control.
-     */
+    ======================================================
+    EXPOSE CAMERA FUNCTIONS
+    ======================================================
+    */
 
     mount.__setCameraView =
       setCameraView;
 
     mount.__resetCamera =
       resetCamera;
+
+    mount.__trackCollision =
+      trackCollisionEvent;
+
+
+    /*
+    ======================================================
+    EXPOSE CAMERA RESTORE
+    ======================================================
+    */
+
+    mount.__restorePreviousCamera =
+      restorePreviousCameraState;
 
 
     /*
@@ -1906,16 +2689,13 @@ const EarthScene = ({
     ======================================================
     */
 
-    /*
-     * First call loads the LOCAL CACHE through
-     * server.js immediately.
-     */
-
     updateDebris();
 
     updateCacheStatus();
 
     updateISS();
+
+    updateCollisions();
 
 
     /*
@@ -1927,6 +2707,13 @@ const EarthScene = ({
     const positionInterval =
       setInterval(
         updateDebris,
+        POSITION_UPDATE_INTERVAL
+      );
+
+
+    const collisionInterval =
+      setInterval(
+        updateCollisions,
         POSITION_UPDATE_INTERVAL
       );
 
@@ -2020,32 +2807,17 @@ const EarthScene = ({
             animate
           );
 
-
-        /*
-         * Realistic Earth rotation.
-         */
-
         updateEarthRotation();
-
-
-        /*
-         * Stars remain fixed.
-         */
 
         stars.rotation.y =
           0;
-
-
-        /*
-         * Reference orbit movement.
-         */
 
         orbitGroup.rotation.y +=
           0.00008;
 
 
         /*
-         * Selected marker pulse.
+         * Selected marker pulse
          */
 
         if (
@@ -2072,7 +2844,7 @@ const EarthScene = ({
 
 
         /*
-         * ISS glow.
+         * ISS glow
          */
 
         issGlow.scale.setScalar(
@@ -2160,6 +2932,10 @@ const EarthScene = ({
         issInterval
       );
 
+      clearInterval(
+        collisionInterval
+      );
+
       window.removeEventListener(
         "resize",
         handleResize
@@ -2172,7 +2948,11 @@ const EarthScene = ({
 
       controls.dispose();
 
+      clearCollisionVisualization();
+
       clearSelectedOrbit();
+
+      clearTrackedCollision();
 
 
       /*
@@ -2218,6 +2998,12 @@ const EarthScene = ({
       mount.__clearSelection =
         null;
 
+      mount.__trackCollision =
+        null;
+
+      mount.__restorePreviousCamera =
+        null;
+
 
       if (
         renderer
@@ -2237,9 +3023,59 @@ const EarthScene = ({
 
 
   /*
-  =========================================================
+  ==========================================================
+  TRACK COLLISION EVENT
+  ==========================================================
+  */
+
+  useEffect(() => {
+
+    if (!trackedEvent) {
+      return;
+    }
+
+    const track =
+      mountRef.current?.__trackCollision;
+
+    if (!track) {
+      return;
+    }
+
+    track(
+      trackedEvent
+    );
+
+  }, [trackedEvent]);
+
+
+  /*
+  ==========================================================
+  RESTORE CAMERA WHEN TRACK EVENT ENDS
+  ==========================================================
+  */
+
+  useEffect(() => {
+
+    if (trackedEvent) {
+      return;
+    }
+
+    const restore =
+      mountRef.current?.__restorePreviousCamera;
+
+    if (!restore) {
+      return;
+    }
+
+    restore();
+
+  }, [trackedEvent]);
+
+
+  /*
+  ==========================================================
   TIME SCALE LABEL
-  =========================================================
+  ==========================================================
   */
 
   const getTimeScaleLabel =
@@ -2274,9 +3110,9 @@ const EarthScene = ({
 
 
   /*
-  =========================================================
+  ==========================================================
   CACHE TIME
-  =========================================================
+  ==========================================================
   */
 
   const formatCacheTime =
@@ -2312,9 +3148,9 @@ const EarthScene = ({
 
 
   /*
-  =========================================================
+  ==========================================================
   POSITION TIME
-  =========================================================
+  ==========================================================
   */
 
   const formatPositionTime =
@@ -2337,9 +3173,9 @@ const EarthScene = ({
 
 
   /*
-  =========================================================
+  ==========================================================
   RENDER
-  =========================================================
+  ==========================================================
   */
 
   return (

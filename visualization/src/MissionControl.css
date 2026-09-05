@@ -1,5 +1,5 @@
 /* =========================================================
-   MISSION CONTROL — COLLISION INTELLIGENCE
+   MISSION CONTROL — AI COLLISION PREDICTION
    ========================================================= */
 
 .mission-control {
@@ -42,17 +42,17 @@
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .mission-title {
   margin: 0;
 
-  font-size: 28px;
+  font-size: 27px;
   line-height: 1.1;
 
   font-weight: 700;
-  letter-spacing: 2.8px;
+  letter-spacing: 2.6px;
 
   color: #edf6ff;
 }
@@ -60,18 +60,19 @@
 .mission-subtitle {
   margin-top: 9px;
 
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
 
   font-weight: 500;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.5px;
 
-  color: rgba(255, 255, 255, 0.48);
+  color:
+    rgba(255, 255, 255, 0.45);
 }
 
 
 /* =========================================================
-   REFRESH BUTTON
+   REFRESH
    ========================================================= */
 
 .refresh-button {
@@ -79,7 +80,9 @@
 
   padding: 11px 17px;
 
-  border: 1px solid rgba(0, 255, 204, 0.42);
+  border:
+    1px solid rgba(0, 255, 204, 0.42);
+
   border-radius: 7px;
 
   background:
@@ -87,7 +90,8 @@
 
   color: #00ffcc;
 
-  font-size: 12px;
+  font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 0.8px;
@@ -97,8 +101,7 @@
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .refresh-button:hover {
@@ -109,9 +112,66 @@
     rgba(0, 255, 204, 0.7);
 
   box-shadow:
-    0 0 18px rgba(0, 255, 204, 0.1);
+    0 0 18px
+    rgba(0, 255, 204, 0.1);
+}
 
-  transform: translateY(-1px);
+.refresh-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+
+/* =========================================================
+   ENGINE STATUS
+   ========================================================= */
+
+.engine-status {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+}
+
+.engine-status-item {
+  padding: 10px 12px;
+
+  border:
+    1px solid rgba(0, 255, 204, 0.08);
+
+  border-radius: 7px;
+
+  background:
+    rgba(0, 255, 204, 0.025);
+}
+
+.engine-status-item span {
+  display: block;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+.engine-status-item strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.6px;
+
+  color: #00d9b0;
 }
 
 
@@ -123,23 +183,25 @@
   display: grid;
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(5, minmax(0, 1fr));
 
-  gap: 10px;
+  gap: 9px;
 
   margin-bottom: 18px;
 }
 
 .summary-card {
-  min-height: 70px;
+  min-height: 68px;
 
   display: flex;
+
   flex-direction: column;
 
   justify-content: center;
+
   align-items: center;
 
-  padding: 12px 10px;
+  padding: 10px;
 
   box-sizing: border-box;
 
@@ -150,41 +212,39 @@
       rgba(255, 255, 255, 0.018)
     );
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.09);
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
 
   border-radius: 9px;
-
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.025);
 }
 
 .summary-card span {
-  display: block;
+  font-size: 9px;
 
-  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 1px;
 
   color:
-    rgba(255, 255, 255, 0.48);
+    rgba(255, 255, 255, 0.43);
 }
 
 .summary-card strong {
-  display: block;
-
   margin-top: 5px;
 
-  font-size: 22px;
+  font-size: 21px;
+
   line-height: 1;
 
   font-weight: 700;
 }
 
+.summary-card.critical strong {
+  color: #ff3030;
+}
+
 .summary-card.high strong {
-  color: #ff4d4d;
+  color: #ff5555;
 }
 
 .summary-card.medium strong {
@@ -197,22 +257,50 @@
 
 
 /* =========================================================
+   STATUS / ERROR
+   ========================================================= */
+
+.mission-status,
+.mission-error {
+  padding: 35px 20px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.mission-status {
+  color:
+    rgba(255, 255, 255, 0.48);
+}
+
+.mission-error {
+  color: #ff6666;
+}
+
+
+/* =========================================================
    COLLISION LIST
    ========================================================= */
 
 .collision-list {
   display: flex;
+
   flex-direction: column;
 
   gap: 14px;
 
-  max-height: calc(100vh - 250px);
+  max-height:
+    calc(100vh - 285px);
 
   overflow-y: auto;
 
   padding: 2px 7px 20px 0;
 
   scrollbar-width: thin;
+
   scrollbar-color:
     rgba(0, 255, 204, 0.38)
     transparent;
@@ -234,11 +322,6 @@
     rgba(0, 255, 204, 0.38);
 
   border-radius: 10px;
-}
-
-.collision-list::-webkit-scrollbar-thumb:hover {
-  background:
-    rgba(0, 255, 204, 0.65);
 }
 
 
@@ -307,6 +390,7 @@
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   margin-bottom: 16px;
@@ -322,9 +406,20 @@
   border-radius: 5px;
 
   font-size: 10px;
+
   font-weight: 800;
 
   letter-spacing: 1px;
+}
+
+.risk-critical {
+  color: #ff3030;
+
+  background:
+    rgba(255, 30, 30, 0.15);
+
+  border:
+    1px solid rgba(255, 50, 50, 0.25);
 }
 
 .risk-high {
@@ -357,14 +452,21 @@
     1px solid rgba(50, 220, 130, 0.1);
 }
 
-.risk-score {
+.prediction-score {
   font-size: 10px;
-  font-weight: 600;
 
-  letter-spacing: 0.5px;
+  font-weight: 700;
 
+  letter-spacing: 0.6px;
+
+  color: #00ffcc;
+}
+
+.prediction-score span {
   color:
-    rgba(255, 255, 255, 0.42);
+    rgba(255, 255, 255, 0.3);
+
+  margin-left: 2px;
 }
 
 
@@ -399,6 +501,7 @@
   white-space: nowrap;
 
   font-size: 13px;
+
   line-height: 1.3;
 
   font-weight: 700;
@@ -423,9 +526,11 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   width: 32px;
+
   height: 32px;
 
   border-radius: 50%;
@@ -436,6 +541,7 @@
     rgba(0, 255, 204, 0.045);
 
   font-size: 18px;
+
   font-weight: 600;
 }
 
@@ -459,6 +565,7 @@
   min-height: 55px;
 
   display: flex;
+
   flex-direction: column;
 
   justify-content: center;
@@ -477,8 +584,6 @@
 }
 
 .telemetry-grid span {
-  display: block;
-
   font-size: 9px;
 
   font-weight: 600;
@@ -490,11 +595,10 @@
 }
 
 .telemetry-grid strong {
-  display: block;
-
   margin-top: 5px;
 
   font-size: 12px;
+
   line-height: 1.2;
 
   font-weight: 700;
@@ -504,11 +608,159 @@
 
 
 /* =========================================================
+   AI PANEL
+   ========================================================= */
+
+.ai-panel {
+  margin-top: 12px;
+
+  padding: 12px;
+
+  border:
+    1px solid rgba(0, 255, 204, 0.1);
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 255, 204, 0.035),
+      rgba(0, 0, 0, 0.18)
+    );
+}
+
+.ai-panel-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-bottom: 10px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: #00ffcc;
+}
+
+.confidence {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   AI FEATURES
+   ========================================================= */
+
+.ai-features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 7px;
+
+  margin-top: 10px;
+}
+
+.ai-feature {
+  padding: 8px;
+
+  background:
+    rgba(0, 0, 0, 0.2);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.035);
+
+  border-radius: 6px;
+}
+
+.ai-feature span {
+  display: block;
+
+  font-size: 8px;
+
+  letter-spacing: 0.5px;
+
+  color:
+    rgba(255, 255, 255, 0.36);
+}
+
+.ai-feature strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  color: #dceaff;
+}
+
+
+/* =========================================================
+   AI FACTORS
+   ========================================================= */
+
+.ai-factors {
+  margin-top: 11px;
+}
+
+.ai-factors-title {
+  margin-bottom: 6px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+}
+
+.ai-factor {
+  display: flex;
+
+  gap: 7px;
+
+  align-items: flex-start;
+
+  margin-top: 4px;
+
+  font-size: 10px;
+
+  line-height: 1.35;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+}
+
+.ai-factor span {
+  color: #00ffcc;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
    TCA
    ========================================================= */
 
 .tca-row {
   display: flex;
+
   align-items: center;
 
   margin-top: 13px;
@@ -578,31 +830,6 @@
 
 
 /* =========================================================
-   STATUS / ERROR
-   ========================================================= */
-
-.mission-status,
-.mission-error {
-  padding: 35px 20px;
-
-  text-align: center;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-}
-
-.mission-status {
-  color:
-    rgba(255, 255, 255, 0.48);
-}
-
-.mission-error {
-  color: #ff6666;
-}
-
-
-/* =========================================================
    RESPONSIVE
    ========================================================= */
 
@@ -614,6 +841,21 @@
 
   .mission-title {
     font-size: 23px;
+  }
+
+  .risk-summary {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .engine-status {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .ai-features {
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .object-row {
@@ -634,21 +876,28 @@
 
   .mission-title {
     font-size: 19px;
+
     letter-spacing: 1.8px;
   }
 
   .mission-subtitle {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .refresh-button {
     min-width: auto;
+
     padding: 9px 12px;
   }
 
   .risk-summary {
     grid-template-columns:
       repeat(2, 1fr);
+  }
+
+  .engine-status {
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .collision-list {
@@ -669,5 +918,18 @@
   .telemetry-grid {
     grid-template-columns:
       1fr;
+  }
+
+  .ai-features {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .ai-panel-header {
+    align-items: flex-start;
+
+    gap: 8px;
+
+    flex-direction: column;
   }
 }
