@@ -34,13 +34,10 @@ const STATIONS_CACHE = path.join(
 );
 
 /*
- * Real orbital-data sources.
- *
- * Retlector is used first because this is the source
- * currently being used by updateOrbitalCache.js.
- *
- * CelesTrak is used as a fallback.
- */
+=========================================================
+REAL ORBITAL DATA SOURCES
+=========================================================
+*/
 
 const DEBRIS_SOURCES = [
   "https://retlector.eu/cosmos-2251-debris/tle",
@@ -53,33 +50,33 @@ const STATION_SOURCES = [
 ];
 
 /*
- * External data is refreshed every 2 hours.
- *
- * IMPORTANT:
- * This is NOT the frontend telemetry interval.
- *
- * The frontend only asks our local server for positions.
- */
+=========================================================
+REFRESH CONFIGURATION
+=========================================================
+*/
+
 const REFRESH_INTERVAL =
   2 * 60 * 60 * 1000;
 
-/*
- * Give the server a few seconds to start before
- * attempting the first external refresh.
- */
 const INITIAL_REFRESH_DELAY =
   5000;
 
+/*
+=========================================================
+SERVICES
+=========================================================
+*/
 
-  const {
+const {
   findCloseApproaches,
-  analyzeCloseApproach
+  analyzeCloseApproach,
 } = require("./services/collisionService");
 
 const {
   analyzePredictions,
-  createPredictionSummary
+  createPredictionSummary,
 } = require("./services/aiPredictionService");
+
 /*
 =========================================================
 RUNTIME STATUS
@@ -104,9 +101,7 @@ CREATE CACHE DIRECTORY
 =========================================================
 */
 
-if (
-  !fs.existsSync(CACHE_DIR)
-) {
+if (!fs.existsSync(CACHE_DIR)) {
   fs.mkdirSync(
     CACHE_DIR,
     {
@@ -123,9 +118,7 @@ CACHE LOADER
 
 function loadCache(filePath) {
   try {
-    if (
-      !fs.existsSync(filePath)
-    ) {
+    if (!fs.existsSync(filePath)) {
       return null;
     }
 
@@ -237,8 +230,7 @@ function parseTLEText(
 
   if (
     !rawText ||
-    typeof rawText !==
-      "string"
+    typeof rawText !== "string"
   ) {
     return [];
   }
@@ -258,12 +250,12 @@ function parseTLEText(
   const objects = [];
 
   /*
-   * Standard 3-line TLE format:
-   *
-   * NAME
-   * LINE 1
-   * LINE 2
-   */
+  Standard 3-line TLE format:
+
+  NAME
+  LINE 1
+  LINE 2
+  */
 
   for (
     let i = 0;
@@ -280,23 +272,14 @@ function parseTLEText(
     const line2 =
       lines[i + 2];
 
-    /*
-     * Validate that these are actually
-     * TLE lines.
-     */
-
     if (
-      !line1.startsWith(
-        "1 "
-      )
+      !line1.startsWith("1 ")
     ) {
       continue;
     }
 
     if (
-      !line2.startsWith(
-        "2 "
-      )
+      !line2.startsWith("2 ")
     ) {
       continue;
     }
@@ -306,10 +289,6 @@ function parseTLEText(
       line1,
       line2,
     });
-
-    /*
-     * Skip the two TLE lines.
-     */
 
     i += 2;
   }
@@ -346,8 +325,7 @@ async function fetchFromSources(
           {
             timeout: 20000,
 
-            responseType:
-              "text",
+            responseType: "text",
 
             headers: {
               "User-Agent":
@@ -412,10 +390,6 @@ async function refreshDebrisCache() {
       "DEBRIS"
     );
 
-  /*
-   * Never replace cache with empty data.
-   */
-
   if (
     !result.objects ||
     result.objects.length === 0
@@ -426,6 +400,7 @@ async function refreshDebrisCache() {
   }
 
   const cacheData = {
+
     dataset:
       "COSMOS 2251 DEBRIS",
 
@@ -443,10 +418,6 @@ async function refreshDebrisCache() {
     DEBRIS_CACHE,
     cacheData
   );
-
-  /*
-   * Update in-memory cache immediately.
-   */
 
   debrisCache =
     cacheData;
@@ -482,6 +453,7 @@ async function refreshStationsCache() {
   }
 
   const cacheData = {
+
     dataset:
       "SPACE STATIONS",
 
@@ -518,14 +490,10 @@ BACKGROUND ORBITAL DATA REFRESH
 
 async function refreshOrbitalData() {
 
-  /*
-   * Prevent two refresh operations from
-   * running at the same time.
-   */
-
   if (
     refreshInProgress
   ) {
+
     console.log(
       "[CACHE] Refresh already running."
     );
@@ -553,16 +521,6 @@ async function refreshOrbitalData() {
   console.log(
     "=========================================="
   );
-
-  /*
-   * IMPORTANT:
-   *
-   * Debris and stations are refreshed
-   * independently.
-   *
-   * If debris fails but stations succeed,
-   * the debris cache remains untouched.
-   */
 
   let debrisSuccess =
     false;
@@ -699,8 +657,7 @@ function calculatePosition(
     const alt =
       positionGd.height;
 
-    let velocity =
-      null;
+    let velocity = null;
 
     if (
       velocityEci &&
@@ -724,39 +681,46 @@ function calculatePosition(
     }
 
     if (
-      !Number.isFinite(
-        lat
-      ) ||
-      !Number.isFinite(
-        lon
-      ) ||
-      !Number.isFinite(
-        alt
-      )
+      !Number.isFinite(lat) ||
+      !Number.isFinite(lon) ||
+      !Number.isFinite(alt)
     ) {
       return null;
     }
 
     return {
-  name: object.name || "UNKNOWN OBJECT",
 
-  noradId:
-    object.noradId ||
-    (
-      object.line1
-        ? object.line1.substring(2, 7).trim()
-        : null
-    ),
+      name:
+        object.name ||
+        "UNKNOWN OBJECT",
 
-  lat,
-  lon,
-  alt,
-  velocity,
+      noradId:
+        object.noradId ||
+        (
+          object.line1
+            ? object.line1
+                .substring(
+                  2,
+                  7
+                )
+                .trim()
+            : null
+        ),
 
-  source: "Local Orbital Cache",
+      lat,
 
-  updatedAt: date.toISOString(),
-};
+      lon,
+
+      alt,
+
+      velocity,
+
+      source:
+        "Local Orbital Cache",
+
+      updatedAt:
+        date.toISOString(),
+    };
 
   } catch (error) {
 
@@ -774,13 +738,6 @@ app.get(
   "/api/debris",
   (req, res) => {
 
-    /*
-     * We DO NOT download anything here.
-     *
-     * We only use the cache already loaded
-     * in memory.
-     */
-
     if (
       !debrisCache ||
       !Array.isArray(
@@ -792,6 +749,7 @@ app.get(
       return res
         .status(503)
         .json({
+
           live: false,
 
           cached: false,
@@ -875,11 +833,6 @@ app.get(
         debrisCache?.upstream ||
         null,
 
-      /*
-       * This means the application has
-       * usable real orbital data.
-       */
-
       live:
         positions.length > 0,
 
@@ -935,6 +888,7 @@ app.get(
       return res
         .status(503)
         .json({
+
           live: false,
 
           cached: false,
@@ -955,12 +909,8 @@ app.get(
             ).toUpperCase();
 
           return (
-            name.includes(
-              "ISS"
-            ) ||
-            name.includes(
-              "ZARYA"
-            )
+            name.includes("ISS") ||
+            name.includes("ZARYA")
           );
         }
       );
@@ -970,6 +920,7 @@ app.get(
       return res
         .status(404)
         .json({
+
           live: false,
 
           cached: true,
@@ -990,6 +941,7 @@ app.get(
       return res
         .status(503)
         .json({
+
           live: false,
 
           cached: true,
@@ -1136,13 +1088,6 @@ app.post(
         });
     }
 
-    /*
-     * Start refresh in background.
-     *
-     * Do not make the browser wait
-     * for the external source.
-     */
-
     refreshOrbitalData();
 
     res.json({
@@ -1152,7 +1097,6 @@ app.post(
 
       message:
         "Background orbital cache refresh started.",
-
     });
   }
 );
@@ -1205,14 +1149,17 @@ app.get(
   }
 );
 
+/*
+=========================================================
+COLLISION ANALYSIS
+=========================================================
+*/
+
 app.get(
   "/api/collisions",
   async (req, res) => {
-    try {
 
-      // -----------------------------------------
-      // Check orbital cache
-      // -----------------------------------------
+    try {
 
       if (
         !debrisCache ||
@@ -1222,27 +1169,26 @@ app.get(
         debrisCache.objects.length < 2
       ) {
 
-        return res.status(503).json({
+        return res
+          .status(503)
+          .json({
 
-          source:
-            "Local orbital cache",
+            source:
+              "Local orbital cache",
 
-          error:
-            "Debris orbital cache is not available or contains insufficient objects.",
+            error:
+              "Debris orbital cache is not available or contains insufficient objects.",
 
-          objectsChecked: 0,
+            objectsChecked:
+              0,
 
-          approachesFound: 0,
+            approachesFound:
+              0,
 
-          results: []
-
-        });
+            results:
+              [],
+          });
       }
-
-
-      // -----------------------------------------
-      // Read API parameters
-      // -----------------------------------------
 
       const predictionMinutes =
         Number(
@@ -1253,11 +1199,6 @@ app.get(
         Number(
           req.query.threshold || 100
         );
-
-
-      // -----------------------------------------
-      // Safety validation
-      // -----------------------------------------
 
       const safePredictionMinutes =
         Number.isFinite(
@@ -1272,7 +1213,6 @@ app.get(
             )
           : 180;
 
-
       const safeThresholdKm =
         Number.isFinite(
           thresholdKm
@@ -1286,15 +1226,11 @@ app.get(
             )
           : 100;
 
-
-      // -----------------------------------------
-      // Collision / close-approach analysis
-      // -----------------------------------------
-
       const analysis =
         findCloseApproaches(
           debrisCache.objects,
           {
+
             predictionMinutes:
               safePredictionMinutes,
 
@@ -1305,14 +1241,9 @@ app.get(
               safeThresholdKm,
 
             maxResults:
-              50
+              50,
           }
         );
-
-
-      // -----------------------------------------
-      // Return API response
-      // -----------------------------------------
 
       res.json({
 
@@ -1340,8 +1271,7 @@ app.get(
           analysis.results.length,
 
         results:
-          analysis.results
-
+          analysis.results,
       });
 
     } catch (error) {
@@ -1351,29 +1281,29 @@ app.get(
         error
       );
 
-      res.status(500).json({
+      res
+        .status(500)
+        .json({
 
-        source:
-          "Local orbital cache",
+          source:
+            "Local orbital cache",
 
-        error:
-          "Collision analysis failed.",
+          error:
+            "Collision analysis failed.",
 
-        message:
-          error.message,
+          message:
+            error.message,
 
-        results:
-          []
-
-      });
-
+          results:
+            [],
+        });
     }
   }
 );
 
 /*
 =========================================================
- AI COLLISION PREDICTION
+AI COLLISION PREDICTION
 =========================================================
 */
 
@@ -1408,12 +1338,9 @@ app.get(
               "Debris orbital cache is not available or contains insufficient objects.",
 
             results:
-              []
-
+              [],
           });
-
       }
-
 
       /*
       -----------------------------------------------------
@@ -1426,12 +1353,10 @@ app.get(
           req.query.minutes || 180
         );
 
-
       const thresholdKm =
         Number(
           req.query.threshold || 100
         );
-
 
       /*
       -----------------------------------------------------
@@ -1452,7 +1377,6 @@ app.get(
             )
           : 180;
 
-
       const safeThresholdKm =
         Number.isFinite(
           thresholdKm
@@ -1466,11 +1390,10 @@ app.get(
             )
           : 100;
 
-
       /*
       -----------------------------------------------------
       STEP 1
-      Existing physics-based close approach engine
+      Physics-based close approach engine
       -----------------------------------------------------
       */
 
@@ -1489,11 +1412,9 @@ app.get(
               safeThresholdKm,
 
             maxResults:
-              50
-
+              50,
           }
         );
-
 
       /*
       -----------------------------------------------------
@@ -1507,7 +1428,6 @@ app.get(
           analysis.results
         );
 
-
       /*
       -----------------------------------------------------
       STEP 3
@@ -1520,10 +1440,9 @@ app.get(
           predictedResults
         );
 
-
       /*
       -----------------------------------------------------
-      Response
+      RESPONSE
       -----------------------------------------------------
       */
 
@@ -1564,19 +1483,15 @@ app.get(
           summary,
 
         results:
-          predictedResults
-
+          predictedResults,
       });
 
-    } catch (
-      error
-    ) {
+    } catch (error) {
 
       console.error(
         "[AI COLLISION] Prediction error:",
         error
       );
-
 
       res
         .status(500)
@@ -1592,12 +1507,122 @@ app.get(
             error.message,
 
           results:
-            []
-
+            [],
         });
-
     }
+  }
+);
 
+/*
+=========================================================
+PHASE 4 — AI ASSISTANT
+=========================================================
+*/
+
+app.post(
+  "/api/assistant",
+  async (req, res) => {
+
+    try {
+
+      const { message } =
+        req.body;
+
+      /*
+      -----------------------------------------------------
+      Validate user message
+      -----------------------------------------------------
+      */
+
+      if (
+        !message ||
+        typeof message !== "string" ||
+        !message.trim()
+      ) {
+
+        return res
+          .status(400)
+          .json({
+
+            success:
+              false,
+
+            error:
+              "Message is required.",
+          });
+      }
+
+      const cleanMessage =
+        message.trim();
+
+      console.log(
+        "[ASSISTANT] User:",
+        cleanMessage
+      );
+
+      /*
+      -----------------------------------------------------
+      PHASE 4.1
+      Assistant connection test
+      -----------------------------------------------------
+      */
+
+      res.json({
+
+        success:
+          true,
+
+        message:
+          "Assistant endpoint is working.",
+
+        userMessage:
+          cleanMessage,
+
+        engine:
+          "Space Debris Tracker AI Assistant",
+
+        phase:
+          "4.1",
+
+        status:
+          "READY_FOR_AI_MODEL",
+
+        toolsAvailable: [
+
+          "GET /api/debris",
+
+          "GET /api/iss",
+
+          "GET /api/collisions",
+
+          "GET /api/ai/collisions",
+
+          "GET /api/status",
+
+        ],
+      });
+
+    } catch (error) {
+
+      console.error(
+        "[ASSISTANT] Error:",
+        error
+      );
+
+      res
+        .status(500)
+        .json({
+
+          success:
+            false,
+
+          error:
+            "Assistant request failed.",
+
+          message:
+            error.message,
+        });
+    }
   }
 );
 
@@ -1659,17 +1684,16 @@ app.listen(
     );
 
     console.log(
+      "AI Assistant: ENABLED"
+    );
+
+    console.log(
       "=========================================="
     );
 
     /*
-     * Server is ready immediately.
-     *
-     * The frontend can start using the
-     * local cache immediately.
-     *
-     * Real source refresh happens in background.
-     */
+    Server is ready immediately.
+    */
 
     setTimeout(
       () => {
@@ -1679,8 +1703,8 @@ app.listen(
     );
 
     /*
-     * Refresh real orbital data every 2 hours.
-     */
+    Refresh every 2 hours.
+    */
 
     setInterval(
       () => {
