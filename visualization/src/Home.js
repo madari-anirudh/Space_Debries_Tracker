@@ -2,8 +2,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import EarthScene from "./EarthScene";
-import "./home.css";
-import MissionControl from "./MissionControl";
+import './home.css';
+import AICollisionPanel from "./AICollisionPanel";
+import OrbitalAssistant from "./OrbitalAssistant";
 const Home = () => {
   const [startSpace, setStartSpace] = useState(false);
   const [debrisData, setDebrisData] = useState([]);
@@ -55,25 +56,23 @@ const Home = () => {
         onBack={() => setStartSpace(false)}
       />
 
-      <MissionControl
-        onTrackEvent={(event) => {
-          console.log(
-            "Tracking collision event:",
-            event
-          );
-
-          setTrackedEvent(event);
-        }}
-      />
+      <AICollisionPanel
+  onSelectCollision={(event) => {
+    console.log("Selected AI collision:", event);
+    setTrackedEvent(event);
+  }}
+/>
     </div>
   );
 }
 
   return (
+    
     <div className="space-home">
       {/* =========================
           NAVIGATION
       ========================== */}
+      <OrbitalAssistant />
       <header className="space-nav">
         <div className="nav-brand">
           <div className="brand-mark">
@@ -87,7 +86,6 @@ const Home = () => {
             <small>DEBRIS TRACKER</small>            
           </div>
         </div>
-
         <nav className="nav-links">
           <button
   className={activeSection === "overview" ? "active" : ""}
@@ -268,16 +266,12 @@ const Home = () => {
             </div>
           </div>
           <div className="mission-control">
-            <MissionControl
-        onTrackEvent={(event) => {
-          console.log(
-            "Tracking collision event:",
-            event
-          );
-
-          setTrackedEvent(event);
-        }}
-      />
+          <AICollisionPanel
+  onSelectCollision={(event) => {
+    console.log("Selected AI collision:", event);
+    setTrackedEvent(event);
+  }}
+/>
           </div>
         </section>
 

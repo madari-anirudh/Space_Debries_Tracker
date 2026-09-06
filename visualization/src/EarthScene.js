@@ -89,6 +89,16 @@ const EarthScene = ({
     setTimeScale,
   ] = useState(1);
 
+  const [
+  sceneReady,
+  setSceneReady,
+] = useState(false);
+
+const [
+  debrisDataReady,
+  setDebrisDataReady,
+] = useState(false);
+
   const timeScaleRef =
     useRef(1);
 
@@ -1220,14 +1230,16 @@ const EarthScene = ({
       null;
 
 
-    /*
-    ======================================================
-    COLLISION TRACKING
-    ======================================================
-    */
+   /*
+=========================================================
+COLLISION TRACKING
+=========================================================
+*/
 
-    let trackedCollisionGroup =
-      null;
+let trackedCollisionGroup = null;
+
+let trackedCollisionRisk = "LOW";
+let trackedCollisionPulseObjects = [];
 
 
     /*
@@ -1387,6 +1399,12 @@ const EarthScene = ({
         }
       );
 
+      trackedCollisionPulseObjects =
+  [];
+
+trackedCollisionRisk =
+  "LOW";
+
       trackedCollisionGroup =
         null;
     };
@@ -1397,356 +1415,367 @@ const EarthScene = ({
     TRACK COLLISION EVENT
     ======================================================
     */
+    const getAIRiskVisual = (event) => {
+  const risk =
+    event?.aiPrediction?.risk_level ||
+    event?.aiPrediction?.riskLevel ||
+    event?.closestApproach?.riskLevel ||
+    "LOW";
 
-    const trackCollisionEvent = (
-      event
-    ) => {
+  switch (String(risk).toUpperCase()) {
+    case "CRITICAL":
+      return {
+        risk: "CRITICAL",
+        color: 0xff1744,
+        pulseSpeed: 0.012,
+        pulseAmount: 0.28,
+      };
 
-      if (!event) {
-        return;
+    case "HIGH":
+      return {
+        risk: "HIGH",
+        color: 0xff6b35,
+        pulseSpeed: 0.009,
+        pulseAmount: 0.22,
+      };
+
+    case "MEDIUM":
+      return {
+        risk: "MEDIUM",
+        color: 0xffc107,
+        pulseSpeed: 0.007,
+        pulseAmount: 0.16,
+      };
+
+    default:
+      return {
+        risk: "LOW",
+        color: 0x00d084,
+        pulseSpeed: 0.005,
+        pulseAmount: 0.10,
+      };
+  }
+};
+
+const trackCollisionEvent = (event) => {
+  if (!event) {
+    return;
+  }
+
+  /*
+  =========================================================
+  PHASE 4.2A AI RISK VISUAL
+  =========================================================
+  */
+
+  
+
+  const aiVisual = getAIRiskVisual(event);
+
+  trackedCollisionRisk = aiVisual.risk;
+
+  console.log(
+    "PHASE 4.2A AI TRACK EVENT",
+    {
+      risk: aiVisual.risk,
+      confidence:
+        event?.aiPrediction?.confidence ?? null,
+      object1:
+        event?.object1?.noradId,
+      object2:
+        event?.object2?.noradId,
+    }
+  );
+
+  /*
+  =========================================================
+  PHASE 3 CAMERA STATE
+  =========================================================
+  */
+
+  savePreviousCameraState();
+
+  clearTrackedCollision();
+
+  /*
+  =========================================================
+  FIND COLLISION OBJECTS
+  =========================================================
+  */
+
+  const object1 = event.object1 || {};
+  const object2 = event.object2 || {};
+
+  const norad1 = String(
+    object1.noradId ?? ""
+  );
+
+  const norad2 = String(
+    object2.noradId ?? ""
+  );
+
+  const debris1 = debrisData.find(
+    (object) =>
+      String(
+        object.noradId ??
+        object.id ??
+        ""
+      ) === norad1
+  );
+
+  const debris2 = debrisData.find(
+    (object) =>
+      String(
+        object.noradId ??
+        object.id ??
+        ""
+      ) === norad2
+  );
+
+  console.log(
+    "PHASE 4.2A COLLISION OBJECT LOOKUP",
+    {
+      norad1,
+      norad2,
+      debris1,
+      debris2,
+      debrisCount: debrisData.length,
+    }
+  );
+
+  /*
+  =========================================================
+  OBJECTS NOT FOUND
+  =========================================================
+  */
+
+  if (!debris1 || !debris2) {
+    console.warn(
+      "Collision objects not found in current debris dataset",
+      {
+        norad1,
+        norad2,
       }
+    );
 
-      /*
-       * PHASE 3:
-       * Save the exact camera state BEFORE
-       * moving the camera to the collision.
-       */
+    restorePreviousCameraState();
 
-      savePreviousCameraState();
+    return;
+  }
 
-      clearTrackedCollision();
+  /*
+  =========================================================
+  CONVERT TO THREE.JS POSITIONS
+  =========================================================
+  */
 
+  const position1 =
+    convertCoordsToVector(
+      debris1.lat,
+      debris1.lon,
+      debris1.alt
+    );
 
-      /*
-      -------------------------------------------------------
-      FIND OBJECTS
-      -------------------------------------------------------
-      */
+  const position2 =
+    convertCoordsToVector(
+      debris2.lat,
+      debris2.lon,
+      debris2.alt
+    );
 
-      const object1 =
-        event.object1 || {};
+  /*
+  =========================================================
+  CREATE TRACKED COLLISION GROUP
+  =========================================================
+  */
 
-      const object2 =
-        event.object2 || {};
+  trackedCollisionGroup =
+    new THREE.Group();
 
+  /*
+  =========================================================
+  OBJECT 1 MARKER
+  =========================================================
+  */
 
-      const norad1 =
-        String(
-          object1.noradId ?? ""
-        );
+  const markerGeometry1 =
+    new THREE.SphereGeometry(
+      3.8,
+      16,
+      16
+    );
 
-      const norad2 =
-        String(
-          object2.noradId ?? ""
-        );
+  const markerMaterial1 =
+    new THREE.MeshBasicMaterial({
+      color: aiVisual.color,
+      transparent: true,
+      opacity: 0.95,
+    });
 
+  const marker1 =
+    new THREE.Mesh(
+      markerGeometry1,
+      markerMaterial1
+    );
 
-      const debris1 =
-        debrisData.find(
-          (object) =>
-            String(
-              object.noradId ??
-              object.id ??
-              ""
-            ) === norad1
-        );
+  marker1.position.copy(
+    position1
+  );
 
+  trackedCollisionGroup.add(
+    marker1
+  );
 
-      const debris2 =
-        debrisData.find(
-          (object) =>
-            String(
-              object.noradId ??
-              object.id ??
-              ""
-            ) === norad2
-        );
+  /*
+  =========================================================
+  OBJECT 2 MARKER
+  =========================================================
+  */
 
+  const markerGeometry2 =
+    new THREE.SphereGeometry(
+      3.8,
+      16,
+      16
+    );
 
-      /*
-      -------------------------------------------------------
-      DEBUG
-      -------------------------------------------------------
-      */
+  const markerMaterial2 =
+    new THREE.MeshBasicMaterial({
+      color: aiVisual.color,
+      transparent: true,
+      opacity: 0.95,
+    });
 
-      console.log(
-        "PHASE 3 TRACK EVENT",
-        {
-          norad1,
-          norad2,
-          debris1,
-          debris2,
-          debrisCount:
-            debrisData.length,
-        }
-      );
+  const marker2 =
+    new THREE.Mesh(
+      markerGeometry2,
+      markerMaterial2
+    );
 
+  marker2.position.copy(
+    position2
+  );
 
-      /*
-      -------------------------------------------------------
-      OBJECTS NOT FOUND
-      -------------------------------------------------------
-      */
+  trackedCollisionGroup.add(
+    marker2
+  );
 
-      if (
-        !debris1 ||
-        !debris2
-      ) {
+  /*
+  =========================================================
+  AI PULSE OBJECTS
+  =========================================================
+  */
 
-        console.warn(
-          "Collision objects not found in current debris dataset",
-          {
-            norad1,
-            norad2,
-          }
-        );
+  trackedCollisionPulseObjects = [
+    marker1,
+    marker2,
+  ];
 
-        /*
-         * Since tracking did not actually start,
-         * restore the camera state that was saved.
-         */
+  /*
+  =========================================================
+  CONNECTION LINE
+  =========================================================
+  */
 
-        restorePreviousCameraState();
+  const lineGeometry =
+    new THREE.BufferGeometry()
+      .setFromPoints([
+        position1,
+        position2,
+      ]);
 
-        return;
-      }
+  const lineMaterial =
+    new THREE.LineBasicMaterial({
+      color: aiVisual.color,
+      transparent: true,
+      opacity: 0.9,
+    });
 
+  const collisionLine =
+    new THREE.Line(
+      lineGeometry,
+      lineMaterial
+    );
 
-      /*
-      -------------------------------------------------------
-      CONVERT TO THREE.JS POSITIONS
-      -------------------------------------------------------
-      */
+  trackedCollisionGroup.add(
+    collisionLine
+  );
 
-      const position1 =
-        convertCoordsToVector(
-          debris1.lat,
-          debris1.lon,
-          debris1.alt
-        );
+  /*
+  =========================================================
+  COLLISION MIDPOINT
+  =========================================================
+  */
 
-
-      const position2 =
-        convertCoordsToVector(
-          debris2.lat,
-          debris2.lon,
-          debris2.alt
-        );
-
-
-      /*
-      -------------------------------------------------------
-      COLLISION GROUP
-      -------------------------------------------------------
-      */
-
-      trackedCollisionGroup =
-        new THREE.Group();
-
-
-      /*
-      -------------------------------------------------------
-      OBJECT 1 MARKER
-      -------------------------------------------------------
-      */
-
-      const markerGeometry1 =
-        new THREE.SphereGeometry(
-          3.8,
-          16,
-          16
-        );
-
-
-      const markerMaterial1 =
-        new THREE.MeshBasicMaterial({
-          color:
-            0xff3b30,
-
-          transparent:
-            true,
-
-          opacity:
-            0.95,
-        });
-
-
-      const marker1 =
-        new THREE.Mesh(
-          markerGeometry1,
-          markerMaterial1
-        );
-
-
-      marker1.position.copy(
-        position1
-      );
-
-
-      trackedCollisionGroup.add(
-        marker1
-      );
-
-
-      /*
-      -------------------------------------------------------
-      OBJECT 2 MARKER
-      -------------------------------------------------------
-      */
-
-      const markerGeometry2 =
-        new THREE.SphereGeometry(
-          3.8,
-          16,
-          16
-        );
-
-
-      const markerMaterial2 =
-        new THREE.MeshBasicMaterial({
-          color:
-            0xff3b30,
-
-          transparent:
-            true,
-
-          opacity:
-            0.95,
-        });
-
-
-      const marker2 =
-        new THREE.Mesh(
-          markerGeometry2,
-          markerMaterial2
-        );
-
-
-      marker2.position.copy(
+  const midpoint =
+    new THREE.Vector3()
+      .addVectors(
+        position1,
         position2
+      )
+      .multiplyScalar(0.5);
+
+  /*
+  =========================================================
+  CAMERA TRACKING
+  =========================================================
+  */
+
+  const cameraDirection =
+    midpoint
+      .clone()
+      .normalize();
+
+  const cameraDistance =
+    Math.max(
+      220,
+      position1.distanceTo(
+        position2
+      ) * 3
+    );
+
+  const cameraPosition =
+    midpoint
+      .clone()
+      .add(
+        cameraDirection.multiplyScalar(
+          cameraDistance
+        )
       );
 
+  camera.position.copy(
+    cameraPosition
+  );
 
-      trackedCollisionGroup.add(
-        marker2
-      );
+  controls.target.copy(
+    midpoint
+  );
 
+  controls.update();
 
-      /*
-      -------------------------------------------------------
-      CONNECTION LINE
-      -------------------------------------------------------
-      */
+  /*
+  =========================================================
+  ADD TO SCENE
+  =========================================================
+  */
 
-      const lineGeometry =
-        new THREE.BufferGeometry()
-          .setFromPoints([
-            position1,
-            position2,
-          ]);
+  scene.add(
+    trackedCollisionGroup
+  );
 
-
-      const lineMaterial =
-        new THREE.LineBasicMaterial({
-
-          color:
-            0xff3b30,
-
-          transparent:
-            true,
-
-          opacity:
-            0.9,
-        });
-
-
-      const collisionLine =
-        new THREE.Line(
-          lineGeometry,
-          lineMaterial
-        );
-
-
-      trackedCollisionGroup.add(
-        collisionLine
-      );
-
-
-      /*
-      -------------------------------------------------------
-      MIDPOINT
-      -------------------------------------------------------
-      */
-
-      const midpoint =
-        new THREE.Vector3()
-          .addVectors(
-            position1,
-            position2
-          )
-          .multiplyScalar(
-            0.5
-          );
-
-
-      /*
-      -------------------------------------------------------
-      TRACK CAMERA
-      -------------------------------------------------------
-      */
-
-      const cameraDirection =
-        midpoint
-          .clone()
-          .normalize();
-
-
-      const cameraDistance =
-        Math.max(
-          220,
-          position1.distanceTo(
-            position2
-          ) * 3
-        );
-
-
-      const cameraPosition =
-        midpoint
-          .clone()
-          .add(
-            cameraDirection.multiplyScalar(
-              cameraDistance
-            )
-          );
-
-
-      camera.position.copy(
-        cameraPosition
-      );
-
-
-      controls.target.copy(
-        midpoint
-      );
-
-
-      controls.update();
-
-
-      /*
-      -------------------------------------------------------
-      ADD TO SCENE
-      -------------------------------------------------------
-      */
-
-      scene.add(
-        trackedCollisionGroup
-      );
-
-      console.log(
-        "PHASE 3: Collision camera tracking active"
-      );
-    };
+  console.log(
+    "PHASE 4.2A: AI collision camera tracking active",
+    {
+      risk: aiVisual.risk,
+      confidence:
+        event?.aiPrediction?.confidence ?? null,
+      color:
+        `#${aiVisual.color
+          .toString(16)
+          .padStart(6, "0")}`,
+    }
+  );
+};
 
 
     /*
@@ -1876,14 +1905,23 @@ const EarthScene = ({
     ======================================================
     */
 
-    const updateDebrisMesh =
-      (data) => {
+    const updateDebrisMesh = (data) => {
+  debrisData = Array.isArray(data)
+    ? data
+    : [];
 
-        debrisData =
-          Array.isArray(data)
-            ? data
-            : [];
+  setDebrisDataReady(
+    debrisData.length > 0
+  );
 
+  console.log(
+    "EARTHSCENE DEBRIS DATA READY",
+    {
+      count: debrisData.length,
+      firstNoradId:
+        debrisData[0]?.noradId ?? null,
+    }
+  );
         ensureDebrisMesh(
           debrisData.length
         );
@@ -2489,6 +2527,7 @@ const EarthScene = ({
     mount.__trackCollision =
       trackCollisionEvent;
 
+      setSceneReady(true);
 
     /*
     ======================================================
@@ -2842,7 +2881,55 @@ const EarthScene = ({
           );
         }
 
+/*
+=========================================================
+AI COLLISION RISK PULSE
+=========================================================
+*/
 
+if (
+  trackedCollisionGroup &&
+  trackedCollisionPulseObjects.length > 0
+) {
+  let pulseSpeed = 0.005;
+  let pulseAmount = 0.10;
+
+  if (
+    trackedCollisionRisk ===
+    "CRITICAL"
+  ) {
+    pulseSpeed = 0.012;
+    pulseAmount = 0.28;
+  } else if (
+    trackedCollisionRisk ===
+    "HIGH"
+  ) {
+    pulseSpeed = 0.009;
+    pulseAmount = 0.22;
+  } else if (
+    trackedCollisionRisk ===
+    "MEDIUM"
+  ) {
+    pulseSpeed = 0.007;
+    pulseAmount = 0.16;
+  }
+
+  const pulse =
+    1 +
+    Math.sin(
+      performance.now() *
+        pulseSpeed
+    ) *
+      pulseAmount;
+
+  trackedCollisionPulseObjects.forEach(
+    (object) => {
+      object.scale.setScalar(
+        pulse
+      );
+    }
+  );
+}
         /*
          * ISS glow
          */
@@ -3028,25 +3115,53 @@ const EarthScene = ({
   ==========================================================
   */
 
-  useEffect(() => {
+useEffect(() => {
 
-    if (!trackedEvent) {
-      return;
-    }
+  if (!trackedEvent) {
+    return;
+  }
 
-    const track =
-      mountRef.current?.__trackCollision;
+  if (!sceneReady) {
+    return;
+  }
 
-    if (!track) {
-      return;
-    }
+  if (!debrisDataReady) {
+    return;
+  }
 
-    track(
-      trackedEvent
+  const track =
+    mountRef.current?.__trackCollision;
+
+  if (!track) {
+    console.warn(
+      "AI tracking requested, but EarthScene tracking API is not ready."
     );
+    return;
+  }
 
-  }, [trackedEvent]);
+  console.log(
+    "AI TRACKING EFFECT FIRED",
+    {
+      object1:
+        trackedEvent?.object1?.noradId,
+      object2:
+        trackedEvent?.object2?.noradId,
+      risk:
+        trackedEvent?.aiPrediction?.risk_level ||
+        trackedEvent?.closestApproach?.riskLevel ||
+        "UNKNOWN",
+    }
+  );
 
+  track(
+    trackedEvent
+  );
+
+}, [
+  trackedEvent,
+  sceneReady,
+  debrisDataReady,
+]);
 
   /*
   ==========================================================
@@ -3882,121 +3997,131 @@ const EarthScene = ({
           SELECTED OBJECT
       ================================================= */}
 
-      {telemetry.selected && (
+     {telemetry.selected && (
 
-        <div className="selected-object-panel">
+  <div className="selected-object-panel">
 
-          <div className="selected-header">
+    <div className="selected-header">
 
-            <div>
+      <div>
 
-              <span>
-                SELECTED OBJECT
-              </span>
+        <span>
+          SELECTED OBJECT
+        </span>
 
-              <strong>
-                {
-                  telemetry.selected.name ||
-                  `OBJECT-${telemetry.selected.index + 1}`
-                }
-              </strong>
+        <strong>
+          {
+            telemetry.selected.name ||
+            `OBJECT-${telemetry.selected.index + 1}`
+          }
+        </strong>
 
-            </div>
+      </div>
 
+      <button
+        onClick={() =>
+          mountRef.current?.__clearSelection?.()
+        }
+      >
+        ×
+      </button>
 
-            <button
-              onClick={() =>
-                mountRef.current?.__clearSelection?.()
-              }
-            >
-              ×
-            </button>
-
-          </div>
-
-
-          <div className="selected-grid">
-
-            <div>
-
-              <span>
-                LATITUDE
-              </span>
-
-              <strong>
-                {Number(
-                  telemetry.selected.lat
-                ).toFixed(2)}
-                °
-              </strong>
-
-            </div>
+    </div>
 
 
-            <div>
+    <div className="selected-grid">
 
-              <span>
-                LONGITUDE
-              </span>
+      <div>
 
-              <strong>
-                {Number(
-                  telemetry.selected.lon
-                ).toFixed(2)}
-                °
-              </strong>
+        <span>
+          NORAD ID
+        </span>
 
-            </div>
+        <strong>
+          {telemetry.selected.noradId || "—"}
+        </strong>
 
-
-            <div>
-
-              <span>
-                ALTITUDE
-              </span>
-
-              <strong>
-                {Number(
-                  telemetry.selected.alt
-                ).toFixed(2)}
-                km
-              </strong>
-
-            </div>
+      </div>
 
 
-            <div>
+      <div>
 
-              <span>
-                VELOCITY
-              </span>
+        <span>
+          LATITUDE
+        </span>
 
-              <strong>
+        <strong>
+          {Number(
+            telemetry.selected.lat
+          ).toFixed(2)}
+          °
+        </strong>
 
-                {telemetry.selected.velocity
-                  ? `${Number(
-                      telemetry.selected.velocity
-                    ).toFixed(2)} km/s`
-                  : "—"}
-
-              </strong>
-
-            </div>
-
-          </div>
+      </div>
 
 
-          <div className="selected-note">
+      <div>
 
-            Position calculated from the
-            local orbital cache using
-            satellite.js / SGP4.
+        <span>
+          LONGITUDE
+        </span>
 
-          </div>
+        <strong>
+          {Number(
+            telemetry.selected.lon
+          ).toFixed(2)}
+          °
+        </strong>
 
-        </div>
+      </div>
 
-      )}
+
+      <div>
+
+        <span>
+          ALTITUDE
+        </span>
+
+        <strong>
+          {Number(
+            telemetry.selected.alt
+          ).toFixed(2)}
+          km
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        <span>
+          VELOCITY
+        </span>
+
+        <strong>
+          {telemetry.selected.velocity
+            ? `${Number(
+                telemetry.selected.velocity
+              ).toFixed(2)} km/s`
+            : "—"}
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div className="selected-note">
+
+      Position calculated from the
+      local orbital cache using
+      satellite.js / SGP4.
+
+    </div>
+
+  </div>
+
+)}
 
 
       {/* =================================================

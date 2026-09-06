@@ -1,0 +1,41 @@
+{
+  "model_name": "gradient_boosting",
+  "model_file": "orbital_risk_model.joblib",
+  "feature_names": [
+    "miss_distance_km",
+    "relative_velocity_kms",
+    "time_to_tca_seconds",
+    "miss_distance_normalized",
+    "relative_velocity_normalized",
+    "time_to_tca_normalized",
+    "physics_risk_score",
+    "distance_risk",
+    "velocity_risk",
+    "time_risk"
+  ],
+  "classes": {
+    "0": "LOW",
+    "1": "MEDIUM",
+    "2": "HIGH",
+    "3": "CRITICAL"
+  },
+  "random_seed": 42,
+  "validation_size": 0.2,
+  "training_samples": 3476,
+  "validation_samples": 756,
+  "training_source_groups": 38,
+  "validation_source_groups": 10,
+  "metrics": {
+    "random_forest": {
+      "accuracy": 0.9986772486772487,
+      "macro_f1": 0.9984177940839257,
+      "weighted_f1": 0.9986784619323027
+    },
+    "gradient_boosting": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0
+    }
+  },
+  "scientific_note": "This model performs risk classification from SGP4-derived orbital screening features. It does not produce a physical collision probability because covariance and empirical collision-outcome data are not available."
+}

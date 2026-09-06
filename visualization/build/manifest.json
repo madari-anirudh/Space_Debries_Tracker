@@ -1,6 +1,6 @@
 {
-  "short_name": "Space Debris Tracker",
-  "name": "Space Debris Tracker",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
