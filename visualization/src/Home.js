@@ -5,6 +5,10 @@ import EarthScene from "./EarthScene";
 import './home.css';
 import AICollisionPanel from "./AICollisionPanel";
 import OrbitalAssistant from "./OrbitalAssistant";
+const API_BASE =
+  process.env.REACT_APP_API_URL ||
+  "http://localhost:5000";
+
 const Home = () => {
   const [startSpace, setStartSpace] = useState(false);
   const [debrisData, setDebrisData] = useState([]);
@@ -13,7 +17,7 @@ const Home = () => {
   const [trackedEvent, setTrackedEvent] = useState(null);
   useEffect(() => {
     axios
-      .get("https://space-debris-tracker-api-t9n9.onrender.com/api/debris")
+      .get(`${API_BASE}/api/debris`)
       .then((res) => {
         setDebrisData(Array.isArray(res.data) ? res.data : []);
       })

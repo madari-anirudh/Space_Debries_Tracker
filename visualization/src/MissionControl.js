@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./MissionControl.css";
 
 const API_URL =
-  "https://space-debris-tracker-api-t9n9.onrender.com";
+  process.env.REACT_APP_API_URL ||
+  "http://localhost:5000";
 
 const MissionControl = ({ onTrackEvent }) => {
   const [events, setEvents] = useState([]);

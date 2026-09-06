@@ -345,13 +345,13 @@ const AICollisionPanel = ({
   =======================================================
   */
 
-  const results =
-    Array.isArray(
-      data?.results
-    )
+const results = useMemo(
+  () =>
+    Array.isArray(data?.results)
       ? data.results
-      : [];
-
+      : [],
+  [data]
+);
 
   /*
   =======================================================
