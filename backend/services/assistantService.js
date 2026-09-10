@@ -1,4 +1,11 @@
 const assistantTools = require("./assistantTools");
+const {
+  understandUserQuery,
+} = require("./pythonNluService");
+
+const {
+  searchKnowledge,
+} = require("./pythonKnowledgeService");
 
 /* =========================================================
    SAFE NUMBER
@@ -382,21 +389,141 @@ async function handleCollisionAnalysis() {
    TRACK DEBRIS
    ========================================================= */
 
-async function handleTrackDebris(message) {
-  const query = extractObjectQuery(message);
+async function handleTrackDebris(
+  message,
+  entities = {}
+) {
+  const noradId =
+    entities?.norad_id || null;
+
+  /*
+   * If NLU extracted a NORAD ID,
+   * use the orbital-object tool directly.
+   */
+  if (noradId) {
+    try {
+      const result =
+        await assistantTools.getObjectByNoradId(
+          noradId
+        );
+
+      const object =
+        result?.data ||
+        result?.object ||
+        result;
+
+      if (!object) {
+        return {
+          reply:
+            `I couldn't find an orbital object with NORAD ID ${noradId}.`,
+          data: {
+            query: noradId,
+          },
+        };
+      }
+
+      const name =
+        object?.name ||
+        object?.satelliteName ||
+        object?.objectName ||
+        `NORAD ${noradId}`;
+
+      const latitude =
+        safeNumber(
+          object?.lat ??
+          object?.latitude
+        );
+
+      const longitude =
+        safeNumber(
+          object?.lon ??
+          object?.longitude
+        );
+
+      const altitude =
+        safeNumber(
+          object?.alt ??
+          object?.altitude ??
+          object?.altitudeKm
+        );
+
+      const velocity =
+        safeNumber(
+          object?.velocity ??
+          object?.velocityKms
+        );
+
+      const latitudeText =
+        latitude !== null
+          ? `${formatNumber(latitude, 2)}°`
+          : "unavailable";
+
+      const longitudeText =
+        longitude !== null
+          ? `${formatNumber(longitude, 2)}°`
+          : "unavailable";
+
+      const altitudeText =
+        altitude !== null
+          ? `${formatNumber(altitude, 2)} km`
+          : "unavailable";
+
+      const velocityText =
+        velocity !== null
+          ? `${formatNumber(velocity, 2)} km/s`
+          : "unavailable";
+
+      return {
+        reply:
+          `${name} (NORAD ${noradId}) is currently at ` +
+          `latitude ${latitudeText}, longitude ${longitudeText}, ` +
+          `altitude ${altitudeText}, with an orbital velocity ` +
+          `of approximately ${velocityText}.`,
+
+        data: {
+          query: noradId,
+          object,
+        },
+      };
+    } catch (error) {
+      console.error(
+        "[ASSISTANT TRACK] NORAD lookup failed:",
+        error.message
+      );
+
+      return {
+        reply:
+          `I couldn't retrieve the current orbital position for NORAD ${noradId}.`,
+
+        data: {
+          query: noradId,
+          error: error.message,
+        },
+      };
+    }
+  }
+
+  /*
+   * Existing name-based debris lookup remains
+   * available when NLU did not extract a NORAD ID.
+   */
+  const query =
+    extractObjectQuery(message);
 
   if (!query) {
     return {
       reply:
-        "Tell me the debris name or NORAD ID you want to track. For example: “Track 34563”.",
+        "Tell me the object name or NORAD ID you want me to track.",
+      data: null,
     };
   }
 
-  const debris = await assistantTools.getDebris();
+  const debrisResponse =
+    await assistantTools.getDebris();
 
   const object =
     assistantTools.findObject(
-      debris,
+      debrisResponse,
       query
     );
 
@@ -404,6 +531,7 @@ async function handleTrackDebris(message) {
     return {
       reply:
         `I couldn't find an object matching "${query}" in the current local debris dataset.`,
+
       data: {
         query,
       },
@@ -416,38 +544,50 @@ async function handleTrackDebris(message) {
     object?.objectName ||
     "Unknown object";
 
-  const noradId =
+  const noradIdFound =
     object?.noradId ||
     object?.noradID ||
     object?.id ||
-    "N/A";
+    "unknown";
 
   const latitude =
-    object?.latitude ??
-    object?.lat ??
-    object?.position?.latitude;
+    safeNumber(
+      object?.latitude ??
+      object?.lat
+    );
 
   const longitude =
-    object?.longitude ??
-    object?.lon ??
-    object?.position?.longitude;
+    safeNumber(
+      object?.longitude ??
+      object?.lon
+    );
 
   const altitude =
-    object?.altitude ??
-    object?.alt ??
-    object?.position?.altitude;
+    safeNumber(
+      object?.altitude ??
+      object?.altitudeKm
+    );
 
   return {
     reply:
-      `I found ${name} (NORAD ${noradId}). ` +
-      `Latitude: ${latitude ?? "N/A"}°, ` +
-      `Longitude: ${longitude ?? "N/A"}°, ` +
-      `Altitude: ${altitude ?? "N/A"} km. ` +
-      `The object can now be selected/tracked in the visualization.`,
+      `${name} (NORAD ${noradIdFound}) is currently at ` +
+      `latitude ${
+        latitude !== null
+          ? `${formatNumber(latitude, 2)}°`
+          : "unavailable"
+      }, longitude ${
+        longitude !== null
+          ? `${formatNumber(longitude, 2)}°`
+          : "unavailable"
+      }, and altitude ${
+        altitude !== null
+          ? `${formatNumber(altitude, 2)} km`
+          : "unavailable"
+      }.`,
 
     data: {
+      query,
       object,
-      trackingQuery: query,
     },
   };
 }
@@ -536,6 +676,43 @@ async function handleGreeting() {
 }
 
 /* =========================================================
+   SPACE KNOWLEDGE
+   ========================================================= */
+
+async function handleSpaceKnowledge(message) {
+  const result =
+    await searchKnowledge(
+      message,
+      5
+    );
+
+  const results =
+    Array.isArray(result?.results)
+      ? result.results
+      : [];
+
+  if (results.length === 0) {
+    return {
+      reply:
+        "I couldn't find reliable information about that topic in my space knowledge base.",
+
+      data: {
+        results: [],
+      },
+    };
+  }
+
+  return {
+    reply:
+      "I found relevant information in the space knowledge base.",
+
+    data: {
+      results,
+    },
+  };
+}
+
+/* =========================================================
    UNKNOWN
    ========================================================= */
 
@@ -547,16 +724,112 @@ async function handleUnknown() {
 }
 
 /* =========================================================
+   ML NLU TOOL ROUTER
+   ========================================================= */
+
+function routeNLUIntent(nluResult) {
+  const intentName =
+    nluResult?.intent?.name || "unknown";
+
+  switch (intentName) {
+    case "highest_risk":
+      return "highest_risk";
+
+    case "collision_lookup":
+      return "collision_analysis";
+
+    case "track_object":
+      return "track_debris";
+
+    case "explain_sgp4":
+      return "explain_sgp4";
+
+    case "ai_status":
+      return "ai_status";
+
+    case "debris_count":
+      return "debris_count";
+
+    case "greeting":
+      return "greeting";
+
+    case "space_knowledge":
+      return "space_knowledge";
+
+    default:
+      return "unknown";
+  }
+}
+
+/* =========================================================
    MAIN ASSISTANT
    ========================================================= */
 
 async function processAssistantMessage(message) {
-  const intentResult =
-    detectIntent(message);
+  let nluResult;
+
+  try {
+    /*
+     * Primary language understanding path.
+     *
+     * User's actual sentence goes to:
+     *
+     * Node.js
+     *   ↓
+     * Python /nlu
+     *   ↓
+     * ML intent + entities
+     */
+
+    nluResult =
+      await understandUserQuery(message);
+
+  } catch (error) {
+    console.error(
+      "[ASSISTANT NLU] Python NLU unavailable:",
+      error.message
+    );
+
+    /*
+     * Temporary compatibility fallback.
+     *
+     * This keeps the existing assistant usable while
+     * the Python NLU service is unavailable.
+     */
+
+    const legacyIntent =
+      detectIntent(message);
+
+    nluResult = {
+      success: true,
+
+      text: message,
+
+      intent: {
+        name:
+          legacyIntent.intent,
+        confidence:
+          legacyIntent.confidence,
+      },
+
+      entities: {},
+
+      source:
+        "legacy-fallback",
+    };
+  }
+
+  /*
+   * Convert ML intent names into existing
+   * assistant tool names.
+   */
+
+  const routedIntent =
+    routeNLUIntent(nluResult);
 
   let result;
 
-  switch (intentResult.intent) {
+  switch (routedIntent) {
     case "highest_risk":
       result =
         await handleHighestRisk();
@@ -569,7 +842,10 @@ async function processAssistantMessage(message) {
 
     case "track_debris":
       result =
-        await handleTrackDebris(message);
+        await handleTrackDebris(
+          message,
+          nluResult?.entities || {}
+        );
       break;
 
     case "explain_sgp4":
@@ -592,6 +868,11 @@ async function processAssistantMessage(message) {
         await handleGreeting();
       break;
 
+    case "space_knowledge":
+      result =
+        await handleSpaceKnowledge(message);
+      break;
+
     default:
       result =
         await handleUnknown();
@@ -606,17 +887,27 @@ async function processAssistantMessage(message) {
       "I couldn't generate a response.",
 
     intent: {
-      name: intentResult.intent,
-      confidence: intentResult.confidence,
+      name:
+        nluResult?.intent?.name ||
+        "unknown",
+
+      confidence:
+        Number(
+          nluResult?.intent?.confidence || 0
+        ),
     },
+
+    entities:
+      nluResult?.entities || {},
 
     data:
       result?.data || null,
 
     assistant: {
       name: "Orbital AI",
-      version: "4.2A",
-      mode: "tool-using orbital assistant",
+      version: "5.0-NLU",
+      mode:
+        "ML NLU + tool-using orbital assistant",
     },
   };
 }

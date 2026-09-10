@@ -1,0 +1,1208 @@
+[
+  {
+    "chunk_id": "9209f54b1a2cf66f",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 1,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "ESA - Space Debris FAQ: Frequently asked questions ESA / Space Safety / Space Debris Frequently asked questions on space debris answered by the team at ESAs Space Debris Office. Updated April 2021 Q1: What is space debris? Q2: How do we watch for space debris? Q3: What are the main sources of information on space debris? Q4: What are the origins of space debris? Q5: How have deliberate satellite intercepts affected the space debris environment? Q6: Why does Earth's atmosphere have a positive effect on space debris? Q7: How many space debris objects are currently in orbit? Q8: What is the Kessler Syndrome, and how can it be avoided? Q9: What risks to spacecraft operations are caused by space debris? Q10: How does the ISS protect itself against space debris? Q11: How do robotic spacecraft protect themselves against space debris? Q12: What measures are already being taken to avoid space debris and which ones need to be taken in the future? Q13: Which international agreements cover space debris mitigation? Q14: How does ESA plan to remove space debris from orbit? Q15: How many objects re-enter each year, and is this dangerous? Q16: How is ESA now approaching the debris situation? Its not just a scientific problem? Q17: How often do ESA missions have to perform debris avoidance manoeuvres? Q18: What is ESA doing about the debris issue? Q19: Which missions does ESA's space debris team support for real-time warnings and collision avoidance manoeuvres? Q20: Is there reason to be hopeful? Q1: What is space debris? Space debris is defined as all non-functional, artificial objects, including fragments and elements thereof, in Earth orbit or re-entering into Earths atmosphere. Human-made space debris dominates over the natural meteoroid environment, except around millimetre sizes."
+  },
+  {
+    "chunk_id": "a996cc8d5282a47d",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 2,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "eful? Q1: What is space debris? Space debris is defined as all non-functional, artificial objects, including fragments and elements thereof, in Earth orbit or re-entering into Earths atmosphere. Human-made space debris dominates over the natural meteoroid environment, except around millimetre sizes. Q2: How do we watch for space debris? Routine ground-based radar and optical measurements performed by space surveillance systems allow the tracking and cataloguing of objects larger than 5-10 cm in low orbit, and larger than 0.3-1.0 m at geostationary orbit altitudes (36 000 km above the equator). Each of these catalogued objects has a known orbit and many can be traced back to a launch event to a unique owner. Ground-based monitoring radars can detect smaller objects, down to a centimetre or less in size. Such objects, however, can generally not be correlated with specific launch events, nor can their orbits be determined with sufficient accuracy to be predictable in future. The presence of smaller space debris objects, typically less than 1 mm in size, can be deduced from impact craters on returned space hardware, or from onboard impact detectors exposed to the space environment. Q3: What are the main sources of information on space debris? A main source of information on space debris is the US Space Surveillance Network, which uses radar and other technologies to track, correlate and catalogue objects. Data are additionally collected by means of a growing number of national and commercial systems, as well as through research radars and telescopes. Some of the observations are coordinated in common campaigns, for example within the Inter-Agency Space Debris Coordination Committee (IADC)."
+  },
+  {
+    "chunk_id": "3291943d245a86ba",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 3,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "e objects. Data are additionally collected by means of a growing number of national and commercial systems, as well as through research radars and telescopes. Some of the observations are coordinated in common campaigns, for example within the Inter-Agency Space Debris Coordination Committee (IADC). For small debris objects, most information is deduced from the impact analyses of space-exposed surfaces that have been returned by US Space Shuttles. Q4: What are the origins of space debris? All artificial space objects result from more than 6000 launches conducted since the start of the space age. The majority of the catalogued objects (the ones large enough to be tracked by radar), however, originate from on-orbit break-ups more than 500 events as well as fewer than 10 known on-orbit collisions. As of 2021, in more than 60 years of spaceflight activity, the 6000-plus launches have placed around 10,000 satellites into orbit, of which about 6000 remain in space; only some about 3900 are still operational today. See ' Space debris by the numbers ' for the most recently updated figures from ESAs Space Debris Office (or access https://sdup.esoc.esa.int/discosweb/statistics/ ). Additional data can be found in ESAs latest Space Debris Office Environment Report and specific information on break-ups is available at https://fragmentation.esoc.esa.int/home (see 'About space debris' for a description of debris origins and sources). Q5: How have deliberate satellite intercepts affected the space debris environment? On 11 January 2007, China conducted an anti-satellite test, intercepting their Fengyun-1C satellite with a surface-launched medium-range missile."
+  },
+  {
+    "chunk_id": "f010f6afd9e26ba7",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 4,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "'About space debris' for a description of debris origins and sources). Q5: How have deliberate satellite intercepts affected the space debris environment? On 11 January 2007, China conducted an anti-satellite test, intercepting their Fengyun-1C satellite with a surface-launched medium-range missile. The intercept occurred at an altitude of 862 km on a near-polar orbit, adding more than 3300 trackable objects to the US Space Surveillance Network catalogue, increasing its size by 25% in just one incident. This was by far the worst break-up event in space history some 3.5 times worse than the worst previous event. Owing to the high altitude of the collision event and the low ambient air density, the fragments will have long orbital lifetimes. Satellites in Sun-synchronous orbits at around 800 km altitude still today experience an increased number of close conjunctions with debris objects. Roughly 30% of such events are caused by Fengyun-1C fragments. On 21 February 2008, the United States intercepted their USA-193 satellite with a modified SM-3 missile. At the time of engagement, the target spacecraft was at an altitude of 249 km, on a near-circular orbit at 58.5 inclination. Owing to the low altitude, and the correspondingly high air drag, most of the generated fragments harmlessly reentered within one orbit. Only 170 fragments entered the US catalogue within one month, and none were left by the end of 2008. In the short-term, however, the risk of penetration of the shields of the ISSs crew modules by USA-193 fragments larger than 1 cm increased by about 30%."
+  },
+  {
+    "chunk_id": "441c528975ebaa8d",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 5,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "gments harmlessly reentered within one orbit. Only 170 fragments entered the US catalogue within one month, and none were left by the end of 2008. In the short-term, however, the risk of penetration of the shields of the ISSs crew modules by USA-193 fragments larger than 1 cm increased by about 30%. Q6: Why does Earth's atmosphere have a positive effect on space debris? Earths atmosphere causes air drag that extracts orbital energy, leading to a reduction in the orbital altitude and final reentry of a space object. Upper layers of the atmosphere are supported by lower layers, which are compressed under the weight of the air column above them. The air density increases, and hence the increase in drag due to air with decreasing altitude is progressive. Changes in air density at a given orbital altitude are mainly driven by the Sun, which varies its activity in an 11-year cycle. Thus, every 11 years, lower parts of the atmosphere are heated and expand towards higher altitudes, where the air density increases, causing higher air drag on objects in space. As a consequence, space debris is periodically cleaned from the lower orbital regions, but these are subsequently replaced by debris objects descending from higher orbits. After sufficient exposure to air drag, the objects orbit decays, and the object enters Earths denser atmosphere, where the air drag converts orbital energy into heat. This heating process is normally sufficient to destroy any object. Approximately 20-40% of the mass of larger-size spacecraft or rocket bodies, or parts made of particularly high-melting steel or titanium alloys, may survive the reentry."
+  },
+  {
+    "chunk_id": "0c1c5c6e678e56f3",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 6,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "osphere, where the air drag converts orbital energy into heat. This heating process is normally sufficient to destroy any object. Approximately 20-40% of the mass of larger-size spacecraft or rocket bodies, or parts made of particularly high-melting steel or titanium alloys, may survive the reentry. Q7: How many space debris objects are currently in orbit? See Space debris by the numbers for the most recently updated figures from ESAs Space Debris Office. Any of these objects can cause harm to an operational spacecraft. For example, a collision with a 10-cm object would cause the catastrophic fragmentation of a typical satellite, a 1-cm object will most likely disable a spacecraft and penetrate the ISS shields, and a 1-mm object could destroy subsystems on a satellite. Scientists generally agree that, for typical satellites, a collision having an energy-to-mass ratio exceeding 40 J/g will be catastrophic. Q8: What is the Kessler Syndrome, and how can it be avoided? At present, the majority of all space debris that can cause a catastrophic collision (i.e. larger than 10 cm) results from the more than 500 on-orbit fragmentation events that have happened in the course of spaceflight history. However, simulations of the long-term evolution of the space debris environment indicate that within a few decades, generated collision fragments will start to dominate, at least in orbits around 8001400 km altitude. This will be true even if all launch activities were to be discontinued now, which is an extremely unlikely development. In the most probable scenario, fragments will initially collide with large, intact objects."
+  },
+  {
+    "chunk_id": "3ab65939fbd5999f",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 7,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "lision fragments will start to dominate, at least in orbits around 8001400 km altitude. This will be true even if all launch activities were to be discontinued now, which is an extremely unlikely development. In the most probable scenario, fragments will initially collide with large, intact objects. Then, the resulting collision fragments will start to collide with other large, intact objects, and so on, and ultimately collision fragments will collide with collision fragments until all remaining objects are reduced to subcritical sizes. This run-away, self-sustained, cascading collision process is most likely to commence at altitudes having high debris population densities and insufficient cleansing by air drag, which would be around 900 km and 1400 km. These long-term simulations of the environment show how the extrapolation of current spaceflight trends in terms of: adherence to space debris mitigation guidelines, and the frequency of on-orbit breakups will result in the exponential growth of the population of objects, with consequences for daily spacecraft operations. The successful passivation of all spacecraft, which would limit on-orbit breakups, and the widespread, i.e. more than 90%, adoption of effective disposal strategies at the end of missions would contribute to containing the population growth. For the situation where large constellations of smaller satellites are present in low Earth orbit (LEO; typically, up to about 1000 km altitude), the IADC has conducted studies across all 13 space agency members. These have shown that a potentially stable evolution of the orbital environment is achieved only when the disposal rate is at least 95%, notably higher than the 90% needed for larger, traditional satellites."
+  },
+  {
+    "chunk_id": "a20e186563fa642f",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 8,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "about 1000 km altitude), the IADC has conducted studies across all 13 space agency members. These have shown that a potentially stable evolution of the orbital environment is achieved only when the disposal rate is at least 95%, notably higher than the 90% needed for larger, traditional satellites. This runaway scenario is the Kessler syndrome and was first postulated by NASA scientist Don Kessler in 1978. Q9: What risks to spacecraft operations are caused by space debris? One must distinguish between debris-related risks in orbit and risks due to reentries. on-orbit risks are due to collisions with operational spacecraft, or with decommissioned spacecraft or rocket bodies. Impacts by debris larger than 10 cm are assumed to cause catastrophic break-ups, which completely destroy the spacecraft, thus ending its operation, and generating thousands of debris fragments, which could then contribute to the run-away cascading Kessler syndrome. Collisions with debris larger than 1 cm would disable an operational spacecraft, and may cause the explosion of a decommissioned spacecraft or rocket body. Impacts by millimetre-size debris may cause local damage or disable a subsystem of an operational spacecraft. Large space debris objects, such as abandoned satellites, rocket bodies or large pieces thereof, that reenter the atmosphere in an uncontrolled way can survive reentry to reach Earths surface, creating risk to the population on ground. The resultant risk for any individual person is, however, several orders of magnitude smaller than other, commonly accepted risks, such as those encountered when driving a car, that people routinely accept in day-to-day life."
+  },
+  {
+    "chunk_id": "8d7c0447e0873737",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 9,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "eentry to reach Earths surface, creating risk to the population on ground. The resultant risk for any individual person is, however, several orders of magnitude smaller than other, commonly accepted risks, such as those encountered when driving a car, that people routinely accept in day-to-day life. Q10: How does the ISS protect itself against space debris? The International Space Station (ISS) has debris shields deployed around the crew modules. These shields are composed of two metal sheets, separated by about 10 cm. The outer bumper shield exploits the impact energy to shatter the debris object, such that the inner back wall can withstand the resulting spray of smaller-sized fragments. Between the walls, fabric with the same functionality as in bulletproof vests is deployed. This design enables the shield to defeat debris objects up to 1 cm in size. The same double-wall design is used by military forces to protect heavy armoured vehicles, such as tanks, and in this usage is called spaced armour. The orbits of debris objects that are large enough to be contained in the US Space Surveillance Network catalogue can be predicted and compared with the Space Stations orbit to determine whether a close approach will occur. Assuming that both orbits can be determined with sufficient accuracy, then a predicted close approach, or conjunction, distance can be translated into a specific on-orbit collision risk. If this risk exceeds a predetermined ISS threshold level, as set under the flight rules, then the Station performs a collision avoidance manoeuvre. By the end of 2020, the Station had performed more than 26 of these manoeuvres, some by using the engines of ESAs Automated Transfer Vehicle, when one happened to be docked to Station in 2008 and 2011."
+  },
+  {
+    "chunk_id": "b6c3316d9fd4755d",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 10,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "d level, as set under the flight rules, then the Station performs a collision avoidance manoeuvre. By the end of 2020, the Station had performed more than 26 of these manoeuvres, some by using the engines of ESAs Automated Transfer Vehicle, when one happened to be docked to Station in 2008 and 2011. Q11: How do robotic spacecraft protect themselves against space debris? The most probable impacts are due to small space debris objects. One can efficiently increase the protection of an uncrewed, robotic spacecraft by moving sensitive equipment away from the most probable impact direction, and/or by covering sensitive parts of the spacecraft with protective fabric layers (the 'bullet-proof vest' approach). Such measures can significantly increase the survivability of a spacecraft against debris up to 1 mm in size. Furthermore, like the ISS, satellites can be commanded to conduct collision avoidance manoeuvres against known objects in the catalogue. At ESA, if a missions designated risk threshold is exceeded, the Space Debris Office informs the mission control teams and supports the definition and planning of an avoidance manoeuvre. The debris experts advise on optimal manoeuvre strategies and screen orbit files covering potential manoeuvres to confirm that the proposed manoeuvre will deliver the desired risk reduction, as well as ensuring that risks of other conjunctions remain at acceptable levels. As of 2021, each of ESAs Earth-orbiting satellites is conducting, on average, two collision avoidance manoeuvres per year. Q12: What measures are already being taken to avoid space debris and which ones need to be taken in the future? Spacecraft operators are currently focusing their efforts on controlling the space debris environment."
+  },
+  {
+    "chunk_id": "6a09b67b34363110",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 11,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "ng satellites is conducting, on average, two collision avoidance manoeuvres per year. Q12: What measures are already being taken to avoid space debris and which ones need to be taken in the future? Spacecraft operators are currently focusing their efforts on controlling the space debris environment. The ultimate goal is to prevent a run-away cascading collision process from setting in over the next few decades. Initial measures aim at reducing the generation of hazardous debris by avoiding on-orbit explosions or collisions with operational spacecraft, and by removing spacecraft from densely populated altitude regions at the end of their mission. These measures can stabilise the environment in the short term, but need to be applied by all spacefaring organisations -- government agencies and commercial operators alike -- immediately. Management of end-of-life for satellites is taken very seriously at ESA. Through the Agencys CleanSpace initiative, space debris mitigation technologies are already being developed to fly onboard future satellites. These include technologies that will: Avoid explosions in space, so, to effect passivation Ensure more complete burn up during re-entry, thereby reducing ground casualty risks Ensure controlled re-entry, so deorbit systems such as deorbiting rocket motors In the long term, at least some of the existing on-orbit mass, which fuels the collisional cascading process, must be removed. This can be most efficiently done by the active removal of old spacecraft and rocket stages, in which most of the mass is concentrated. This means designing, developing and flying a new class of missions."
+  },
+  {
+    "chunk_id": "8a93acdd082d4c1c",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 12,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "of the existing on-orbit mass, which fuels the collisional cascading process, must be removed. This can be most efficiently done by the active removal of old spacecraft and rocket stages, in which most of the mass is concentrated. This means designing, developing and flying a new class of missions. In one scenario, such a mission would launch into orbit, chase and then rendezvous with a dead satellite or rocket stage, latch on to it, then fire its engines to conduct a controlled reentry, ensuring that both the chaser and the derelict safely burn up in the atmosphere. Regardless, long-term debris environment projections indicate that removal of existing on-orbit mass is a required, mandatory and unavoidable step in maintaining the space debris environment at a low enough level to allow future spaceflight. Q13: Which international agreements cover space debris mitigation? There is an international consensus on the necessary space-debris mitigation measures. The most prominent international body where such measures are discussed and elaborated is the Inter-Agency Space Debris Coordination Committee (IADC)."
+  },
+  {
+    "chunk_id": "072068247053a796",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 13,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "Which international agreements cover space debris mitigation? There is an international consensus on the necessary space-debris mitigation measures. The most prominent international body where such measures are discussed and elaborated is the Inter-Agency Space Debris Coordination Committee (IADC). In addition to ESA, IADC membership comprises: Italy - ASI (Agenzia Spaziale Italiana) France - CNES (Centre National d'Etudes Spatiales) China - CNSA (China National Space Administration) Canada - CSA (Canadian Space Agency) Germany - DLR (German Aerospace Center) India - ISRO (Indian Space Research Organisation) Japan - JAXA (Japan Aerospace Exploration Agency) USA - NASA (National Aeronautics and Space Administration) Russia - ROSCOSMOS (Russian Federal Space Agency) Ukraine - SSAU (State Space Agency of Ukraine) United Kingdom UK Space Agency In 2002 (with updates in 2007 and 2020), IADC produced a set of mitigation guidelines, which also served as input to a set of seven Space Debris Mitigation Guidelines adopted by the United Nations Committee on the Peaceful Uses of Outer Space (UNCOPUOS). The required steps are: Limit debris release during normal operations Minimise the potential for break-ups during operational phases Limit the probability of accidental collisions Avoid intentional destruction and other harmful activities Minimise the potential for post-mission break-ups resulting from stored energy, e.g."
+  },
+  {
+    "chunk_id": "ce1cae07ebc2e9d2",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 14,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "Limit debris release during normal operations Minimise the potential for break-ups during operational phases Limit the probability of accidental collisions Avoid intentional destruction and other harmful activities Minimise the potential for post-mission break-ups resulting from stored energy, e.g. from the explosion of fuel tanks or batteries Limit the long-term presence of spacecraft and launch vehicle orbital stages in the low-Earth orbit region after the end of their missions Limit the long-term interference of spacecraft and launch vehicle orbital stages with the geosynchronous region after the end of their missions For example, one strategy that is fully compliant with the IADC guidelines would be to preserve enough fuel on board a satellite to perform a deorbiting manoeuvre at the end of the mission and to passivate on-board systems. So long as the manoeuvre brought the satellite to a sufficiently low orbit that it would decay and re-enter the atmosphere due to air drag within 25 years, the guidelines would be fully respected. While this technique may be straightforward, in fact it implies additional cost and complexity, which can vary according to the risk of casualties on ground. The space debris mitigation measures elaborated by the IADC have been presented to the UNCOPUOS Scientific & Technical Subcommittee (STSC), where they served as a baseline for the UN Space Debris Mitigation Guidelines. In 2007, these guidelines were approved by the 63 STSC member nations as voluntary high-level mitigation measures."
+  },
+  {
+    "chunk_id": "9ecb0a704a25f1d8",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 15,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "res elaborated by the IADC have been presented to the UNCOPUOS Scientific & Technical Subcommittee (STSC), where they served as a baseline for the UN Space Debris Mitigation Guidelines. In 2007, these guidelines were approved by the 63 STSC member nations as voluntary high-level mitigation measures. The guidelines have since found their way into engineering standards promulgated by the International Organization for Standardization (ISO) and, in Europe, by European Cooperation for Space Standardization (ECSS), that guide the design of space missions today. Moreover, several countries have adopted those recommendations, guidelines and standards via national laws, making space debris mitigation mandatory. At ESA, the ISO 24113 (Space Systems - Space Debris Mitigation Requirements) standard was adopted in 2014 through a tailoring process via the ECSS, and replaced the requirements on space debris mitigation for Agency projects that have been applicable since 1 April 2008. This means that space debris mitigation requirements became applicable to any new mission that ESA designed. What could be the next steps? The agreed-upon space-debris mitigation measures must be followed by space-debris environment remediation measures. Such measures are presently being discussed at the International Academy of Astronautics (IAA) and the UNs Long-term Sustainability of Outer Space Activities Working Group. Following several years of international cooperation, UNCOPUOS adopted in June 2019 a set of 21 guidelines that address the long-term sustainability of space activities. These guidelines comprise internationally recognised and accepted measures to sustain the space environment for safe spaceflight operations."
+  },
+  {
+    "chunk_id": "191ced5280b8ba3e",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 16,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "several years of international cooperation, UNCOPUOS adopted in June 2019 a set of 21 guidelines that address the long-term sustainability of space activities. These guidelines comprise internationally recognised and accepted measures to sustain the space environment for safe spaceflight operations. An additional approach is to define a metric that quantifies the impact of a mission on other spacecraft operators and on the environment in general, by considering parameters such as the spacecraft size, the operational orbits and the adopted mitigation measures. ESA has been working on the development of such concepts in recent years and is proceeding with their implementation via its Space Safety Programme. This approach is also included into ESAs contribution to the new Space Sustainability Rating, currently in development together with academic and industrial partners following an initiative by the World Economic Forum. Q14: How does ESA plan to remove space debris from orbit? It is agreed today that the number of objects in low-Earth orbit (LEO) can only be controlled by the active removal of selected objects, meaning five to ten large objects -- such as complete defunct satellites -- per year. As this is a global task, active removal is a challenge that should be undertaken by joint efforts and ESA, as a space technology and operations agency, has identified the development of active removal technologies in partnership with other actors as a strategic goal. Through its Active Debris Removal In-Orbit Servicing (ADRIOS) project, ESA is contributing actively to cleaning up space, while also demonstrating the technologies needed for debris removal."
+  },
+  {
+    "chunk_id": "1053e773a6ff998d",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 17,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "entified the development of active removal technologies in partnership with other actors as a strategic goal. Through its Active Debris Removal In-Orbit Servicing (ADRIOS) project, ESA is contributing actively to cleaning up space, while also demonstrating the technologies needed for debris removal. This includes the development of essential guidance, navigation and control (GNC) technologies as well as rendezvous and capture methods. The results of these developments will be applied to the planned ClearSpace-1 mission, which will be the worlds first mission to remove an item of debris from orbit. Clearspace-1 will fly in 2025 and will aim to remove the upper portion of a Vega Secondary Payload Adapter (Vespa). This was left in an approximately 801 km by 664 km-altitude gradual disposal orbit, complying with space debris mitigation guidelines, following the second flight of the then-new Vega launcher back in 2013. The ClearSpace-1 mission is being procured by ESA as a service contract with a start-up-led commercial team with the aim of stimulating a new market for in-orbit servicing and space debris removal. ESA is also actively working in designing technologies that will ease the removal of future debris. These Design for Removal technologies will be added to future satellites. These will include for example 2D and 3D graphic markers, handles to enable capturing and passive radio-frequency identifiers (to know which side of the satellite a chaser is approaching). These technologies will not only help remove the satellite in case of failure, they will support its maintenance, repair and refuelling, all of which will prolong the life of the satellite."
+  },
+  {
+    "chunk_id": "d9cb9bbd4f9c2cd8",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 18,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "pturing and passive radio-frequency identifiers (to know which side of the satellite a chaser is approaching). These technologies will not only help remove the satellite in case of failure, they will support its maintenance, repair and refuelling, all of which will prolong the life of the satellite. Q15: How many objects re-enter each year, and is this dangerous? Only a few large objects fall out of orbit and re-enter the atmosphere every year. In total, about 75% of the larger objects ever launched have already done so. Objects of moderate size re-enter about once per week, while small-size tracked space debris objects re-enter almost daily. In general, most objects burn up entirely in the atmosphere during the re-entry. Parts of larger objects, or components that are made of material with a high melting point, may survive to reach the ground or ocean surface. As these are rare events, and as about 75% of the Earths surface is covered by water while large portions of land area are uninhibited, the risk for any single individual is several orders of magnitude smaller than commonly accepted risks, such as those encountered when driving a car, taken in day-to-day life. As large constellations of smaller satellites are now being deployed, and as the overall number of objects placed into orbit is growing rapidly, the number of re-entering objects is also expected to grow during the next few years. Q16: How is ESA now approaching the debris situation? Its not just a scientific problem? Briefly Today, Space debris is a topic of global concern. Debris threatens our future in space and everything that relies on it such as telecommunication services, weather forecasting, Earth monitoring and personal navigation services like Galileo and GPS."
+  },
+  {
+    "chunk_id": "f6657b2ba1a622dd",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 19,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "tuation? Its not just a scientific problem? Briefly Today, Space debris is a topic of global concern. Debris threatens our future in space and everything that relies on it such as telecommunication services, weather forecasting, Earth monitoring and personal navigation services like Galileo and GPS. Although space may seem vast, the orbits around Earth are like the oceans, forests, land and food on Earth a limited natural resource. We must use them responsibly, and protect them for future generations. In more detail Space debris is a topic of global concern: Debris threatens our future in space and everything that relies on it. This is an issue for the entire planet, as all of us rely on services and data delivered via space, and no country can solve this alone. Space debris is also a major project driver. The management of the end of life of future satellites has to be considered right at the very start of the design of any mission. New technologies that will ease the implementation of effective end-of-life management will need to be developed and made available to mission designers, such as demisable components, controlled re-entry devices and passivation devices. Furthermore, post-mission disposal manoeuvres must be proven to be at least 90% successful. Orbits are a limited natural resource: Orbits must be considered and cared for in the same way as the limited natural resources on Earth such as forests, fresh water and land. Space debris threatens the economically vital orbits in which satellites fly, potentially making them unusable in future. This would be a catastrophic disaster for all modern society and all people, everywhere. Long-term sustainability: Space is fundamental to our daily lives, and we need to secure it for future generations."
+  },
+  {
+    "chunk_id": "1a616d8841079775",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 20,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "economically vital orbits in which satellites fly, potentially making them unusable in future. This would be a catastrophic disaster for all modern society and all people, everywhere. Long-term sustainability: Space is fundamental to our daily lives, and we need to secure it for future generations. The UN COPUOS Guidelines on the Long Term Sustainability of Outer Space provide directions on how we can continue the peaceful use of space in a manner that is sustainable for future generations. Today, there is a pressing need for international collaboration: No one rules space, and individual space actors have the power to degrade vital orbits for everyone else. We stand on the cusp of a new era of space activities, with unprecedented numbers of satellites being launched into orbit. The time is now for all countries, space agencies, businesses and organisations to come together to tackle the debris problem. Sustainability on Earth depends on space: From space, we get a unique view of our planet and its delicate and complex ecosystems. To better understand the changing climate, deforestation, the melting ice caps and rising sea levels, we need to protect low-Earth orbit. Q17: How often do ESA missions have to perform debris avoidance manoeuvres? Today On average, ESA satellites in low-Earth orbit perform two collision avoidance manoeuvres per satellite per year. For the Sentinel satellites, it is more frequent, with around one manoeuvre every three months. Future: automated collision avoidance The average number of avoidance manoeuvres performed each year depends on the orbit in which a satellite flies."
+  },
+  {
+    "chunk_id": "4ea343cd46b3f096",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 21,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "collision avoidance manoeuvres per satellite per year. For the Sentinel satellites, it is more frequent, with around one manoeuvre every three months. Future: automated collision avoidance The average number of avoidance manoeuvres performed each year depends on the orbit in which a satellite flies. The Sentinel satellites, operated by ESA as part of the EUs Copernicus programme, operate in a region with high debris density, and such manoeuvres are conducted roughly every three monthsand around once a month, the predicted collision probability is high enough that the flight control team must be alerted. Each of these manoeuvres has a cost. The cost is not entirely measured by the fuel that must be used (thus shortening the overall life of the satellite), as the manoeuvres tend to be small, but it may result in the interruption of spacecraft operation for several hours, meaning an outage of data for the scientists working with the satellite and this hurts. In addition, this system of alerts requires a team of experts available 24 hours/day, year-round and this also has a cost and results in a not negligible effort for the team as the process of designing and implementing a manoeuvre still involves a series of labour-intensive processes and checks. In the past years, fragments from the two large breakup events in 2007 (Fengyun-1C) and 2009 (Cosmos/Iridium) have been involved in a significant fraction of the conjunctions with ESA-operated satellites. More recently, a new trend is emerging, with more conjunctions involving intact and sometimes operationalsatellites, as more and more satellites are launched into the commercially and scientifically valuable low-Earth Orbit."
+  },
+  {
+    "chunk_id": "5e014247451f7156",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 22,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "in a significant fraction of the conjunctions with ESA-operated satellites. More recently, a new trend is emerging, with more conjunctions involving intact and sometimes operationalsatellites, as more and more satellites are launched into the commercially and scientifically valuable low-Earth Orbit. How can spacecraft operators deal with this increase in traffic and the resulting need to perform avoidance manoeuvres? One way is to consider how the process can be made more automated. Several activities in this direction are being undertaken as part of ESAs Space Safety Programme, including, among others, the analysis of historical data for training machine learning models and the investigation of automated coordination mechanisms. Q18: What is ESA doing about the debris issue? Space debris is a classic tragedy of the commons dilemma and therefore should be tackled by global cooperation. It is also an issue that needs the development of solutions and technologies. At ESA, various programmes address this need, for example the Technology Development Element ( TDE ), the General Support Technology Programme ( GSTP ) and the Space Safety Programme . In total, ESAs Space Safety Programme was funded at 412 million at the 2019 Ministerial Council (aka Space19+) for the period 2020-2024 and 13 Member States are participating in the programmes elements addressing Space Debris and Cleanspace. These debris-related technology development initiatives are demonstrating a significant commitment and engagement by ESA Member States, industry, and academia to this programme."
+  },
+  {
+    "chunk_id": "b60d3663c66d9423",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 23,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "period 2020-2024 and 13 Member States are participating in the programmes elements addressing Space Debris and Cleanspace. These debris-related technology development initiatives are demonstrating a significant commitment and engagement by ESA Member States, industry, and academia to this programme. ESA is working toward the goals of: Ensuring Europes space infrastructure can efficiently mitigate the generation of space debris and their hazards by 2030 The safe operation of individual satellites and large constellations by developing and demonstrating an Automated Collision Avoidance System Developing a European industrial capacity to conduct on-orbit servicing by flying a first-of-its-kind active debris removal mission Encouraging sustainable spaceflight practices on the global stage, and to lead in developing clean and sustainable technologies, fuels and designs Q19: Which missions does ESA's space debris team support for real-time warnings and collision avoidance manoeuvres? ESAs Space Debris Office is responsible for debris alerting services for all ESA missions, as well as those of some partner and third-party missions. Q20: Is there reason to be hopeful? Yes! Many orbits are already well managed by the international spaceflight community due to their immense economic value. The Geostationary orbit at 35 000 km above Earths surface is home to many communication satellites operated by private companies. In the last five years, more than 80% of the satellites flying there have been disposed of according to international guidelines, which is very encouraging. This compares, however, with only 15-30% of the satellites at low-Earth orbit, all of which require active disposal as they will not re-enter and burn up naturally anytime soon after their mission ends."
+  },
+  {
+    "chunk_id": "c61e72945b8ffc00",
+    "document_id": "esa_debris_faq",
+    "chunk_number": 24,
+    "title": "ESA - Space Debris FAQ",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+    "topics": [
+      "space debris",
+      "tracking",
+      "collision",
+      "orbital environment"
+    ],
+    "text": "ing there have been disposed of according to international guidelines, which is very encouraging. This compares, however, with only 15-30% of the satellites at low-Earth orbit, all of which require active disposal as they will not re-enter and burn up naturally anytime soon after their mission ends. We need to apply the same effective thinking to all orbits. Many new technologies are being developed worldwide to reduce the creation of space debris, together with technologies that will demonstrate active debris removal. Among them is ESAs Clearspace-1 mission, which will be the first mission to remove an existing piece of space debris from orbit. In summary, international cooperation in space is often stronger than on Earth, and the 20-year-old International Space Station is an enduring example of this spirit. In space, all of us can come together to face common challenges, and it is through space exploration that humanity has developed some of the most astonishing innovations of recent decades. Space has the potential to inspire, motivate and push us to break down barriers. We have many reasons to believe we can work together to find solutions to the problem of space debris and achieve a better future for everyone. Like Thank you for liking You have already liked this page, you can only like it once! European Space Agency FAQ Contacts Terms and conditions Privacy notice Careers at ESA Subscribe"
+  },
+  {
+    "chunk_id": "c2d3681491302009",
+    "document_id": "esa_space_debris",
+    "chunk_number": 1,
+    "title": "ESA - About Space Debris",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+    "topics": [
+      "space debris",
+      "orbital environment",
+      "satellites",
+      "collision"
+    ],
+    "text": "ESA - About space debris ESA / Space Safety / Space Debris Satellites in orbit underpin our modern lives. They are used in many areas and disciplines, including space science, Earth observation, meteorology, climate research, telecommunication, navigation and human space exploration. They offer a unique perspective, a resource for collecting scientific data, commercial opportunities and various essential applications and services, which lead to unrivalled possibilities for research and exploitation. However, in the past decades, with increasing space activities, a new and unexpected hazard has started to emerge: space debris. 60 years of space activity In more than 60 years of space activities, more than 6050 launches have resulted in some 56450 tracked objects in orbit, of which about 28160 remain in space and are regularly tracked by the US Space Surveillance Network and maintained in their catalogue, which covers objects larger than about 5-10 cm in low-Earth orbit (LEO) and 30 cm to 1 m at geostationary (GEO) altitudes. Only a small fraction - about 4000 - are intact, operational satellites today. This large amount of space hardware has a total mass of more than 9300 tonnes. Objects in orbit include spent upper stages Debris objects in orbit include spent upper stages About 24% of the catalogued objects are satellites (less than a third of which are operational), and about 11% are spent upper stages and mission-related objects such as launch adapters and lens covers. More than 560 in-orbit fragmentation events have been recorded since 1961. Only 7 events were associated with collisions and the majority of the current events were explosions of spacecraft and upper stages."
+  },
+  {
+    "chunk_id": "a9c7f19787ec39ed",
+    "document_id": "esa_space_debris",
+    "chunk_number": 2,
+    "title": "ESA - About Space Debris",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+    "topics": [
+      "space debris",
+      "orbital environment",
+      "satellites",
+      "collision"
+    ],
+    "text": "are spent upper stages and mission-related objects such as launch adapters and lens covers. More than 560 in-orbit fragmentation events have been recorded since 1961. Only 7 events were associated with collisions and the majority of the current events were explosions of spacecraft and upper stages. It is however expected that in the future collisions will become the dominant source of space debris Explosions of satellites and rocket bodies Sources of space debris include explosions of rocket bodies These fragmentation events are assumed to have generated a population of objects larger than 1 cm numbering on the order of 900000. The sporadic flux from naturally occurring meteoroids may only prevail over that from human-made debris objects near sizes of 0.1-1 mm. The main cause of in orbit explosions is related to residual fuel that remains in tanks or fuel lines, or other remaining energy sources, that remain on board once a rocket stage or satellite has been discarded in Earth orbit. Over time, the harsh space environment can reduce the mechanical integrity of external and internal parts, leading to leaks and/or mixing of fuel components, which could trigger self-ignition. The resulting explosion can destroy the object and spread its mass across numerous fragments with a wide spectrum of masses and imparted velocities. Antisatellite test: 25% more debris Besides such accidental break-ups, satellite interceptions by surface-launched missiles have been a major contributor in the recent past. The Chinese FengYun-1C engagement in January 2007 alone increased the trackable space object population by 25%."
+  },
+  {
+    "chunk_id": "48f58b240d3482e2",
+    "document_id": "esa_space_debris",
+    "chunk_number": 3,
+    "title": "ESA - About Space Debris",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+    "topics": [
+      "space debris",
+      "orbital environment",
+      "satellites",
+      "collision"
+    ],
+    "text": "ed velocities. Antisatellite test: 25% more debris Besides such accidental break-ups, satellite interceptions by surface-launched missiles have been a major contributor in the recent past. The Chinese FengYun-1C engagement in January 2007 alone increased the trackable space object population by 25%. Other sources of debris fragments Sending commands to Swarm-B to conduct a debris avoidance manoeuvre The most important non-fragmentation debris source have been more than 2460 solid rocket-motor firings, which have released aluminium oxide (Al2O3) in the form of micrometre-sized dust and mm- to cm-sized slag particles. A second important source was the ejection of reactor cores from Buk reactors after the end of operation of Russian radar ocean reconnaissance satellites in the 1980s. In 16 such ejection events, numerous droplets of reactor coolant liquid (a low-melting sodium potassium alloy) were released into space. Another historic source was the release of thin copper wires as part of a radio communication experiment during the Midas missions in the 1960s. Finally, under the influence of extreme ultraviolet radiation, impinging atomic oxygen and impacting micro particles erode the surfaces of space objects. This leads to mass loss of surface coatings and to the detachment of paint flakes with sizes from micrometre to mm. Observations with ESA's 1 m-diameter telescope at Teide Observatory, Tenerife, Spain, have found a population of objects with extremely high area-to-mass ratios. The origin and nature of these objects is not yet fully understood. It is generally agreed now that these objects have been created in the GEO region, possibly from thermal covering material of disposed satellites."
+  },
+  {
+    "chunk_id": "f62838dc5ec68ed2",
+    "document_id": "esa_space_debris",
+    "chunk_number": 4,
+    "title": "ESA - About Space Debris",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+    "topics": [
+      "space debris",
+      "orbital environment",
+      "satellites",
+      "collision"
+    ],
+    "text": "e, Spain, have found a population of objects with extremely high area-to-mass ratios. The origin and nature of these objects is not yet fully understood. It is generally agreed now that these objects have been created in the GEO region, possibly from thermal covering material of disposed satellites. First-ever in-orbit collision The first-ever accidental in-orbit collision between two satellites occurred at 16:56 UTC, 10 February 2009, at 776 km altitude above Siberia. A privately owned American communication satellite, Iridium-33, and a Russian military satellite, Kosmos2251, collided at 11.7 km/s. Both were destroyed, and more than 2300 trackable fragments were generated, some of which have since reentered (that is, decayed and reentered the atmosphere, where they have burned up). Distribution of catalogued objects in space - global view Geostationary orbit Satellites launched into LEO are continuously exposed to aerodynamic forces from the tenuous upper reaches of Earth's atmosphere. Depending on the altitude, after a few weeks, years or even centuries, this resistance decelerates the satellite sufficiently so that it reenters the atmosphere. At higher altitudes, above 800 km, air drag becomes less effective and objects will generally remain in orbit for many decades. At any given altitude, the generation of debris through normal launch operations, breakups and other release events is counteracted by natural cleansing mechanisms, such as air drag and luni-solar gravitational attraction. The result of these balancing effects is an altitude and latitude-dependent concentration (spatial density) of space debris objects. Maximum debris concentrations can be noted at altitudes of 800-1000 km, and near 1400 km."
+  },
+  {
+    "chunk_id": "3ca0780bec06ee52",
+    "document_id": "esa_space_debris",
+    "chunk_number": 5,
+    "title": "ESA - About Space Debris",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+    "topics": [
+      "space debris",
+      "orbital environment",
+      "satellites",
+      "collision"
+    ],
+    "text": "eansing mechanisms, such as air drag and luni-solar gravitational attraction. The result of these balancing effects is an altitude and latitude-dependent concentration (spatial density) of space debris objects. Maximum debris concentrations can be noted at altitudes of 800-1000 km, and near 1400 km. Spatial densities in GEO and near the orbits of navigation satellite constellations are smaller by two to three orders of magnitude. Forecast if business as usual: debris growth With today's annual launch rates of around 110, and with future break-ups continuing to occur at average historic rates of 10 to 11 per year, the number of debris objects in space will steadily increase. ESA's active debris removal mission: e.Deorbit Access the video As a consequence of the rising debris object count, the probability for catastrophic collisions will also grow progressively; doubling the number of objects will increase the collision risk by approximately four times. As the debris population grows, more collisions will occur. In a 'business-as-usual' scenario, such collisions will start prevailing over the now-dominating explosions within a few decades from now. Ultimately, collision fragments will collide with collision fragments, until the entire population is reduced to subcritical sizes. This self-sustained process, which is particularly critical for the LEO region, is known as the 'Kessler syndrome'. It must be avoided by the timely application of mitigation and remediation measures on an international scale. Like Thank you for liking You have already liked this page, you can only like it once! European Space Agency FAQ Contacts Terms and conditions Privacy notice Careers at ESA Subscribe"
+  },
+  {
+    "chunk_id": "d899465236fcd120",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 1,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "ESA - Types of orbits ESA / Enabling & Support / Space Transportation In brief Our understanding of orbits , first established by Johannes Kepler in the 17th century, remains foundational even after 400 years. Today, Europe continues this legacy with a family of rockets launched from Europes Spaceport into a wide range of orbits around Earth, the Moon, the Sun and other planetary bodies. In-depth Mass affects orbiting bodies What is an orbit? An orbit is the curved path that an object in space (like a star, planet, moon, asteroid or spacecraft) follows around another object due to gravity. Gravity pulls objects with mass towards each other. If this attraction brings them together with enough momentum, they can start to orbit each other. Objects of similar mass orbit each other with neither object at the centre, while small objects orbit around larger objects. In our Solar System, the Moon orbits Earth and the Earth-Moon system orbits the Sun, but that does not mean the larger object remains completely still. Because of gravity, Earth is pulled slightly from its centre by the Moon (which is why tides form in our oceans), and our Sun is pulled slightly from its centre by Earth and the other planets. The early formation of our Solar System about 4.6 billion years ago began with an enormous swirling cloud of dust and gas, held together by gravity. Its core became so dense and massive that it collapsed under its own gravity, igniting to become our Sun. Around this early star, the remaining material from the interstellar cloud continued to spin around the Sun with great momentum, gradually flattening due to centrifugal forces into a disc called the solar nebula."
+  },
+  {
+    "chunk_id": "4b2b964dda25b967",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 2,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "dense and massive that it collapsed under its own gravity, igniting to become our Sun. Around this early star, the remaining material from the interstellar cloud continued to spin around the Sun with great momentum, gradually flattening due to centrifugal forces into a disc called the solar nebula. The huge Sun at the clouds core kept these bits of gas, dust and ice in orbit around it, shaping it into a kind of ring around the Sun. Eventually, these particles started to settle and clump together (or coalesce), growing ever larger like rolling snowballs until they formed what we now see as planets, comets and asteroids, and moons although not our own . That the planets all formed together from this cloud of rotating dust explains why they all orbit the Sun in the same direction, in roughly the same plane. Reaching orbit When rockets launch our satellites, they put them into orbit in space. There, gravity keeps the satellite in its required orbit in the same way that gravity keeps the Moon in orbit around Earth. This happens in a way that is similar to throwing a ball out of the window of a tall tower to get the ball going, you need to first give it a push by throwing it, making the ball fall towards the ground on a curved path. Whilst it is your throw that gives the ball its initial speed, it is gravity alone that keeps the ball moving towards the ground once you let go. Similarly, a satellite is put into orbit by being placed a few hundred or even thousands of kilometres above Earths surface, where it is no longer in danger of being decelerated by the denser parts of Earths atmosphere. From here, as if at the top of averytall tower, it is then given a pushby the rockets engines to make it begin its orbit."
+  },
+  {
+    "chunk_id": "e0f25480801032ab",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 3,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "by being placed a few hundred or even thousands of kilometres above Earths surface, where it is no longer in danger of being decelerated by the denser parts of Earths atmosphere. From here, as if at the top of averytall tower, it is then given a pushby the rockets engines to make it begin its orbit. As shown in the figure, throwing something off the tower will make it fall on a curved path toward the ground but a really powerful throw will impart so much speed to the object that the ground starts to curve away before your object reaches it. Your object will fall towards Earth indefinitely, causing it to circle the planet repeatedly. Congratulations! You have reached orbit. In space, there is no air and therefore no air friction, so gravity lets a satellite orbit around Earth with almost no further assistance. Putting satellites into orbit enables us to use technologies for telecommunication, navigation, weather forecasting, emergency response and astronomy observations. Artist's view of Europe's launcher family Launch to orbit The role of a launcher is, therefore, first to pass through the atmosphere with its cargo, and then to provide the horizontal velocity push necessary to get into orbit. Europes rockets operate from Europes Spaceport in French Guiana, and each mission delivers one or more satellites payloads into carefully designated orbits. The choice of which launch vehicle to use depends primarily on the mass of the payload, but also on how far from Earth it needs to go. A heavy payload or a high-altitude or interplanetary orbit requires more power to fight Earths gravity than a lighter payload and a lower altitude. Ariane 6is Europes most powerful rocket, capable of lifting one, two, or multiple satellites into their required orbits."
+  },
+  {
+    "chunk_id": "ea70ee62bf18080f",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 4,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "far from Earth it needs to go. A heavy payload or a high-altitude or interplanetary orbit requires more power to fight Earths gravity than a lighter payload and a lower altitude. Ariane 6is Europes most powerful rocket, capable of lifting one, two, or multiple satellites into their required orbits. Depending on which orbit Ariane 6 is going to, it can launch approximately 21.5 tonnes into space that is 21 500 kg, about the mass of a grey whale. Vega-C is smaller than Ariane 6, capable of launching roughly 2.2 tonnes at a time, making it an ideal launch vehicle for many scientific and Earth observation missions. Both Ariane 6 and Vega-C can deploy multiple satellites at a time. Ariane 6 and Vega-C are Europes new generation of rockets, following on from Ariane 5 and Vega. They are more flexible, have greater payload capacity and will expand Europes launch capacity, able also to deliver payloads to several different orbits in a single flight like a bus making multiple stops. Types of orbit Upon launch, a satellite or spacecraft is usually placed in one of several specific orbits around Earth, or it may be sent on an interplanetary journey, meaning it no longer orbits Earth, but instead orbits the Sun, perhaps until it arrives at another final destination, like Mars, Jupiter, or even a comet . Many factors influence the choice of an optimal orbit for a space mission, all depending on the missions objectives."
+  },
+  {
+    "chunk_id": "2c89c824d64808e7",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 5,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "an interplanetary journey, meaning it no longer orbits Earth, but instead orbits the Sun, perhaps until it arrives at another final destination, like Mars, Jupiter, or even a comet . Many factors influence the choice of an optimal orbit for a space mission, all depending on the missions objectives. Geostationary orbit (GEO) Low Earth orbit (LEO) Polar orbit (PO) Sun-synchronous orbit (SSO) Medium Earth orbit (MEO) Highly eccentric orbit (HEO) Transfer orbits and geostationary transfer orbit (GTO) Lagrange points (L-points) Heliocentric orbit Geostationary orbit Geostationary orbit (GEO) Satellites in geostationary orbit (GEO) fly above Earths equator, moving from west to east, exactly matching Earths rotation: taking 23 hours 56 minutes and 4 seconds to complete one full orbit, i.e. the duration of a sidereal day. This makes GEO satellites appear stationary over one fixed spot. To keep pace with Earths spin, they travel at about 3 km per second at an altitude of 35 786 km, much farther than most satellites. GEO is ideal for satellites that need to stay fixed above a specific location, such as telecommunication satellites, allowing antennas on Earth to stay in a constant position, always pointing at the satellite. It is also valuable for weather satellites, enabling continuous monitoring specific regions to track evolving weather patterns over times and see how weather trends emerge. Satellites in GEO can cover a large portion of Earth; just three evenly spaced satellites can provide near-global coverage. Being far away allows these satellites a view of larger areas, similar to how you see more of a map standing a metre away from it compared to with your nose up close to it. To see all of Earth at once from GEO, far fewer satellites are needed than at lower altitudes."
+  },
+  {
+    "chunk_id": "bc6da6761b05bb71",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 6,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "an provide near-global coverage. Being far away allows these satellites a view of larger areas, similar to how you see more of a map standing a metre away from it compared to with your nose up close to it. To see all of Earth at once from GEO, far fewer satellites are needed than at lower altitudes. ESAs European Data Relay System (EDRS) programme consists of a constellation of GEO satellites that relay information and data between non-GEO satellites, spacecraft and ground stations that are otherwise unable to permanently transmit or receive data. This means Europe can always stay connected and online, even with satellites in lower orbits that have reduced visibility from the ground. Low Earth orbit Low Earth orbit (LEO) A low Earth orbit (LEO) is, as the name suggests, an orbit that is relatively close to Earths surface. LEO is considered to be under altitudes of 2000 km, this upper limit a consequence of the Van Allen belts above and the harsh environment they create. The lower limit for how low a satellite can fly is down to the impact of Earths atmosphere. Generally, satellites do not fly below 180 km for this reason low compared to most orbits, but still very far above Earths surface. By comparison, most commercial aeroplanes do not fly higher than approximately 12 km, so even the lowest LEO is more than ten times higher. Unlike satellites in GEO that orbit along Earths equator, LEO satellites can have their orbital planes tilted at various angles. LEOs close proximity to Earth is useful for several reasons. It is ideal for satellite imaging, as its closeness allows for higher resolution images. The International Space Station (ISS) also orbits here as the shorter distance makes it easier for astronauts to reach."
+  },
+  {
+    "chunk_id": "91c01cfb550fb243",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 7,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "anes tilted at various angles. LEOs close proximity to Earth is useful for several reasons. It is ideal for satellite imaging, as its closeness allows for higher resolution images. The International Space Station (ISS) also orbits here as the shorter distance makes it easier for astronauts to reach. Satellites in low-Earth orbit travel at approximately 7.8 km per second with respect to Earth, completing an orbit in about 90 minutes. This means the ISS circles Earth roughly 16 times a day. As such, communications satellites in LEO often work as part of a constellation, a networking of several of the same or similar satellites working together to provide continuous coverage in a net around Earth. The same can apply to observation or navigation constellations. Ariane 5 carried its heaviest 20-tonne payload, the Automated Transfer Vehicle (ATV) , five times to the ISS. In the future, Ariane 6 may take over this task and launch supplies to space stations in Earth or lunar orbit. Polar and Sun-synchronous orbit Polar orbit (PO) Polar orbits are a type of low Earth orbit, typically between 200 to 1000 km in altitude. Satellites in polar orbits usually travel around Earth from, roughly, one pole to the other, rather than from west to east. They do not need to pass exactly over the North and South Poles; a deviation of10 degrees is still classed as a polar orbit. Polar orbits are particularly useful for global Earth coverage, as satellites orbiting up and down Earths surface can see every inch of the planet over time as it also rotates below. Sun synchronous orbit (SSO) Sun-synchronous orbit (SSO) is a particular kind of polar orbit in which satellites are in sync with the Sun."
+  },
+  {
+    "chunk_id": "8f5d8985f266c4aa",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 8,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "ticularly useful for global Earth coverage, as satellites orbiting up and down Earths surface can see every inch of the planet over time as it also rotates below. Sun synchronous orbit (SSO) Sun-synchronous orbit (SSO) is a particular kind of polar orbit in which satellites are in sync with the Sun. Matching Earths rotation around the Sun, they always appear in the same position relative to our star. This means they pass over the same spot on Earth at the same local time every day for example passing over the city of Paris daily at noon. This consistency allows for the accurate monitoring of changes over days, weeks, months or even years, as images are more comparable in terms of light and shadows. Scientists use SSO and this ability to compare like-for-like images over time to investigate how weather patterns emerge, help predict extreme weather events, monitor emergencies like forest fires or flooding and to accumulate data on long-term problems like deforestation or rising sea levels. Often, satellites in SSO are synchronised so that they are in constant dawn or dusk, constantly riding a sunset or sunrise and ensuring as consistent as possible illumination/shadows. A satellite in a Sun-synchronous orbit usually flies at an altitude of between 600 to 800 km. At 800 km, it will travel at a speed of approximately 7.5 km per second. Medium Earth orbit (MEO) Medium Earth orbit (MEO) covers a wide range of altitudes anywhere between LEO usually over the top of the Van Allen belts and GEO. Like LEO, satellites in MEO do not need to follow specific paths around Earth and the orbit is used by a variety of satellites for many different purposes. MEO is very commonly used by navigation satellites, like the European Galileo system (pictured)."
+  },
+  {
+    "chunk_id": "fdf3f6a13a8c5d50",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 9,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "ly over the top of the Van Allen belts and GEO. Like LEO, satellites in MEO do not need to follow specific paths around Earth and the orbit is used by a variety of satellites for many different purposes. MEO is very commonly used by navigation satellites, like the European Galileo system (pictured). Galileo provides navigation services across the world, helping with everything from tracking large jumbo jets to giving directions on your smartphone. Galileo consists of a constellation of satellites that provide simultaneous coverage over large areas of the world. Once the satellite reaches the furthest point from Earth in Geostationary transfer orbit (green), it fires its engines in such a way that it enters into a circular GEO orbit (blue) Transfer orbits and Geostationary Transfer Orbit (GTO) Transfer orbits are a special kind of orbit used to get from one orbit to another. When satellites are launched from Earth by rockets like Ariane 6, they are not always placed directly into their final orbit. Instead, they are often put into an initial transfer orbit where, using energy from onboard motors, the satellite or spacecraft can move from one orbit to another. For example, to reach a high-altitude orbit like GEO, a satellite doesnt need the launch vehicle to take it all the way. Instead, the satellite is placed in a special type of transfer orbit called a geostationary transfer orbit (GTO), which serves as a shortcut. Orbits have different shapes or eccentricities a measure of how circular (round) or elliptical (squashed) they are. In a perfectly round orbit, a satellite is always the same distance from Earths surface, but in a highly eccentric orbit, the satellite moves closer and farther from Earth as it travels."
+  },
+  {
+    "chunk_id": "5af6468b4f3e1a43",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 10,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "bits have different shapes or eccentricities a measure of how circular (round) or elliptical (squashed) they are. In a perfectly round orbit, a satellite is always the same distance from Earths surface, but in a highly eccentric orbit, the satellite moves closer and farther from Earth as it travels. In transfer orbits, satellites or spacecraft use their engines to go from an orbit of one eccentricity to another, which puts it on track for an orbit at higher or lower altitudes, but also to modify their orbital inclination and semi-major axis. After liftoff, a launch vehicle makes its way to space following a path like that shown in yellow (pictured). The rocket releases its payload at a target point, releasing it into an elliptical orbit, (in blue), taking the payload far from Earth before it would then get close again. The point farthest from Earth in an elliptical orbit is the apogee, and the point closest is the perigee. To get to GEO, when a satellite reaches its apogee of 35 786 km, (the GEO altitude) it fires its engines in such a way that it circularises its orbit, entering into a circular geostationary orbit and staying there, shown by the red line in the diagram. When a satellite is launched from a non-equatorial site, e.g. from Kourou, 500km north of the equator, the transfer orbit is inclined. The manoeuvre at apogee is also used to cancel out this inclination and bring the satellite to the equator. When the launch site is far from the equator, e.g. from Cape Canaveral, fuel can be saved when the apogee is higher, sometimes much higher, than the GEO altitude. In this case, we refer to a Supersynchronous transfer orbit, which is much more eccentric than GTO. Highly eccentric orbit (HEO) Orbits, like people, can be highly eccentric."
+  },
+  {
+    "chunk_id": "df63f4a97440efcd",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 11,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "equator, e.g. from Cape Canaveral, fuel can be saved when the apogee is higher, sometimes much higher, than the GEO altitude. In this case, we refer to a Supersynchronous transfer orbit, which is much more eccentric than GTO. Highly eccentric orbit (HEO) Orbits, like people, can be highly eccentric. As a spacecraft flies on a highly eccentric orbit, its distance from Earth, the Sun, or whichever body it is locked around varies greatly, coming close at vast speeds and then whizzing away far into space and slowing down before returning again. The eccentricity of orbits is denoted by numbers from zero to one, with perfectly circular orbits rating zero while a highly eccentric orbit is closer to (but always less than) one. A score of one would mean an orbit is parabolic', i.e. the shape of a parabola think of a symmetrical U shaped curve reaching just enough energy to escape the gravitational pull of the central object, never to return. Above one and an orbit is 'hyperbolic, with more than enough speed to escape the Earth (or other central gravitational body). Comets have highly eccentric orbits around the Sun as they formed at the far edges of the Solar System. Their orbital eccentricity can get very close to one (Halleys Comet has an eccentricity of 0.967), and they can take many millions of years to complete a full orbit around the Sun. Made of ice and dust, they spend the majority of their lives in the cold of the outer Solar System, and sometimes dont survive their fleeting close encounters with the Sun. HEO is very useful for missions that need to observe Earth or look into space from high altitudes for extended periods. ESAs upcoming SMILE mission, for example, will fly in HEO to study the interactions between the solar wind and Earths magnetosphere."
+  },
+  {
+    "chunk_id": "aa4419f25c7f6346",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 12,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "e their fleeting close encounters with the Sun. HEO is very useful for missions that need to observe Earth or look into space from high altitudes for extended periods. ESAs upcoming SMILE mission, for example, will fly in HEO to study the interactions between the solar wind and Earths magnetosphere. The spacecraft's orbit will allow it to spend long periods far from Earth to observe large-scale processes. HEO can also be used as a transfer orbit for an interplanetary mission, or to reach GEO when the launch site is far from the equator, e.g. Cape Canaveral or Baikonur. The ESA telescope Gaia orbits around an L-point. The point is exactly behind Earth, so at this point Gaia would be in Earth's shadow and unable to receive the sunlight needed to power its solar panels. Every few years, Gaia uses its motors to adjust its position in order to maintain this orbit. Lagrange points There are regions in space where the gravitational influence of two large masses, like the Sun and Earth, or Earth and Moon, balance out, causing a whole range of orbits to appear the so-called Lagrange, or libration points. Some spacecraft need to avoid being too close to Earth, because Earths light, radiation and shadow can interfere with their mission even at more distant orbits such as GEO. This makes Lagrange points particularly useful for missions that rely on incredible precision and stability, such as deep space astronomical missions like Gaia and Euclid. For space-based observatories and telescopes whose mission is to photograph deep, dark space, being next to Earth is hugely detrimental because as Earth naturally emits infrared radiation (thermal emission) and reflects visible sunlightthat prevents the telescope detecting faint light from, for example, distant galaxies."
+  },
+  {
+    "chunk_id": "0380f723adcd18c3",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 13,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "atories and telescopes whose mission is to photograph deep, dark space, being next to Earth is hugely detrimental because as Earth naturally emits infrared radiation (thermal emission) and reflects visible sunlightthat prevents the telescope detecting faint light from, for example, distant galaxies. Photographing dark space with a telescope next to our glowing Earth would be as hopeless as trying to take pictures of stars from Earth in broad daylight. Lagrange points, or L-points, allow for orbits that are much, much farther away (approximately 1.5 million kilometres) and do not orbit Earth directly. These are specific points in space where the gravitational fields of Earth and the Sun combine in such a way that spacecraft can orbit the points themselves, remaining stable with little effort and thus anchoredrelative to Earth. If a spacecraft was launched to other random points in space far from Earth, they would naturally fall into an orbit around the Sun or Earth, taking them far from Earth and making communication extremely difficult. Instead, spacecraft launched to these special L-points remain roughly fixed in a frame rotating with the Earth, close-enough to Earth and with minimal effort without going into a different orbit. The most commonly used Lagrange points are L1 and L2, located about 1.5 million kilometres from Earth roughly four times the distance to the Moon and about 1% of the distance from Earth to the Sun. When a spacecraft reaches L1 or L2, it typically follows is an oval-shaped path around the fictitious libration point called a Halo orbit, or, a smaller, Lissajous orbit that looks like a spirograph drawing. Several of ESAs observational and science missions were, are, or will enter into orbit about the Lagrange points."
+  },
+  {
+    "chunk_id": "595609d0dc25c432",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 14,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "ches L1 or L2, it typically follows is an oval-shaped path around the fictitious libration point called a Halo orbit, or, a smaller, Lissajous orbit that looks like a spirograph drawing. Several of ESAs observational and science missions were, are, or will enter into orbit about the Lagrange points. The SOHO solar telescope is now orbiting the first Sun-Earth Lagrangian point, where LISA Pathfinder also flew. Herschel, Planck, Gaia, Euclid, Plato, Ariel, JWST and the Athena telescope have been or will be orbiting the Sun-Earth point L2. Heliocentric orbit Some missions dont orbit Earth, but instead join it and the other planets of the Solar System in orbiting the Sun in heliocentric orbit. This kind of orbit is useful of course for missions studying our star, but also for those studying other planets, moons, comets and asteroids or deep space, as it allows spacecraft to travel vast distances without being tied to Earth's gravity or position in the Solar System. To enter into a heliocentric orbit, a spacecraft must first escape Earths gravity by reaching a speed called escape velocityin other words they follow a hyperbolic trajectory. Once this speed is achieved, the spacecraft can move beyond Earth's influence and become captured instead by the Suns gravity. This transition is typically done using powerful launch vehicles, followed by trajectory adjustments using the spacecrafts own engines. ESAs Solar Orbiter mission is in a heliocentric orbit to study the Sun up close. From a distance of 42 million km, more than three times closer than the Earth, and at an inclination 33 degrees above the solar equator, Solar Orbiter even has a view of the Suns little-seen poles."
+  },
+  {
+    "chunk_id": "ee580ad17f6dcf96",
+    "document_id": "esa_types_of_orbits",
+    "chunk_number": 15,
+    "title": "ESA - Types of Orbits",
+    "organization": "ESA",
+    "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+    "topics": [
+      "orbit",
+      "orbits",
+      "LEO",
+      "MEO",
+      "GEO",
+      "polar orbit",
+      "geostationary orbit",
+      "orbital mechanics"
+    ],
+    "text": "cecrafts own engines. ESAs Solar Orbiter mission is in a heliocentric orbit to study the Sun up close. From a distance of 42 million km, more than three times closer than the Earth, and at an inclination 33 degrees above the solar equator, Solar Orbiter even has a view of the Suns little-seen poles. Rosetta also followed a heliocentric path to rendezvous with and study the comet 67P/Churyumov-Gerasimenko, and other future ESA missions, like Comet Interceptor, will also make use of heliocentric orbits to explore distant comets and other celestial bodies in our Solar System. When flying around the Sun, and far from any planets, a spacecraft follows an orbit as if it were orbiting Earth almost always an ellipses with varying eccentricities. From here, its path can then planned so that it encounters planets and perform gravity assist manoeuvres, which allow us to modify the spacecraft's trajectory for free. When a spacecraft has enough initial velocity, it leaves Earth to orbit the Sun. To also escape the Sun and so the Solar System, only two missions to date have had enough velocity: Voyager 1 and 2. Like Thank you for liking You have already liked this page, you can only like it once! European Space Agency FAQ Contacts Terms and conditions Privacy notice Careers at ESA Subscribe"
+  },
+  {
+    "chunk_id": "f67dbe90daef3695",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 1,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "Space Debris: Understanding the Risks to NASA Spacecraft - NASA Suggested Searches Climate Change Artemis Expedition 64 Mars perseverance SpaceX Crew-2 International Space Station View All Topics A-Z Home Missions Humans in Space Earth The Solar System The Universe Science Aeronautics Technology Learning Resources About NASA Espaol News & Events Multimedia NASA+ Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 4 min read NASAs Dragonfly Gets Wired Up While Titan Landing Area Is Named article 7 days ago Back Missions Search All NASA Missions A to Z List of Missions Upcoming Launches and Landings Spaceships and Rockets Communicating with Missions Artemis James Webb Space Telescope Hubble Space Telescope International Space Station OSIRIS-Rex Humans in Space Why Go to Space Astronauts Commercial Space Destinations Spaceships and Rockets Living in Space Earth Explore Earth Science Climate Change Earth, Our Planet Earth Science in Action Earth Multimedia Earth Data Earth Science Researchers The Solar System The Sun Mercury Venus Earth The Moon Mars Jupiter Saturn Uranus Neptune Pluto & Dwarf Planets Asteroids, Comets & Meteors The Kuiper Belt The Oort Cloud Skywatching The Universe Exoplanets The Search for Life in the Universe Stars Galaxies Black Holes The Big Bang Dark Energy Dark Matter Science Earth Science Planetary Science Astrophysics & Space Science The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviatio"
+  },
+  {
+    "chunk_id": "d9f850244669852b",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 2,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "trophysics & Space Science The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviation Tech Drones & You Technology Technology Transfer & Spinoffs Space Travel Living in Space Lunar Surface Technology Manufacturing and Materials Robotics Science Instruments Computing Learning Resources For Kids and Students For Educators For Colleges and Universities For Professionals Science for Everyone Requests for Exhibits, Artifacts, Speakers & Flyovers STEM Engagement at NASA About NASA NASA's Impacts Centers and Facilities Directorates Organizations People of NASA Careers Internships Our History Doing Business with NASA Get Involved Contact NASA en Espaol Ciencia Aeronutica Ciencias Terrestres Sistema Solar Universo News & Events News Releases Recently Published Video Series on NASA+ Podcasts & Audio Blogs Newsletters Social Media Media Resources Events Upcoming Launches & Landings Virtual Guest Program Multimedia NASA+ Images NASA Live NASA Apps Podcasts Image of the Day e-Books 3D Resources Interactives STEM Multimedia NASA Brand & Usage Guidelines Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 5 min read NASAs X-59 Aircraft Builds Momentum Through 25th Flight article 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min rea"
+  },
+  {
+    "chunk_id": "4eb569ec66842dbc",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 3,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "h 25th Flight article 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 4 min read The Otherworldly Geology of Vasquez Rocks article 1 day ago 3 min read A Bright Spot at Mount Michael article 2 days ago Highlights 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 5 min read NASA Rocket Takes First Multi-Point Look Inside Radio-Disrupting Clouds article 7 days ago Featured 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 1 min read 9 Things to Know About NASAs Nancy Grace Roman Space Telescope article 2 weeks ago 5 min read NASAs Pandora Mission Begins Study of Exoplanets, Host Stars article 2 weeks ago Highlights 1 min read Joint Observations with Swift removed from IXPE GO Cycle 4 article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago Highlights 3 min read NASA Johnson Pilots Chase Moons Shadow for Eclipse Science article 2 weeks ago 4 min read NASA Selects University Teams to Help Advance Aviation Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Ima"
+  },
+  {
+    "chunk_id": "4981b9cf0a9231a1",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 4,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "Help Advance Aviation Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Images article 22 hours ago 2 min read Ribbon-Cutting Event for NASA Deep Space Networks Deep Space Station 23 article 1 week ago Featured 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 4 min read NASA Revamps Challenge Linking Community College Studies to Aerospace Careers article 7 days ago Featured 5 min read NASAs Dark Universe-Seeking Nancy Grace Roman Space Telescope Launches article 1 week ago 5 min read President Honors NASAs Artemis II Crew with Highest US Space Award article 2 weeks ago 3 min read President Trump Signs Executive Order to Create US Space Academy article 2 weeks ago Highlights 11 min read La NASA anuncia la cobertura de la misin lunar Artemis II article 6 months ago 15 min read Agenda diaria de la misin a la Luna de ArtemisII de la NASA article 6 months ago 6 min read La NASA refuerza Artemis: aade una misin y perfecciona su arquitectura general article 6 months ago 6 min read Space Debris: Understanding the Risks to NASA Spacecraft Daniel Hoffpauir Jul 11, 2016 Article This article is from the 2015 NESC Technical Update. Getting to space requires speed. A lot of speed. So, for NASA to send an object, like a satellite, into orbit, that object must reach velocities of several kilometers per second. And if it hits anything while in orbit, like debris, the damage can be substantial if not catastrophic."
+  },
+  {
+    "chunk_id": "8a615d343cbb94f6",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 5,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "Technical Update. Getting to space requires speed. A lot of speed. So, for NASA to send an object, like a satellite, into orbit, that object must reach velocities of several kilometers per second. And if it hits anything while in orbit, like debris, the damage can be substantial if not catastrophic. This is why NASA has invested much into investigating the potential risk of damage to its spaceflight programs from orbital debristhose manmade objects in Earth orbit that no longer serve a useful purpose, from a derelict satellite to a flake of paint. Natural objects like meteoroids are also a threat, traveling even faster than orbital debris. Typically comprising particles originating from comets or asteroids, the vast majority of them are very small micrometeoroids. Micrometeoroids and orbital debris (MMOD) is the number one risk for NASAs human spaceflight programs. Many orbital debris objectsapproximately 20,000are large enough to be tracked and catalogued by the U.S. Space Surveillance Network and can be avoided by spacecraft maneuvering. But it is the unseen population of MMOD that poses the biggest risk to spacecraft: the orbital debris large enough to cause damage, but too small to track, and the micrometeoroids, which cannot be tracked regardless of their size. it is the unseen population of MMOD that poses the biggest risk to spacecraft: the orbital debris large enough to cause damage, but too small to track To help mitigate the risk of MMOD, NASA uses a variety of computer models and applications to perform MMOD risk assessments. The primary MMOD risk assessment tool is a computer application called Bumper. Bumper helps NASA determine the probability of a spacecraft being damaged by MMOD during its operational lifetime."
+  },
+  {
+    "chunk_id": "e2418f9acb626989",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 6,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "he risk of MMOD, NASA uses a variety of computer models and applications to perform MMOD risk assessments. The primary MMOD risk assessment tool is a computer application called Bumper. Bumper helps NASA determine the probability of a spacecraft being damaged by MMOD during its operational lifetime. Working with NASAs primary MMOD organizationsthe Orbital Debris Program Office, the Meteoroid Environment Office, and the Hypervelocity Impact Technology (HVIT) Officethe NESC has performed several assessments in pursuit of improving the understanding of MMOD risk, refining the risk assessment processes, and reducing the actual risk. For example, in 2014, an NESC team compared NASAs newest and most advanced orbital debris model, ORDEM 3.0, to other orbital debris models to analyze how it models the orbital debris population. ORDEM 3.0, key to predicting the orbital debris environment, uses the largest database of MMOD impact data taken from analyzing damage sites on the Space Shuttle after each return to Earth. As a result, there is a relatively high level of confidence in the results the model gives for the orbital altitude where the Shuttle flew. However, no sources of impact data are available for higher altitudes, so the model has to make certain assumptions on the sources of the debris, which results in more uncertainty in orbital debris predictions. The NESC review represented the most extensive independent review of ORDEM 3.0 since its release. The team concluded that ORDEM 3.0 is the best model available and appropriate for use in NASAs MMOD risk assessments, while still making several recommendations that may reduce the uncertainties and improve the model. MMOD environment model uncertainty affects the fidelity of predictions in MMOD risk assessments."
+  },
+  {
+    "chunk_id": "b98a7efef423799c",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 7,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "uded that ORDEM 3.0 is the best model available and appropriate for use in NASAs MMOD risk assessments, while still making several recommendations that may reduce the uncertainties and improve the model. MMOD environment model uncertainty affects the fidelity of predictions in MMOD risk assessments. But this is not the only source of uncertainty. Damage prediction is another area where uncertainties can be introduced into risk values. In order to predict the risk from MMOD, a clear understanding of the spacecrafts susceptibility to MMOD is needed. This includes looking at each exposed component and how it will behave when hit by a hypervelocity particle. This is damage prediction. By combining hypervelocity impact testing with simulations, ballistic limit equations (BLEs) are produced, which define the minimum size of a particle that will cause a failure as a function of velocity. BLEs are generated for particles of different material densities (e.g., lighter aluminum will cause less damage than heavier steel) and impact angles. The NESC has worked with HVIT to conduct testing and simulations to refine existing BLEs and to create new ones for advanced shield materials and configurations. The NESC/HVIT Team also worked together to test and evaluate multifunctional shields that would protect from the radiation as well as the MMOD environment, and they evaluated self-sealing materials for use in pressurized volumes. The NESC is also working to gauge how well NASA does on assessing MMOD risk overall. The concept is to compare MMOD-caused anomalies and failures on active satellites to what their predicted risk would be."
+  },
+  {
+    "chunk_id": "e99ca65200d5ff49",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 8,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "he MMOD environment, and they evaluated self-sealing materials for use in pressurized volumes. The NESC is also working to gauge how well NASA does on assessing MMOD risk overall. The concept is to compare MMOD-caused anomalies and failures on active satellites to what their predicted risk would be. This work is challenging as failure data are not always readily shared by satellite operators, and it is often difficult to pinpoint the cause of a failure as MMOD. On the other hand, few MMOD risk assessments have been performed on robotic satellites so predicted risk is, for the majority, unknown. The MMOD risk assessment process is time and labor intensive and requires a detailed knowledge of the configuration, materials, and failure criteria for the spacecraft. To achieve a good statistical comparison, the NESC is targeting a limited number of satellites for which anomaly data and configuration information are available. The goal is to determine how close NASA is to accurately predicting this top-priority risk and to learn how to improve our risk predictions. Orbital Debris Model ORDEM 3.0 ORDEM 3.0 is appropriate for those engineering solutions requiring knowledge and estimates of the orbital debris environment (debris spatial density, flux, etc.) and is primarily used by spacecraft designers to understand the long-term risks of debris collisions. ORDEM 3.0 can also be used as a benchmark for ground-based debris measurements and observations. ORDEM 3.0 includes flux estimates for several material density classes. It has also been extended to describe the orbital debris environment from low Earth orbit past geosynchronous orbit (100 to 40,000 km altitude)."
+  },
+  {
+    "chunk_id": "50ffa08c8915ee03",
+    "document_id": "nasa_debris_risk",
+    "chunk_number": 9,
+    "title": "NASA - Space Debris: Understanding the Risks",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+    "topics": [
+      "space debris",
+      "collision risk",
+      "spacecraft safety"
+    ],
+    "text": "also be used as a benchmark for ground-based debris measurements and observations. ORDEM 3.0 includes flux estimates for several material density classes. It has also been extended to describe the orbital debris environment from low Earth orbit past geosynchronous orbit (100 to 40,000 km altitude). A large set of observational data (both in situ and ground-based) incorporated into ORDEM 3.0 reflects the current debris environment and is NASAs best estimate of the current and near future orbital debris environment. These data cover the object size range from 10 m to 1 m. Analytical techniques (such as maximum likelihood estimation and Bayesian statistics) are employed to determine the orbit populations used to calculate population fluxes and their uncertainties. ORDEM 3.0 was developed by NASAs Orbital Debris Program Office. Was this page helpful?"
+  },
+  {
+    "chunk_id": "392385e3d6c03dc8",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 1,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "What Is Orbital Debris? (Grades 5-8) - NASA Suggested Searches Climate Change Artemis Expedition 64 Mars perseverance SpaceX Crew-2 International Space Station View All Topics A-Z Home Missions Humans in Space Earth The Solar System The Universe Science Aeronautics Technology Learning Resources About NASA Espaol News & Events Multimedia NASA+ Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 4 min read NASAs Dragonfly Gets Wired Up While Titan Landing Area Is Named article 7 days ago Back Missions Search All NASA Missions A to Z List of Missions Upcoming Launches and Landings Spaceships and Rockets Communicating with Missions Artemis James Webb Space Telescope Hubble Space Telescope International Space Station OSIRIS-Rex Humans in Space Why Go to Space Astronauts Commercial Space Destinations Spaceships and Rockets Living in Space Earth Explore Earth Science Climate Change Earth, Our Planet Earth Science in Action Earth Multimedia Earth Data Earth Science Researchers The Solar System The Sun Mercury Venus Earth The Moon Mars Jupiter Saturn Uranus Neptune Pluto & Dwarf Planets Asteroids, Comets & Meteors The Kuiper Belt The Oort Cloud Skywatching The Universe Exoplanets The Search for Life in the Universe Stars Galaxies Black Holes The Big Bang Dark Energy Dark Matter Science Earth Science Planetary Science Astrophysics & Space Science The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviation Tech Drones & You"
+  },
+  {
+    "chunk_id": "b373be60f4272500",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 2,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "cience The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviation Tech Drones & You Technology Technology Transfer & Spinoffs Space Travel Living in Space Lunar Surface Technology Manufacturing and Materials Robotics Science Instruments Computing Learning Resources For Kids and Students For Educators For Colleges and Universities For Professionals Science for Everyone Requests for Exhibits, Artifacts, Speakers & Flyovers STEM Engagement at NASA About NASA NASA's Impacts Centers and Facilities Directorates Organizations People of NASA Careers Internships Our History Doing Business with NASA Get Involved Contact NASA en Espaol Ciencia Aeronutica Ciencias Terrestres Sistema Solar Universo News & Events News Releases Recently Published Video Series on NASA+ Podcasts & Audio Blogs Newsletters Social Media Media Resources Events Upcoming Launches & Landings Virtual Guest Program Multimedia NASA+ Images NASA Live NASA Apps Podcasts Image of the Day e-Books 3D Resources Interactives STEM Multimedia NASA Brand & Usage Guidelines Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 5 min read NASAs X-59 Aircraft Builds Momentum Through 25th Flight article 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min read Anak Krakatau Rumb"
+  },
+  {
+    "chunk_id": "5bad117877950666",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 3,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "e 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 4 min read The Otherworldly Geology of Vasquez Rocks article 1 day ago 3 min read A Bright Spot at Mount Michael article 2 days ago Highlights 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 5 min read NASA Rocket Takes First Multi-Point Look Inside Radio-Disrupting Clouds article 7 days ago Featured 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 1 min read 9 Things to Know About NASAs Nancy Grace Roman Space Telescope article 2 weeks ago 5 min read NASAs Pandora Mission Begins Study of Exoplanets, Host Stars article 2 weeks ago Highlights 1 min read Joint Observations with Swift removed from IXPE GO Cycle 4 article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago Highlights 3 min read NASA Johnson Pilots Chase Moons Shadow for Eclipse Science article 2 weeks ago 4 min read NASA Selects University Teams to Help Advance Aviation Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Images article 22 hours"
+  },
+  {
+    "chunk_id": "32440c4ff0cf8412",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 4,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "n Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Images article 22 hours ago 2 min read Ribbon-Cutting Event for NASA Deep Space Networks Deep Space Station 23 article 1 week ago Featured 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 4 min read NASA Revamps Challenge Linking Community College Studies to Aerospace Careers article 7 days ago Featured 5 min read NASAs Dark Universe-Seeking Nancy Grace Roman Space Telescope Launches article 1 week ago 5 min read President Honors NASAs Artemis II Crew with Highest US Space Award article 2 weeks ago 3 min read President Trump Signs Executive Order to Create US Space Academy article 2 weeks ago Highlights 11 min read La NASA anuncia la cobertura de la misin lunar Artemis II article 6 months ago 15 min read Agenda diaria de la misin a la Luna de ArtemisII de la NASA article 6 months ago 6 min read La NASA refuerza Artemis: aade una misin y perfecciona su arquitectura general article 6 months ago 6 min read What Is Orbital Debris? (Grades 5-8) NASA STEM Team Jun 08, 2010 Article Contents How Big Is Orbital Debris? Why Is Orbital Debris Important? How Much Debris Is in Orbit? How Do Astronauts Stay Safe From Orbital Debris? What Is NASA Doing About Orbital Debris? This article isfor students grades 5-8. Orbital debris (duh BREE) is junk that is circling Earth. It is pieces from spacecraft. Humans have been launching objects into space for more than 50 years."
+  },
+  {
+    "chunk_id": "9c308379183d9367",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 5,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "Is in Orbit? How Do Astronauts Stay Safe From Orbital Debris? What Is NASA Doing About Orbital Debris? This article isfor students grades 5-8. Orbital debris (duh BREE) is junk that is circling Earth. It is pieces from spacecraft. Humans have been launching objects into space for more than 50 years. Most of those objects have fallen back to Earth. A piece of debris falls back to Earth about once a day. These objects either land or burn up in the atmosphere. Most objects that return to Earth end up in water, since it makes up 70 percent of Earths surface. But many of the objects sent into space are still in orbit around Earth. ____________________________________________________________________________________________ Words to Know stage: one of two or more sections of a rocket that have their own fuel and engine ____________________________________________________________________________________________ How Big Is Orbital Debris? On one extreme, debris can be as small as tiny flecks of paint or bits of metal that have come off spacecraft. On the other, large debris could be an entire satellite that is no longer working. The most common source of orbital debris larger than 1 centimeter (0.39 inches) is the explosion of objects orbiting Earth. These are often rocket upper stages . They can contain fuel or high-pressure fluids. Why Is Orbital Debris Important? Most space junk is moving very fast. It can reach speeds of 4.3 to 5 miles per second. Five miles per second is 18,000 miles per hour. That speed is almost seven times faster than a bullet. And if a spacecraft is moving toward the debris, the total speed at which they collide can be even faster. The average impact speed of a piece of orbital debris running into another object is 22,370 miles per hour."
+  },
+  {
+    "chunk_id": "7f11f7460804c867",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 6,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "cond is 18,000 miles per hour. That speed is almost seven times faster than a bullet. And if a spacecraft is moving toward the debris, the total speed at which they collide can be even faster. The average impact speed of a piece of orbital debris running into another object is 22,370 miles per hour. Since it is moving so quickly, a tiny piece of orbital debris can cause a lot of damage. Being hit by a piece of debris smaller than half an inch around traveling at about six miles per second would be like being hit by a bowling ball moving at 300 miles per hour. How Much Debris Is in Orbit? To keep astronauts safe, scientists use radar to keep track of all the debris in orbit. They classify it by its size. About 13,000 known objects are bigger than 10 centimeters in diameter. Scientists believe that there are more than 100,000 pieces of orbital debris between 1 cm and 10 cm. And tens of millions of pieces are smaller than 1 cm. All pieces of debris larger than 10 cm are carefully tracked using radar and telescopes. That information is used to estimate the number of small pieces of debris. Even though they cannot detect every piece, scientists have an idea of the amount of debris that is out there. To determine the number of pieces of very small debris smaller than 1 millimeter were in orbit, scientists studied the space shuttle when it returned from orbit. They looked for damage from debris impacts. When the space shuttle returned from missions, scientists counted the number of impacts it experienced. They then compared the number of dents or holes to the amount of space the shuttle traveled through. These comparisons helped them estimate how many of the tiny objects are in orbit around Earth."
+  },
+  {
+    "chunk_id": "8241dedc6453861a",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 7,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "When the space shuttle returned from missions, scientists counted the number of impacts it experienced. They then compared the number of dents or holes to the amount of space the shuttle traveled through. These comparisons helped them estimate how many of the tiny objects are in orbit around Earth. NASA also has performed experiments in space to learn more about orbital debris. Satellites like the Long Duration Exposure Facility were brought back to Earth. Scientists then counted the number of objects that hit the satellite. The LDEF was a satellite that was left in space for over five years. It tested what happened to materials exposed to space. ____________________________________________________________________________________________ Words to Know micrometeoroid: a tiny (size of a grain of sand) particle of space debris, natural or artificial, traveling through space at high speeds ____________________________________________________________________________________________ How Do Astronauts Stay Safe From Orbital Debris? Since NASA keeps track of larger debris, spacecraft with crews are able to dodge it. When an object is expected to come within a few miles of the International Space Station, NASA can slightly change the stations path to avoid the object. Plus, the space station is the most heavily shielded spacecraft ever. It can survive impact with smaller pieces of debris. The debris would hit panels that serve as shields instead of vital parts of the station. Spacesuits also help protect crew members from orbital debris and micrometeoroids when the astronauts are outside the space station. The suits include a layer of strong, thin material that protects astronauts from impacts. This layer is made from the materials used in bulletproof vests."
+  },
+  {
+    "chunk_id": "7674bdd324203559",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 8,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "the station. Spacesuits also help protect crew members from orbital debris and micrometeoroids when the astronauts are outside the space station. The suits include a layer of strong, thin material that protects astronauts from impacts. This layer is made from the materials used in bulletproof vests. Since the smallest pieces of debris cannot be tracked, collisions with them are bound to happen. The space shuttle often returns to Earth with tiny impact craters. Impacts have even created small cracks in the front windows. Windows are replaced after almost every mission. The shuttle has three layers of windows to protect the crew. What Is NASA Doing About Orbital Debris? As humans launch more and more objects, will Earth orbit turn into a dangerous, crowded junkyard? Space agencies around the world are working to make sure that does not happen. Since 1988, the United States has had an official policy to keep the creation of new orbital debris to a minimum. NASA even has an Orbital Debris Program Office at Johnson Space Center in Houston, Texas. This office looks for ways to create less orbital debris. It also looks for ways to get rid of debris that is already in space. Many U.S. aerospace companies also follow guidelines to reduce the creation of debris. The Russian, Japanese, French and European space agencies are keeping the creation of new debris low, too. NASA and other space agencies are doing many things to reduce the problem of orbital debris. The upper stages of launch vehicles, and some satellites, are being placed in lower orbits. This location will cause them to re-enter the atmosphere and burn up sooner. Debris in orbits below 373 miles usually falls back to Earth within a few years."
+  },
+  {
+    "chunk_id": "d74a0271858262ff",
+    "document_id": "nasa_debris_students",
+    "chunk_number": 9,
+    "title": "NASA - What Is Orbital Debris?",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "debris risk",
+      "debris tracking"
+    ],
+    "text": "ny things to reduce the problem of orbital debris. The upper stages of launch vehicles, and some satellites, are being placed in lower orbits. This location will cause them to re-enter the atmosphere and burn up sooner. Debris in orbits below 373 miles usually falls back to Earth within a few years. Objects at heights of more than 621 miles can stay in orbit for more than a century. More About Orbital Debris Orbital Debris Program Office What Is A Spacesuit? What Do You Do About Space Junk? What Was the Space Shuttle? Return to What Is Orbital Debris? (Grades K-4) Explore More For Students Grades 5-8 Was this page helpful?"
+  },
+  {
+    "chunk_id": "e7df8769d3c343e6",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 1,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "What Is Orbital Debris? (Grades 5-8) - NASA Suggested Searches Climate Change Artemis Expedition 64 Mars perseverance SpaceX Crew-2 International Space Station View All Topics A-Z Home Missions Humans in Space Earth The Solar System The Universe Science Aeronautics Technology Learning Resources About NASA Espaol News & Events Multimedia NASA+ Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 4 min read NASAs Dragonfly Gets Wired Up While Titan Landing Area Is Named article 7 days ago Back Missions Search All NASA Missions A to Z List of Missions Upcoming Launches and Landings Spaceships and Rockets Communicating with Missions Artemis James Webb Space Telescope Hubble Space Telescope International Space Station OSIRIS-Rex Humans in Space Why Go to Space Astronauts Commercial Space Destinations Spaceships and Rockets Living in Space Earth Explore Earth Science Climate Change Earth, Our Planet Earth Science in Action Earth Multimedia Earth Data Earth Science Researchers The Solar System The Sun Mercury Venus Earth The Moon Mars Jupiter Saturn Uranus Neptune Pluto & Dwarf Planets Asteroids, Comets & Meteors The Kuiper Belt The Oort Cloud Skywatching The Universe Exoplanets The Search for Life in the Universe Stars Galaxies Black Holes The Big Bang Dark Energy Dark Matter Science Earth Science Planetary Science Astrophysics & Space Science The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviation Tech Drones & You"
+  },
+  {
+    "chunk_id": "aa59d664358bcbe9",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 2,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "cience The Sun & Heliophysics Biological & Physical Sciences Lunar Science Citizen Science Astromaterials Aeronautics Research Human Space Travel Research Aeronautics Science in the Air NASA Aircraft Flight Research Innovation Supersonic Flight Air Traffic Solutions Green Aviation Tech Drones & You Technology Technology Transfer & Spinoffs Space Travel Living in Space Lunar Surface Technology Manufacturing and Materials Robotics Science Instruments Computing Learning Resources For Kids and Students For Educators For Colleges and Universities For Professionals Science for Everyone Requests for Exhibits, Artifacts, Speakers & Flyovers STEM Engagement at NASA About NASA NASA's Impacts Centers and Facilities Directorates Organizations People of NASA Careers Internships Our History Doing Business with NASA Get Involved Contact NASA en Espaol Ciencia Aeronutica Ciencias Terrestres Sistema Solar Universo News & Events News Releases Recently Published Video Series on NASA+ Podcasts & Audio Blogs Newsletters Social Media Media Resources Events Upcoming Launches & Landings Virtual Guest Program Multimedia NASA+ Images NASA Live NASA Apps Podcasts Image of the Day e-Books 3D Resources Interactives STEM Multimedia NASA Brand & Usage Guidelines Featured 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 5 min read NASAs X-59 Aircraft Builds Momentum Through 25th Flight article 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min read Anak Krakatau Rumb"
+  },
+  {
+    "chunk_id": "cb6a8402607a12ea",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 3,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "e 5 days ago Highlights 265 min read Astronaut Fact Book article 17 hours ago 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 5 min read Human-Related Microbes May Survive Moons South Pole, NASA Finds article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 4 min read The Otherworldly Geology of Vasquez Rocks article 1 day ago 3 min read A Bright Spot at Mount Michael article 2 days ago Highlights 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago 5 min read NASAs Hubble Tracks New Decagon Encircling Saturns South Pole article 7 days ago 5 min read NASA Rocket Takes First Multi-Point Look Inside Radio-Disrupting Clouds article 7 days ago Featured 3 min read NASAs Hubble Spies Superbubble Scene article 6 days ago 1 min read 9 Things to Know About NASAs Nancy Grace Roman Space Telescope article 2 weeks ago 5 min read NASAs Pandora Mission Begins Study of Exoplanets, Host Stars article 2 weeks ago Highlights 1 min read Joint Observations with Swift removed from IXPE GO Cycle 4 article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 5 min read NASAs Hubble, Webb Find Far-out Solar System Objects Remember Past article 23 hours ago Highlights 3 min read NASA Johnson Pilots Chase Moons Shadow for Eclipse Science article 2 weeks ago 4 min read NASA Selects University Teams to Help Advance Aviation Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Images article 22 hours"
+  },
+  {
+    "chunk_id": "74b004d737ffddc9",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 4,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "n Research article 3 weeks ago 3 min read NASA Student Aviation Challenge Focuses on Nations Infrastructure article 3 weeks ago Highlights 3 min read Anak Krakatau Rumbles Again article 9 hours ago 3 min read NASATechnique for Manipulating Satellite Photos Now Reveals Ancient Images article 22 hours ago 2 min read Ribbon-Cutting Event for NASA Deep Space Networks Deep Space Station 23 article 1 week ago Featured 7 min read From the Corps to the Cosmos, featuring Jaden Caradine article 17 hours ago 3 min read 1,000 Museum Visitors Dive Into NASA Sea Level Science on World Ocean Day article 23 hours ago 4 min read NASA Revamps Challenge Linking Community College Studies to Aerospace Careers article 7 days ago Featured 5 min read NASAs Dark Universe-Seeking Nancy Grace Roman Space Telescope Launches article 1 week ago 5 min read President Honors NASAs Artemis II Crew with Highest US Space Award article 2 weeks ago 3 min read President Trump Signs Executive Order to Create US Space Academy article 2 weeks ago Highlights 11 min read La NASA anuncia la cobertura de la misin lunar Artemis II article 6 months ago 15 min read Agenda diaria de la misin a la Luna de ArtemisII de la NASA article 6 months ago 6 min read La NASA refuerza Artemis: aade una misin y perfecciona su arquitectura general article 6 months ago 6 min read What Is Orbital Debris? (Grades 5-8) NASA STEM Team Jun 08, 2010 Article Contents How Big Is Orbital Debris? Why Is Orbital Debris Important? How Much Debris Is in Orbit? How Do Astronauts Stay Safe From Orbital Debris? What Is NASA Doing About Orbital Debris? This article isfor students grades 5-8. Orbital debris (duh BREE) is junk that is circling Earth. It is pieces from spacecraft. Humans have been launching objects into space for more than 50 years."
+  },
+  {
+    "chunk_id": "bf39a97695e8d501",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 5,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "Is in Orbit? How Do Astronauts Stay Safe From Orbital Debris? What Is NASA Doing About Orbital Debris? This article isfor students grades 5-8. Orbital debris (duh BREE) is junk that is circling Earth. It is pieces from spacecraft. Humans have been launching objects into space for more than 50 years. Most of those objects have fallen back to Earth. A piece of debris falls back to Earth about once a day. These objects either land or burn up in the atmosphere. Most objects that return to Earth end up in water, since it makes up 70 percent of Earths surface. But many of the objects sent into space are still in orbit around Earth. ____________________________________________________________________________________________ Words to Know stage: one of two or more sections of a rocket that have their own fuel and engine ____________________________________________________________________________________________ How Big Is Orbital Debris? On one extreme, debris can be as small as tiny flecks of paint or bits of metal that have come off spacecraft. On the other, large debris could be an entire satellite that is no longer working. The most common source of orbital debris larger than 1 centimeter (0.39 inches) is the explosion of objects orbiting Earth. These are often rocket upper stages . They can contain fuel or high-pressure fluids. Why Is Orbital Debris Important? Most space junk is moving very fast. It can reach speeds of 4.3 to 5 miles per second. Five miles per second is 18,000 miles per hour. That speed is almost seven times faster than a bullet. And if a spacecraft is moving toward the debris, the total speed at which they collide can be even faster. The average impact speed of a piece of orbital debris running into another object is 22,370 miles per hour."
+  },
+  {
+    "chunk_id": "79eb6b601993633f",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 6,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "cond is 18,000 miles per hour. That speed is almost seven times faster than a bullet. And if a spacecraft is moving toward the debris, the total speed at which they collide can be even faster. The average impact speed of a piece of orbital debris running into another object is 22,370 miles per hour. Since it is moving so quickly, a tiny piece of orbital debris can cause a lot of damage. Being hit by a piece of debris smaller than half an inch around traveling at about six miles per second would be like being hit by a bowling ball moving at 300 miles per hour. How Much Debris Is in Orbit? To keep astronauts safe, scientists use radar to keep track of all the debris in orbit. They classify it by its size. About 13,000 known objects are bigger than 10 centimeters in diameter. Scientists believe that there are more than 100,000 pieces of orbital debris between 1 cm and 10 cm. And tens of millions of pieces are smaller than 1 cm. All pieces of debris larger than 10 cm are carefully tracked using radar and telescopes. That information is used to estimate the number of small pieces of debris. Even though they cannot detect every piece, scientists have an idea of the amount of debris that is out there. To determine the number of pieces of very small debris smaller than 1 millimeter were in orbit, scientists studied the space shuttle when it returned from orbit. They looked for damage from debris impacts. When the space shuttle returned from missions, scientists counted the number of impacts it experienced. They then compared the number of dents or holes to the amount of space the shuttle traveled through. These comparisons helped them estimate how many of the tiny objects are in orbit around Earth."
+  },
+  {
+    "chunk_id": "758f32e882b79c8f",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 7,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "When the space shuttle returned from missions, scientists counted the number of impacts it experienced. They then compared the number of dents or holes to the amount of space the shuttle traveled through. These comparisons helped them estimate how many of the tiny objects are in orbit around Earth. NASA also has performed experiments in space to learn more about orbital debris. Satellites like the Long Duration Exposure Facility were brought back to Earth. Scientists then counted the number of objects that hit the satellite. The LDEF was a satellite that was left in space for over five years. It tested what happened to materials exposed to space. ____________________________________________________________________________________________ Words to Know micrometeoroid: a tiny (size of a grain of sand) particle of space debris, natural or artificial, traveling through space at high speeds ____________________________________________________________________________________________ How Do Astronauts Stay Safe From Orbital Debris? Since NASA keeps track of larger debris, spacecraft with crews are able to dodge it. When an object is expected to come within a few miles of the International Space Station, NASA can slightly change the stations path to avoid the object. Plus, the space station is the most heavily shielded spacecraft ever. It can survive impact with smaller pieces of debris. The debris would hit panels that serve as shields instead of vital parts of the station. Spacesuits also help protect crew members from orbital debris and micrometeoroids when the astronauts are outside the space station. The suits include a layer of strong, thin material that protects astronauts from impacts. This layer is made from the materials used in bulletproof vests."
+  },
+  {
+    "chunk_id": "fff01668e6ea4b09",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 8,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "the station. Spacesuits also help protect crew members from orbital debris and micrometeoroids when the astronauts are outside the space station. The suits include a layer of strong, thin material that protects astronauts from impacts. This layer is made from the materials used in bulletproof vests. Since the smallest pieces of debris cannot be tracked, collisions with them are bound to happen. The space shuttle often returns to Earth with tiny impact craters. Impacts have even created small cracks in the front windows. Windows are replaced after almost every mission. The shuttle has three layers of windows to protect the crew. What Is NASA Doing About Orbital Debris? As humans launch more and more objects, will Earth orbit turn into a dangerous, crowded junkyard? Space agencies around the world are working to make sure that does not happen. Since 1988, the United States has had an official policy to keep the creation of new orbital debris to a minimum. NASA even has an Orbital Debris Program Office at Johnson Space Center in Houston, Texas. This office looks for ways to create less orbital debris. It also looks for ways to get rid of debris that is already in space. Many U.S. aerospace companies also follow guidelines to reduce the creation of debris. The Russian, Japanese, French and European space agencies are keeping the creation of new debris low, too. NASA and other space agencies are doing many things to reduce the problem of orbital debris. The upper stages of launch vehicles, and some satellites, are being placed in lower orbits. This location will cause them to re-enter the atmosphere and burn up sooner. Debris in orbits below 373 miles usually falls back to Earth within a few years."
+  },
+  {
+    "chunk_id": "4bff0a08ea1c5ef4",
+    "document_id": "nasa_orbital_debris",
+    "chunk_number": 9,
+    "title": "NASA - Orbital Debris",
+    "organization": "NASA",
+    "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+    "topics": [
+      "space debris",
+      "orbital debris",
+      "space junk",
+      "debris tracking"
+    ],
+    "text": "ny things to reduce the problem of orbital debris. The upper stages of launch vehicles, and some satellites, are being placed in lower orbits. This location will cause them to re-enter the atmosphere and burn up sooner. Debris in orbits below 373 miles usually falls back to Earth within a few years. Objects at heights of more than 621 miles can stay in orbit for more than a century. More About Orbital Debris Orbital Debris Program Office What Is A Spacesuit? What Do You Do About Space Junk? What Was the Space Shuttle? Return to What Is Orbital Debris? (Grades K-4) Explore More For Students Grades 5-8 Was this page helpful?"
+  },
+  {
+    "chunk_id": "2fe57a3ee5b17ec6",
+    "document_id": "nasa_satellite",
+    "chunk_number": 1,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "What Is a Satellite? | NASA Space Place NASA Science for Kids satellite What Is a Satellite? The Short Answer: A satellite is anything that orbits a planet or a star. Earth is a satellite orbiting the Sun. The Moon is a satellite orbiting Earth. When you launch a spacecraft into orbit around Earth, thats a satellite, too. This kind of satellite can help us learn about Earth and the universe. What do you think of when you hear the word satellite? Maybe you think of a big metal spacecraft that circles our planet in space. When we think of satellites, we usually think of something that looks like this. Image credit: Maxar Technologies But, did you know that our Earth and Moon are satellites, too? A satellite can be any object that orbits a planet, star, or moon. An orbit is a regular, repeating path that one object in space takes around another one. So, Earth is a satellite, because it orbits the Sun ! The Moon is also a satellite because it orbits Earth. But, usually, the word \"satellite\" refers to a machine that is launched into space and moves around Earth or another body in space. Earth and the Moon are examples of natural satellites. Thousands of artificial, or man-made, satellites orbit Earth. Some take pictures of the planet that help meteorologists predict weather and track hurricanes. Some take pictures of other planets, the Sun, black holes , dark matter or faraway galaxies . These pictures help scientists better understand the solar system and universe. Believe it or not, there are satellite galaxies, too! Learn all about them here ! This illustration shows NASA's Earth-observing satellite fleet. Image credit: Jenny Mottar/NASA Other satellites are used for communications, such as TV signals and phone calls around the world."
+  },
+  {
+    "chunk_id": "40172ddb2ef07eca",
+    "document_id": "nasa_satellite",
+    "chunk_number": 2,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "ar system and universe. Believe it or not, there are satellite galaxies, too! Learn all about them here ! This illustration shows NASA's Earth-observing satellite fleet. Image credit: Jenny Mottar/NASA Other satellites are used for communications, such as TV signals and phone calls around the world. Have you ever tried to find your house, or the closest ice cream shop, on a map on your phone? Satellites help us do this with GPS! A group of more than 30 satellites make up the Global Positioning System , or GPS. These satellites can help figure out your exact location. Why are satellites important? The view that satellites like GPS have allows them to see large areas of Earth at one time. This means satellites can collect more data, more quickly, than instruments on the ground. Satellites also can see into space better than telescopes at Earth's surface! That's because satellites fly above the clouds, dust, and molecules in the atmosphere that can block the view from the ground. Clouds can block the view of space from the ground. Satellites fly high above the clouds, helping us see the universe better. Image credit: Pixabay/Pexels What are the parts of an artificial satellite? Man-made satellites come in many shapes and sizes. But most have at least two parts in common - an antenna and a power source. The antenna sends and receives information, usually to and from Earth. Just like a toy that requires batteries to work here on Earth, satellites need power, too! There are several types of power sources for satellites, such as solar panels or batteries. Solar panels are cool because they power the satellite by turning sunlight into electricity. Satellites can have solar panels as power sources."
+  },
+  {
+    "chunk_id": "2077513b59de4c9b",
+    "document_id": "nasa_satellite",
+    "chunk_number": 3,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "res batteries to work here on Earth, satellites need power, too! There are several types of power sources for satellites, such as solar panels or batteries. Solar panels are cool because they power the satellite by turning sunlight into electricity. Satellites can have solar panels as power sources. Image credit: Pixabay/Pexels Many NASA satellites carry cameras and scientific sensors. Sometimes, these instruments point toward Earth to gather information about its land, air and water. Other times, they face toward space to collect data from the solar system and universe. How do satellites orbit Earth? Most satellites are launched into space on rockets . A satellite orbits Earth when its speed is balanced by the pull of Earth's gravity. Without this balance, the satellite would fly in a straight line off into space or fall back to Earth. Satellites orbit Earth at different heights, different speeds and along different paths. The two most common types of orbit are \"geostationary\" (jee-oh-STAY-shun-air-ee) and \"polar.\" A geostationary satellite travels from west to east over the equator. It moves in the same direction and at the same rate Earth is spinning. From Earth, a geostationary satellite looks like it is standing still since it is always above the same location. From Earth, a geostationary satellite looks like it is always in the same place, because it moves in the same direction and at the same rate the Earth spins. Image credit: NASA Solar System Exploration Polar-orbiting satellites travel in a north-south direction from pole to pole. As Earth spins underneath, these satellites can scan the entire globe, one strip at a time."
+  },
+  {
+    "chunk_id": "cd214d3d9d8900aa",
+    "document_id": "nasa_satellite",
+    "chunk_number": 4,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "e place, because it moves in the same direction and at the same rate the Earth spins. Image credit: NASA Solar System Exploration Polar-orbiting satellites travel in a north-south direction from pole to pole. As Earth spins underneath, these satellites can scan the entire globe, one strip at a time. Why don't satellites crash into each other? Actually, they can! In February 2009, two communications satellites one American and one Russian crashed in space! This, however, is believed to be the first time two man-made satellites have collided accidentally. But, dont worry! NASA and other organizations across the world keep track of satellites in space. Collisions usually dont happen because when a satellite is launched, it is placed into an orbit designed to avoid other satellites. But orbits can change over time, and the chances of a crash increase as more and more satellites are launched into space. What is the history of NASA satellites? NASA has launched dozens of satellites into space, starting with the Explorer 1 satellite in 1958. Explorer 1 was America's first man-made satellite was called Explorer 1. It launched in 1958. The main instrument aboard was a sensor that measured high-energy particles in space called cosmic rays. Explorer 1 was the first U.S. satellite and the first satellite to carry science instruments. Image credit: NASA The first satellite picture of Earth came from NASA's Explorer 6 in 1959. TIROS-1 followed in 1960 with the first TV picture of Earth from space. These pictures did not show much detail. But they did show the potential satellites had to change how people view Earth and space. How it started This is the first-ever satellite image of Earth, captured by Explorer 6 on August 14, 1959."
+  },
+  {
+    "chunk_id": "a0692984fdb3c03b",
+    "document_id": "nasa_satellite",
+    "chunk_number": 5,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "ollowed in 1960 with the first TV picture of Earth from space. These pictures did not show much detail. But they did show the potential satellites had to change how people view Earth and space. How it started This is the first-ever satellite image of Earth, captured by Explorer 6 on August 14, 1959. It looks just like a blur but it showed the potential satellites had to change how people could view Earth from space. Satellites have become much better at taking pictures since then! Image credit: NASA Kennedy Center How does NASA use satellites today? NASA satellites help scientists study Earth, the other worlds of our solar system, and beyond. Satellites looking toward Earth provide information about clouds, oceans, land and ice. They measure gases in the atmosphere , such as carbon dioxide. NASA's Orbiting Carbon Observatory 2 , or OCO-2, launched in 2014 to measure carbon dioxide levels on Earth to better observe Earth's carbon cycle. NASA's OCO-2 also helps explore how measurements from space can predict future CO2 increases and its impact on Earth's climate. Satellites also measure the amount of energy that Earth keeps inside the atmosphere, and the amount of energy the Earth sends back into space. And satellites monitor wildfires and volcanoes and their smoke. An illustration of OCO-2, a satellite that studies carbon dioxide, taking carbon dioxide measurements on Earth all the way from space. Image credit: NASA/JPL-Caltech All this information helps scientists predict weather and climate. The information also helps public health officials track disease and famine; it helps farmers know what crops to plant; and it helps emergency workers respond to natural disasters."
+  },
+  {
+    "chunk_id": "9bfeac0b8b3efc55",
+    "document_id": "nasa_satellite",
+    "chunk_number": 6,
+    "title": "NASA - What Is a Satellite?",
+    "organization": "NASA",
+    "url": "https://spaceplace.nasa.gov/satellite/en/",
+    "topics": [
+      "satellite",
+      "orbit",
+      "artificial satellite",
+      "satellite operations"
+    ],
+    "text": "l the way from space. Image credit: NASA/JPL-Caltech All this information helps scientists predict weather and climate. The information also helps public health officials track disease and famine; it helps farmers know what crops to plant; and it helps emergency workers respond to natural disasters. Did you check the weather forecast today? We know todays weather thanks to satellites! Satellites that face toward space have many jobs. Some watch for dangerous rays coming from the Sun. Others explore asteroids and comets, the history of stars, and the origin of planets. Some satellites fly near or orbit other planets. These spacecraft may look for evidence of water on Mars or capture close-up pictures of Saturn's rings. Build a NASA spacecraft at home! article last updated July 31, 2026 If you liked this, you may like: How Does GPS Work? Where Do Old Satellites Go When They Die? Tired travelers Games Crafts Activities Videos Glossary Mystery More Less More Less"
+  }
+]

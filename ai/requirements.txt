@@ -6,3 +6,5 @@ requests
 fastapi
 uvicorn
 pydantic
+beautifulsoup4
+sentence-transformers

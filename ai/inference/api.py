@@ -7,16 +7,20 @@ classifier to the existing Node.js backend.
 """
 
 from __future__ import annotations
-
 from typing import Any, Dict, List
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-
+from ai.inference.intent_predictor import predict_intent
+from ai.inference.nlu import understand
 from ai.inference.predictor import (
     get_model_metadata,
     predict_collision_batch,
     predict_collision_risk,
+)
+from ai.inference.knowledge_api import (
+    KnowledgeSearchRequest,
+    KnowledgeSearchResponse,
+    search_knowledge
 )
 
 
@@ -45,6 +49,8 @@ class CollisionRequest(BaseModel):
 class BatchCollisionRequest(BaseModel):
     collisions: List[Dict[str, Any]]
 
+class IntentRequest(BaseModel):
+    text: str
 
 # ============================================================
 # HEALTH
@@ -165,4 +171,67 @@ def root():
             "predict": "POST /predict",
             "batch": "POST /predict/batch",
         },
+    }
+
+# ============================================================
+# intent prediction endpoint
+# ============================================================
+
+@app.post("/intent")
+def predict_user_intent(request: IntentRequest):
+    try:
+        result = predict_intent(request.text)
+
+        return {
+            "success": True,
+            **result
+        }
+
+    except ValueError as error:
+        return {
+            "success": False,
+            "error": str(error)
+        }
+
+# ============================================================
+# intent prediction endpoint
+# ============================================================
+
+@app.post("/nlu")
+def understand_user_query(request: IntentRequest):
+    try:
+        result = understand(request.text)
+
+        return {
+            "success": True,
+            **result
+        }
+
+    except ValueError as error:
+        return {
+            "success": False,
+            "error": str(error)
+        }
+
+# ============================================================
+# intent prediction endpoint
+# ============================================================
+
+@app.post(
+    "/knowledge/search",
+    response_model=KnowledgeSearchResponse
+)
+def knowledge_search(
+    request: KnowledgeSearchRequest
+):
+
+    results = search_knowledge(
+        query=request.query,
+        top_k=request.top_k
+    )
+
+    return {
+        "success": True,
+        "query": request.query,
+        "results": results
     }

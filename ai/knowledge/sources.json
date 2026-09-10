@@ -1,0 +1,91 @@
+{
+  "sources": [
+    {
+      "id": "nasa_satellite",
+      "name": "NASA - What Is a Satellite?",
+      "organization": "NASA",
+      "url": "https://spaceplace.nasa.gov/satellite/en/",
+      "topics": [
+        "satellite",
+        "orbit",
+        "artificial satellite",
+        "satellite operations"
+      ]
+    },
+    {
+      "id": "nasa_orbital_debris",
+  "name": "NASA - Orbital Debris",
+  "organization": "NASA",
+  "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+  "topics": [
+    "space debris",
+    "orbital debris",
+    "space junk",
+    "debris tracking"
+  ]
+    },
+    {
+      "id": "nasa_debris_students",
+      "name": "NASA - What Is Orbital Debris?",
+      "organization": "NASA",
+      "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/",
+      "topics": [
+        "space debris",
+        "orbital debris",
+        "debris risk",
+        "debris tracking"
+      ]
+    },
+    {
+      "id": "esa_space_debris",
+      "name": "ESA - About Space Debris",
+      "organization": "ESA",
+      "url": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+      "topics": [
+        "space debris",
+        "orbital environment",
+        "satellites",
+        "collision"
+      ]
+    },
+    {
+      "id": "esa_debris_faq",
+      "name": "ESA - Space Debris FAQ",
+      "organization": "ESA",
+      "url": "https://www.esa.int/Space_Safety/Space_Debris/Space_Debris_FAQ_Frequently_asked_questions",
+      "topics": [
+        "space debris",
+        "tracking",
+        "collision",
+        "orbital environment"
+      ]
+    },
+    {
+      "id": "nasa_debris_risk",
+      "name": "NASA - Space Debris: Understanding the Risks",
+      "organization": "NASA",
+      "url": "https://www.nasa.gov/centers-and-facilities/nesc/space-debris-understanding-the-risks-to-nasa-spacecraft/",
+      "topics": [
+        "space debris",
+        "collision risk",
+        "spacecraft safety"
+      ]
+    },
+    {
+      "id": "esa_types_of_orbits",
+      "name": "ESA - Types of Orbits",
+      "organization": "ESA",
+      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits",
+      "topics": [
+        "orbit",
+        "orbits",
+        "LEO",
+        "MEO",
+        "GEO",
+        "polar orbit",
+        "geostationary orbit",
+        "orbital mechanics"
+      ]
+    }
+  ]
+}

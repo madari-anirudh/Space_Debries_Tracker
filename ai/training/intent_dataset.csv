@@ -1,0 +1,298 @@
+text,intent
+Which debris is the most dangerous,highest_risk
+Which object has the highest risk,highest_risk
+Show me the highest risk debris,highest_risk
+What is the highest collision risk,highest_risk
+Which debris should I worry about,highest_risk
+Which object should I be most concerned about,highest_risk
+What is the most dangerous object near Earth,highest_risk
+Show the riskiest conjunction,highest_risk
+Which conjunction has the highest risk,highest_risk
+Find the highest risk event,highest_risk
+What is the most critical orbital encounter,highest_risk
+Which object is most likely to be dangerous,highest_risk
+Tell me the highest risk event,highest_risk
+What debris has the greatest risk,highest_risk
+Which space object is the riskiest,highest_risk
+Show me dangerous debris,highest_risk
+What is the worst collision threat,highest_risk
+Which encounter should I be most worried about,highest_risk
+Find the most concerning conjunction,highest_risk
+What is the top risk right now,highest_risk
+Show highest priority collision,highest_risk
+Which object has the greatest collision risk,highest_risk
+What is the riskiest debris object,highest_risk
+Which debris has the highest screening risk,highest_risk
+Show me the most dangerous conjunction,highest_risk
+Which collision event is most risky,highest_risk
+What is the highest risk near Earth,highest_risk
+Which orbital encounter is the most dangerous,highest_risk
+Rank the objects by risk and show the highest one,highest_risk
+Tell me which object is most dangerous,highest_risk
+Are there any objects getting close,collision_lookup
+Are there any collision risks,collision_lookup
+Show me close approaches,collision_lookup
+Find nearby orbital collisions,collision_lookup
+Are any debris objects approaching each other,collision_lookup
+Check for close encounters,collision_lookup
+Are there dangerous conjunctions,collision_lookup
+Show current collision events,collision_lookup
+Are any objects getting dangerously close,collision_lookup
+Find objects that are close together,collision_lookup
+Do we have any close approaches,collision_lookup
+Check the current collision screening,collision_lookup
+Are there any potential collisions,collision_lookup
+Show me possible collisions,collision_lookup
+Find close orbital encounters,collision_lookup
+Are any satellites approaching each other,collision_lookup
+Which objects are close to each other,collision_lookup
+Show current conjunctions,collision_lookup
+Check for dangerous orbital approaches,collision_lookup
+Are objects coming close to one another,collision_lookup
+Find orbital objects with small separation,collision_lookup
+What close approaches are happening,collision_lookup
+Show me collision candidates,collision_lookup
+Are there any threatening encounters,collision_lookup
+Check whether objects are getting close,collision_lookup
+Find risky close approaches,collision_lookup
+What objects are currently near each other,collision_lookup
+Show me the current conjunctions,collision_lookup
+Check orbital collision threats,collision_lookup
+Are there any close orbital events,collision_lookup
+Where is NORAD 25544,track_object
+Track NORAD 25544,track_object
+Where is satellite 25544,track_object
+Locate NORAD 25544,track_object
+Find NORAD 25544,track_object
+Track satellite NORAD 25544,track_object
+Where is the ISS,track_object
+Track the ISS,track_object
+Where is ISS ZARYA,track_object
+Locate the space station,track_object
+Where is this satellite,track_object
+Can you track an object,track_object
+Show me the position of NORAD 25544,track_object
+What is the current position of 25544,track_object
+Tell me where NORAD 25544 is now,track_object
+Track object 25544,track_object
+Locate object 25544,track_object
+Where can I find NORAD 25544,track_object
+Give me the location of the ISS,track_object
+Track ISS ZARYA,track_object
+Where is ZARYA right now,track_object
+Find satellite 25544,track_object
+Show the current position of satellite 25544,track_object
+Can you locate NORAD 25544,track_object
+Tell me the coordinates of 25544,track_object
+Where is that orbital object,track_object
+Track this satellite,track_object
+Show me where the ISS is,track_object
+How does SGP4 work,explain_sgp4
+Explain SGP4,explain_sgp4
+What is SGP4,explain_sgp4
+How does satellite propagation work,explain_sgp4
+Explain orbital propagation,explain_sgp4
+How are satellite positions calculated,explain_sgp4
+How does the tracker propagate satellites,explain_sgp4
+Explain the SGP4 model,explain_sgp4
+What does SGP4 do,explain_sgp4
+How are TLEs used for propagation,explain_sgp4
+How does a TLE become a position,explain_sgp4
+Explain satellite propagation,explain_sgp4
+How are orbital positions predicted,explain_sgp4
+What is orbital propagation,explain_sgp4
+Tell me about SGP4,explain_sgp4
+Why does the tracker use SGP4,explain_sgp4
+How does the orbital engine work,explain_sgp4
+How are TLE orbital data propagated,explain_sgp4
+What calculates the satellite position,explain_sgp4
+How does the orbital propagation engine work,explain_sgp4
+Explain how SGP4 predicts position,explain_sgp4
+How are satellites propagated forward,explain_sgp4
+What model propagates the satellite,explain_sgp4
+Explain the satellite propagation model,explain_sgp4
+How does SGP4 calculate orbital position,explain_sgp4
+What is satellite propagation,explain_sgp4
+Can you explain TLE propagation,explain_sgp4
+How does the tracker calculate positions,explain_sgp4
+Explain how satellite TLEs work with SGP4,explain_sgp4
+Is the AI system online,ai_status
+Is the AI service running,ai_status
+Check AI status,ai_status
+Is the orbital AI available,ai_status
+Is the machine learning model online,ai_status
+Is the Python AI service working,ai_status
+Check the AI system,ai_status
+Tell me if the AI is running,ai_status
+Is the AI backend healthy,ai_status
+Is the risk model available,ai_status
+Check whether the AI service is available,ai_status
+Is the machine learning service online,ai_status
+What is the AI system status,ai_status
+Show AI status,ai_status
+Is the orbital risk classifier running,ai_status
+Is the prediction service online,ai_status
+Check the Python model,ai_status
+Is the AI backend working,ai_status
+Tell me whether the AI service is healthy,ai_status
+Is the classifier available,ai_status
+Is the orbital AI operational,ai_status
+Can you check the AI engine,ai_status
+Is the prediction engine running,ai_status
+Check whether the risk model is online,ai_status
+Is the machine learning backend available,ai_status
+What is the status of the AI engine,ai_status
+Can you verify the AI service,ai_status
+Is Phase 4.2A AI online,ai_status
+Is the orbital classifier healthy,ai_status
+Check the AI prediction service,ai_status
+How many debris objects are tracked,debris_count
+How much debris is being tracked,debris_count
+How many debris objects are in the system,debris_count
+What is the debris count,debris_count
+Tell me how many debris objects there are,debris_count
+How many objects are in the debris dataset,debris_count
+How many pieces of debris are tracked,debris_count
+How many orbital debris objects do you have,debris_count
+Give me the current debris count,debris_count
+How many debris objects are available,debris_count
+What is the number of tracked debris objects,debris_count
+How large is the debris dataset,debris_count
+How many debris objects are loaded,debris_count
+How many objects are currently tracked,debris_count
+Tell me the number of debris objects,debris_count
+Count the debris objects,debris_count
+Show me the debris count,debris_count
+How many debris records are available,debris_count
+What is the current number of debris objects,debris_count
+How many objects does the tracker have,debris_count
+How much orbital debris is being tracked,debris_count
+Tell me how many objects are in the cache,debris_count
+How many debris objects are in the cache,debris_count
+What is the current object count,debris_count
+How many tracked debris are there,debris_count
+Give me the number of debris objects,debris_count
+How many objects are in the orbital dataset,debris_count
+What is the size of the debris collection,debris_count
+How many debris objects does the tracker know about,debris_count
+Tell me the debris total,debris_count
+Hello,greeting
+Hi,greeting
+Hey,greeting
+Hello Orbital AI,greeting
+Hi Orbital AI,greeting
+Hey Orbital AI,greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+How are you,greeting
+Are you there,greeting
+Can you help me,greeting
+Hello there,greeting
+Hi there,greeting
+Hey there,greeting
+Greetings,greeting
+Good day,greeting
+Nice to meet you,greeting
+What can you do,greeting
+What can you help me with,greeting
+Can I ask you something,greeting
+I need some help,greeting
+Help me,greeting
+Are you available,greeting
+Are you working,greeting
+Hello assistant,greeting
+Hi assistant,greeting
+Hey assistant,greeting
+Good to see you,greeting
+Let's get started,greeting
+What is the weather today?,unknown
+Who is the president of the United States?,unknown
+Tell me a joke,unknown
+What is the capital of France?,unknown
+How do I cook pasta?,unknown
+What time is it?,unknown
+Can you help me write an email?,unknown
+What is the latest football score?,unknown
+Tell me about the stock market,unknown
+How do I learn JavaScript?,unknown
+What is my internet speed?,unknown
+Can you translate this sentence?,unknown
+What movie should I watch tonight?,unknown
+How do I bake a cake?,unknown
+What is the population of India?,unknown
+Who won the cricket match?,unknown
+Help me plan a vacation,unknown
+What is the temperature outside?,unknown
+Can you recommend a phone?,unknown
+How do I reset my password?,unknown
+Tell me about artificial intelligence in general,unknown
+What is two plus two?,unknown
+Can you summarize this article?,unknown
+What should I eat for dinner?,unknown
+How do I create a website?,unknown
+Tell me a funny story,unknown
+What is the price of gold today?,unknown
+Can you help with my homework?,unknown
+What is the best programming language?,unknown
+How do I make coffee?,unknown
+What is a satellite?,space_knowledge
+What is space debris?,space_knowledge
+Tell me about satellites,space_knowledge
+Tell me about space exploration,space_knowledge
+What is orbital mechanics?,space_knowledge
+Explain orbital mechanics,space_knowledge
+What is an orbit?,space_knowledge
+How do satellites work?,space_knowledge
+How does space work?,space_knowledge
+Tell me about NASA,space_knowledge
+What does NASA do?,space_knowledge
+What is the difference between a satellite and a rocket?,space_knowledge
+What is the difference between a satellite and debris?,space_knowledge
+Why are satellites important?,space_knowledge
+Why is space exploration important?,space_knowledge
+Tell me something interesting about space,space_knowledge
+What are artificial satellites?,space_knowledge
+What are natural satellites?,space_knowledge
+How are satellites launched?,space_knowledge
+How are satellites built?,space_knowledge
+What happens to old satellites?,space_knowledge
+Why do satellites stay in orbit?,space_knowledge
+Can satellites fall back to Earth?,space_knowledge
+What is low Earth orbit?,space_knowledge
+What is geostationary orbit?,space_knowledge
+What is the Moon's orbit?,space_knowledge
+How many satellites are around Earth?,space_knowledge
+Tell me about the International Space Station,space_knowledge
+What is a rocket?,space_knowledge
+How do rockets work?,space_knowledge
+Define a satellite,space_knowledge
+What exactly is a satellite?,space_knowledge
+Can you explain satellites?,space_knowledge
+How does a satellite remain in space?,space_knowledge
+Why don't satellites fall straight down?,space_knowledge
+What keeps satellites in orbit?,space_knowledge
+What is an orbital path?,space_knowledge
+Explain what an orbit is,space_knowledge
+What does orbital velocity mean?,space_knowledge
+What is orbital velocity?,space_knowledge
+Explain Earth's orbit,space_knowledge
+What is LEO?,space_knowledge
+What is GEO?,space_knowledge
+What is geostationary orbit used for?,space_knowledge
+What is space debris made of?,space_knowledge
+Where does space junk come from?,space_knowledge
+Why is space junk dangerous?,space_knowledge
+How does space debris affect satellites?,space_knowledge
+How are old satellites removed?,space_knowledge
+What happens when satellites stop working?,space_knowledge
+What is NASA responsible for?,space_knowledge
+What kind of work does NASA do?,space_knowledge
+Why does NASA study space?,space_knowledge
+What is the ISS?,space_knowledge
+How does the ISS stay in orbit?,space_knowledge
+What is a rocket used for?,space_knowledge
+How does a rocket get into orbit?,space_knowledge
+What is the difference between a rocket and a satellite?,space_knowledge
+How do rockets reach space?,space_knowledge
+Why are rockets needed for satellites?,space_knowledge

@@ -931,6 +931,144 @@ app.get(
   }
 );
 
+/* =========================================================
+   GENERIC ORBITAL OBJECT LOOKUP
+   ========================================================= */
+
+app.get(
+  "/api/object/:noradId",
+  (req, res) => {
+
+    const noradId =
+      String(
+        req.params.noradId || ""
+      ).trim();
+
+    if (!/^\d{4,6}$/.test(noradId)) {
+
+      return res
+        .status(400)
+        .json({
+
+          live: false,
+
+          error:
+            "A valid NORAD ID is required.",
+
+        });
+
+    }
+
+
+    const allObjects = [
+
+      ...(Array.isArray(
+        debrisCache?.objects
+      )
+        ? debrisCache.objects
+        : []),
+
+      ...(Array.isArray(
+        stationsCache?.objects
+      )
+        ? stationsCache.objects
+        : []),
+
+    ];
+
+
+    const object =
+      allObjects.find(
+        item => {
+
+          const objectNoradId =
+            String(
+              item?.noradId ||
+              item?.noradID ||
+              (
+                item?.line1
+                  ? item.line1
+                      .substring(2, 7)
+                      .trim()
+                  : ""
+              )
+            ).trim();
+
+          return (
+            objectNoradId ===
+            noradId
+          );
+
+        }
+      );
+
+
+    if (!object) {
+
+      return res
+        .status(404)
+        .json({
+
+          live: false,
+
+          cached: true,
+
+          error:
+            `NORAD ${noradId} was not found in the local orbital cache.`,
+
+          noradId,
+
+        });
+
+    }
+
+
+    const position =
+      calculatePosition(
+        object,
+        new Date()
+      );
+
+
+    if (!position) {
+
+      return res
+        .status(503)
+        .json({
+
+          live: false,
+
+          cached: true,
+
+          error:
+            `Unable to calculate the current position of NORAD ${noradId}.`,
+
+          noradId,
+
+        });
+
+    }
+
+
+    return res.json({
+
+      ...position,
+
+      noradId,
+
+      type:
+        "orbital-object",
+
+      live:
+        true,
+
+      cached:
+        true,
+
+    });
+
+  }
+);
 
 /*
 =========================================================

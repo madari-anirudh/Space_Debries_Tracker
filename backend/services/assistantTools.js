@@ -66,6 +66,26 @@ async function getLocal(endpoint, params = {}) {
 async function getDebris() {
   return getLocal("/api/debris");
 }
+/* =========================================================
+   ORBITAL OBJECT LOOKUP
+   ========================================================= */
+
+async function getObjectByNoradId(noradId) {
+  const normalizedNoradId =
+    String(noradId || "").trim();
+
+  if (!normalizedNoradId) {
+    throw new Error(
+      "NORAD ID is required."
+    );
+  }
+
+  return getLocal(
+    `/api/object/${encodeURIComponent(
+      normalizedNoradId
+    )}`
+  );
+}
 
 /* =========================================================
    NORMAL COLLISIONS
@@ -211,6 +231,7 @@ function findObject(
 
 module.exports = {
   getDebris,
+  getObjectByNoradId,
   getCollisions,
   getAICollisions,
   getAIStatus,
